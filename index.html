@@ -93,22 +93,104 @@
                 </div>
                 
                 <!-- Mobile Navigation Links -->
-                <nav class="space-y-4">
+                <nav class="space-y-2">
                     <a href="#" class="block text-red-500 font-medium py-3 border-b border-gray-200 flex items-center">
                         <i class="fas fa-home mr-3 w-5"></i>HOME
                     </a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
-                        <i class="fas fa-info-circle mr-3 w-5"></i>GIỚI THIỆU
-                    </a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
-                        <i class="fas fa-cogs mr-3 w-5"></i>DỊCH VỤ
-                    </a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
-                        <i class="fas fa-globe mr-3 w-5"></i>WEBSITE
-                    </a>
-                    <a href="#" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
-                        <i class="fas fa-graduation-cap mr-3 w-5"></i>KHÓA HỌC
-                    </a>
+                    
+                    <!-- GIỚI THIỆU with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle" data-submenu="about">
+                            <div class="flex items-center">
+                                <i class="fas fa-info-circle mr-3 w-5"></i>GIỚI THIỆU
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-about">
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Về chúng tôi
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tầm nhìn & sứ mệnh
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Đội ngũ
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- DỊCH VỤ with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle" data-submenu="services">
+                            <div class="flex items-center">
+                                <i class="fas fa-cogs mr-3 w-5"></i>DỊCH VỤ
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-services">
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tư vấn giải pháp
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Chăm sóc web, fanpage
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Viết content, design
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Quảng cáo online
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- WEBSITE with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle" data-submenu="website">
+                            <div class="flex items-center">
+                                <i class="fas fa-globe mr-3 w-5"></i>WEBSITE
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-website">
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website doanh nghiệp
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website bán hàng
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Landing page
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Bảo trì website
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- KHÓA HỌC with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle" data-submenu="courses">
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap mr-3 w-5"></i>KHÓA HỌC
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-courses">
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Digital Marketing
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Facebook Ads
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Google Ads
+                            </a>
+                            <a href="#" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">
+                                <i class="fas fa-circle mr-2 text-xs"></i>SEO cơ bản
+                            </a>
+                        </div>
+                    </div>
+                    
                     <a href="#" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
                         <i class="fas fa-star mr-3 w-5"></i>ĐÁNH GIÁ
                     </a>
@@ -917,6 +999,38 @@
                 if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
                     closeMobileMenuFunction();
                 }
+            });
+
+            // Submenu toggle functionality
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const submenuId = this.getAttribute('data-submenu');
+                    const submenu = document.getElementById(`submenu-${submenuId}`);
+                    const chevron = this.querySelector('.fa-chevron-down');
+                    
+                    // Toggle submenu visibility
+                    if (submenu.classList.contains('hidden')) {
+                        // Close all other submenus first
+                        submenuToggles.forEach(otherToggle => {
+                            if (otherToggle !== this) {
+                                const otherSubmenuId = otherToggle.getAttribute('data-submenu');
+                                const otherSubmenu = document.getElementById(`submenu-${otherSubmenuId}`);
+                                const otherChevron = otherToggle.querySelector('.fa-chevron-down');
+                                otherSubmenu.classList.add('hidden');
+                                otherChevron.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                        
+                        // Open current submenu
+                        submenu.classList.remove('hidden');
+                        chevron.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Close current submenu
+                        submenu.classList.add('hidden');
+                        chevron.style.transform = 'rotate(0deg)';
+                    }
+                });
             });
         });
     </script>
