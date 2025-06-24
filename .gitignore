@@ -1,0 +1,45 @@
+# WordPress theme specific
+.DS_Store
+.idea
+.vscode
+*.log
+*.sql
+*.sqlite
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+
+# Tailwind CSS
+# Keep style.css as it's the compiled output that WordPress needs
+# style.css
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+tmp/
+temp/
+.tmp
+.temp
+
+# Build files
+dist/
+build/
+
+# Package managers
+package-lock.json
+yarn.lock
+composer.lock
+
+# Cache
+.cache/
+.sass-cache/
+.parcel-cache/ 

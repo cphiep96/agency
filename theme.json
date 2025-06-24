@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "blue",
+          "color": "#667eea",
+          "name": "Blue"
+        },
+        {
+          "slug": "purple",
+          "color": "#764ba2",
+          "name": "Purple"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "gray",
+          "color": "#6b7280",
+          "name": "Gray"
+        }
+      ],
+      "custom": false
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "12px",
+          "name": "Small"
+        },
+        {
+          "slug": "normal",
+          "size": "16px",
+          "name": "Normal"
+        },
+        {
+          "slug": "large",
+          "size": "36px",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "48px",
+          "name": "Extra Large"
+        }
+      ],
+      "customFontSize": true
+    },
+    "layout": {
+      "contentSize": "800px",
+      "wideSize": "1200px"
+    }
+  }
+}
