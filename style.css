@@ -1,3 +1,15 @@
+/*
+Theme Name: Agency Theme
+Author: Gemini
+Author URI: https://gemini.google.com
+Description: A custom theme for Agency, based on the provided HTML templates.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-background, post-formats, theme-options, threaded-comments, translation-ready
+Text Domain: agency
+*/
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;

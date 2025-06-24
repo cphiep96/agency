@@ -1,213 +1,154 @@
 <?php
-// Enqueue scripts and styles
-function agency72_enqueue_scripts() {
-    // Enqueue theme's main stylesheet (compiled Tailwind CSS)
-    wp_enqueue_style('agency72-style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
 
-    
-    // Enqueue Font Awesome
-    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0-beta3');
+if ( ! function_exists( 'agency_setup' ) ) :
+    function agency_setup() {
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support( 'automatic-feed-links' );
 
-    // Enqueue Google Fonts Inter
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support( 'title-tag' );
 
-    // Enqueue custom JavaScript
-    wp_enqueue_script('agency72-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0', true);
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support( 'post-thumbnails' );
+
+        register_nav_menus( array(
+            'primary' => esc_html__( 'Primary Menu', 'agency' ),
+        ) );
+
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support( 'html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ) );
+    }
+endif;
+add_action( 'after_setup_theme', 'agency_setup' );
+
+
+/**
+ * Enqueue scripts and styles.
+ */
+function agency_scripts() {
+    wp_enqueue_style( 'agency-style', get_stylesheet_uri() );
+    wp_enqueue_script( 'agency-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20201210', true );
 }
-add_action('wp_enqueue_scripts', 'agency72_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'agency_scripts' );
 
-// Register navigation menus
-function agency72_register_menus() {
-    register_nav_menus(array(
-        'main-menu' => __('Main Menu', 'agency72'),
-        'mobile-menu' => __('Mobile Menu', 'agency72'),
-        'footer-services' => __('Footer Services Menu', 'agency72'),
-        'footer-more-services' => __('Footer More Services Menu', 'agency72'),
-        'footer-contact' => __('Footer Contact Menu', 'agency72')
-    ));
-}
-add_action('after_setup_theme', 'agency72_register_menus');
 
-// Add theme support
-function agency72_theme_support() {
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
-    add_theme_support('custom-logo');
-}
-add_action('after_setup_theme', 'agency72_theme_support');
-
-// Register Custom Post Types
-function agency72_register_post_types() {
-    // Services CPT
-    register_post_type('service', array(
-        'labels' => array(
-            'name' => __('Services', 'agency72'),
-            'singular_name' => __('Service', 'agency72')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-admin-tools',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'rewrite' => array('slug' => 'services')
-    ));
-
-    // Courses CPT
-    register_post_type('course', array(
-        'labels' => array(
-            'name' => __('Courses', 'agency72'),
-            'singular_name' => __('Course', 'agency72')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-welcome-learn-more',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'rewrite' => array('slug' => 'courses')
-    ));
-
-    // Testimonials CPT
-    register_post_type('testimonial', array(
-        'labels' => array(
-            'name' => __('Testimonials', 'agency72'),
-            'singular_name' => __('Testimonial', 'agency72')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-format-quote',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'rewrite' => array('slug' => 'testimonials')
-    ));
-}
-add_action('init', 'agency72_register_post_types');
-
-// Custom Menu Walker for Desktop Navigation
-class Agency72_Menu_Walker extends Walker_Nav_Menu {
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-        $classes = empty($item->classes) ? array() : (array) $item->classes;
-        $has_children = in_array('menu-item-has-children', $classes);
-        
-        if ($depth === 0) {
-            if ($has_children) {
-                $output .= '<div class="relative group">';
-                $output .= '<a href="' . esc_url($item->url) . '" class="text-gray-700 hover:text-blue-600 flex items-center">';
-                $output .= $this->get_menu_icon($item->title);
-                $output .= esc_html($item->title);
-                $output .= '<i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>';
-                $output .= '</a>';
-            } else {
-                $class = ($item->title === 'HOME') ? 'text-red-500 font-medium' : 'text-gray-700 hover:text-blue-600';
-                $output .= '<a href="' . esc_url($item->url) . '" class="' . $class . ' flex items-center">';
-                $output .= $this->get_menu_icon($item->title);
-                $output .= esc_html($item->title) . '</a>';
-            }
+/**
+ * Custom navigation walker for the theme.
+ */
+class Agency_Nav_Walker extends Walker_Nav_Menu {
+    /**
+     * Starts the list before the elements are added.
+     */
+    public function start_lvl( &$output, $depth = 0, $args = null ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
         } else {
-            $output .= '<a href="' . esc_url($item->url) . '" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">';
-            $output .= '<i class="fas fa-circle mr-2 text-xs"></i>' . esc_html($item->title) . '</a>';
+            $t = "\t";
+            $n = "\n";
         }
+        $indent = str_repeat( $t, $depth );
+
+        // Dropdown menu
+        $output .= "{$n}{$indent}<div class=\"absolute left-0 mt-0 pt-4 w-48 bg-transparent z-20 hidden group-hover:block\"><div class=\"bg-white rounded-lg shadow-lg py-2\">{$n}";
     }
 
-    private function get_menu_icon($title) {
-        $icons = array(
-            'home' => 'fa-home',
-            'giới thiệu' => 'fa-info-circle',
-            'dịch vụ' => 'fa-cogs',
-            'website' => 'fa-globe',
-            'khóa học' => 'fa-graduation-cap',
-            'đánh giá' => 'fa-star',
-            'bản tin' => 'fa-newspaper',
-            'liên hệ' => 'fa-phone'
-        );
-        
-        $title_key = strtolower($title);
-        $icon_class = isset($icons[$title_key]) ? $icons[$title_key] : 'fa-circle';
-        return '<i class="fas ' . $icon_class . ' mr-2"></i>';
-    }
-
-    function start_lvl(&$output, $depth = 0, $args = array()) {
-        if ($depth === 0) {
-            $output .= '<div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-20 hidden group-hover:block">';
-        }
-    }
-
-    function end_lvl(&$output, $depth = 0, $args = array()) {
-        if ($depth === 0) {
-            $output .= '</div>';
-        }
-    }
-
-    function end_el(&$output, $item, $depth = 0, $args = array()) {
-        if ($depth === 0 && in_array('menu-item-has-children', $item->classes)) {
-            $output .= '</div>';
-        }
-    }
-}
-
-// Custom Menu Walker for Mobile Navigation
-class Agency72_Mobile_Menu_Walker extends Walker_Nav_Menu {
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-        $classes = empty($item->classes) ? array() : (array) $item->classes;
-        $has_children = in_array('menu-item-has-children', $classes);
-        
-        if ($depth === 0) {
-            if ($has_children) {
-                $output .= '<div class="border-b border-gray-200">';
-                $output .= '<button class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle" data-submenu="' . sanitize_title($item->title) . '">';
-                $output .= '<div class="flex items-center">';
-                $output .= $this->get_menu_icon($item->title);
-                $output .= esc_html($item->title) . '</div>';
-                $output .= '<i class="fas fa-chevron-down transition-transform duration-200"></i>';
-                $output .= '</button>';
-            } else {
-                $class = ($item->title === 'HOME') ? 'text-red-500 font-medium' : 'text-gray-700 hover:text-blue-600';
-                $output .= '<a href="' . esc_url($item->url) . '" class="block ' . $class . ' py-3 border-b border-gray-200 flex items-center">';
-                $output .= $this->get_menu_icon($item->title);
-                $output .= esc_html($item->title) . '</a>';
-            }
+    /**
+     * Ends the list of after the elements are added.
+     */
+    public function end_lvl( &$output, $depth = 0, $args = null ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
         } else {
-            $output .= '<a href="' . esc_url($item->url) . '" class="block text-gray-600 hover:text-blue-600 py-2 text-sm">';
-            $output .= '<i class="fas fa-circle mr-2 text-xs"></i>' . esc_html($item->title) . '</a>';
+            $t = "\t";
+            $n = "\n";
         }
+        $indent  = str_repeat( $t, $depth );
+        $output .= "$indent</div></div>{$n}";
     }
 
-    private function get_menu_icon($title) {
-        $icons = array(
-            'home' => 'fa-home',
-            'giới thiệu' => 'fa-info-circle',
-            'dịch vụ' => 'fa-cogs',
-            'website' => 'fa-globe',
-            'khóa học' => 'fa-graduation-cap',
-            'đánh giá' => 'fa-star',
-            'bản tin' => 'fa-newspaper',
-            'liên hệ' => 'fa-phone'
-        );
+    /**
+     * Starts the element output.
+     */
+    public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+            $t = '';
+            $n = '';
+        } else {
+            $t = "\t";
+            $n = "\n";
+        }
+        $indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
+
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+
+        // Check if this menu item has children.
+        $has_children = in_array('menu-item-has-children', $classes);
+
+        if ($has_children) {
+            $output .= $indent . '<div class="relative group">';
+            $output .= '<a href="' . esc_attr($item->url) . '" class="text-gray-700 flex items-center" style="transition: color 1s;" onmouseover="this.style.color=\'#ff3205\'" onmouseout="this.style.color=\'#374151\'">';
+        } else {
+             $output .= $indent;
+             $output .= '<a href="' . esc_attr($item->url) . '" class="text-gray-700 flex items-center" style="transition: color 0.3s;" onmouseover="this.style.color=\'#ff3205\'" onmouseout="this.style.color=\'#374151\'">';
+        }
+
+
+        // We need to get the icon from the navigation label.
+        // The user should write "fas fa-home | Home" in the navigation label.
+        $title_parts = explode('|', $item->title);
+        $icon_class = '';
+        $title = '';
+        if(count($title_parts) > 1) {
+            $icon_class = 'fas ' . trim($title_parts[0]) . ' mr-2';
+            $title = trim($title_parts[1]);
+        } else {
+            $title = trim($title_parts[0]);
+        }
         
-        $title_key = strtolower($title);
-        $icon_class = isset($icons[$title_key]) ? $icons[$title_key] : 'fa-circle';
-        return '<i class="fas ' . $icon_class . ' mr-3 w-5"></i>';
+        if(!empty($icon_class)){
+             $output .= '<i class="' . esc_attr($icon_class) . '"></i>';
+        }
+
+        $output .= esc_html($title);
+
+        if ($has_children) {
+             $output .= '<i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i></a>';
+        } else {
+            $output .= '</a>';
+        }
+
     }
 
-    function start_lvl(&$output, $depth = 0, $args = array()) {
-        if ($depth === 0) {
-            $output .= '<div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-' . sanitize_title($args->menu_id) . '">';
+    /**
+     * Ends the element output, if needed.
+     */
+    public function end_el( &$output, $item, $depth = 0, $args = null ) {
+        $has_children = in_array('menu-item-has-children', $item->classes);
+        if ($has_children) {
+            $output .= "</div>\n";
+        } else {
+            $output .= "\n";
         }
     }
-
-    function end_lvl(&$output, $depth = 0, $args = array()) {
-        if ($depth === 0) {
-            $output .= '</div>';
-        }
-    }
-
-    function end_el(&$output, $item, $depth = 0, $args = array()) {
-        if ($depth === 0 && in_array('menu-item-has-children', $item->classes)) {
-            $output .= '</div>';
-        }
-    }
-}
-?>
+} 

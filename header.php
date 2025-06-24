@@ -1,42 +1,90 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .gradient-purple {
+            background: linear-gradient(135deg, #ff3205 0%, #ff6b47 100%);
+        }
+
+        .gradient-brown {
+            background: linear-gradient(135deg, #ff3205 0%, #ff7a5c 100%);
+        }
+
+        .gradient-dark-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .wave-bg {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .wave-bg>* {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-gray-50'); ?>>
-<?php wp_body_open(); ?>
 
+<body <?php body_class('bg-gray-50'); ?>>
+    <?php wp_body_open(); ?>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">72</span>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-800"><?php bloginfo('name'); ?></h1>
-                        <p class="text-xs text-gray-600"><?php bloginfo('description'); ?></p>
-                    </div>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center space-x-3">
+                        <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                            class="h-12 w-auto">
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-600">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                        </div>
+                    </a>
                 </div>
-                
+
                 <!-- Navigation -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'main-menu',
-                        'container' => false,
-                        'menu_class' => 'flex items-center space-x-8',
-                        'fallback_cb' => false,
-                        'items_wrap' => '%3$s',
-                        'walker' => new Agency72_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
+                <?php
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'container'      => 'nav',
+                        'container_class'=> 'hidden lg:flex items-center space-x-8',
+                        'menu_class'     => '',
+                        'items_wrap'     => '%3$s',
+                        'walker'         => new Agency_Nav_Walker(),
+                    ) );
+                }
+                ?>
+
 
                 <!-- Mobile menu button -->
                 <button id="mobileMenuBtn" class="lg:hidden">
@@ -45,10 +93,9 @@
             </div>
         </div>
     </header>
-
-    <!-- Mobile Menu Overlay -->
     <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden hidden">
-        <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out" id="mobileMenuPanel">
+        <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
+            id="mobileMenuPanel">
             <div class="p-6">
                 <!-- Close button -->
                 <div class="flex justify-end mb-6">
@@ -56,20 +103,16 @@
                         <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                
                 <!-- Mobile Navigation Links -->
-                <nav class="space-y-2">
-                    <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'main-menu',
-                        'container' => false,
-                        'menu_class' => 'space-y-2',
-                        'fallback_cb' => false,
-                        'items_wrap' => '%3$s',
-                        'walker' => new Agency72_Mobile_Menu_Walker()
-                    ));
-                    ?>
-                </nav>
+                <?php
+                if ( has_nav_menu( 'primary' ) ) {
+                    wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'container'      => 'nav',
+                        'menu_class'     => 'space-y-2',
+                    ) );
+                }
+                ?>
             </div>
         </div>
-    </div>
+    </div> 
