@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website - VV Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .gradient-purple {
+            background: linear-gradient(135deg, #ff3205 0%, #ff6b47 100%);
+        }
+
+        .gradient-brown {
+            background: linear-gradient(135deg, #ff3205 0%, #ff7a5c 100%);
+        }
+
+        .gradient-dark-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .wave-bg {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .wave-bg>* {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                            class="h-12 w-auto">
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-600">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-home mr-2"></i>HOME
+                    </a>
+                    <!-- GIỚI THIỆU with submenu -->
+                    <div class="relative group">
+                        <a href="gioi-thieu.html" class="text-gray-700 flex items-center" style="transition: color 1s;"
+                            onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                            <i class="fas fa-info-circle mr-2"></i>GIỚI THIỆU
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 mt-0 pt-4 w-48 bg-transparent z-20 hidden group-hover:block">
+                            <div class="bg-white rounded-lg shadow-lg py-2">
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Về chúng tôi
+                                </a>
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Tầm nhìn & sứ mệnh
+                                </a>
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Đội ngũ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DỊCH VỤ with submenu -->
+                    <div class="relative group">
+                        <a href="dich-vu.html" class="text-gray-700 flex items-center" style="transition: color 1s;"
+                            onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                            <i class="fas fa-cogs mr-2"></i>DỊCH VỤ
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-0 pt-4 w-48 bg-transparent z-20 hidden group-hover:block">
+                            <div class="bg-white rounded-lg shadow-lg py-2">
+                                <a href="dich-vu.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Tư vấn giải pháp
+                                </a>
+                                <a href="dich-vu.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Chăm sóc web, fanpage
+                                </a>
+                                <a href="dich-vu.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Viết content, design
+                                </a>
+                                <a href="dich-vu.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Quảng cáo online
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WEBSITE with submenu -->
+                    <div class="relative group">
+                        <a href="website.html" class="font-medium flex items-center" style="color: #ff3205;">
+                            <i class="fas fa-globe mr-2"></i>WEBSITE
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-0 pt-4 w-48 bg-transparent z-20 hidden group-hover:block">
+                            <div class="bg-white rounded-lg shadow-lg py-2">
+                                <a href="website.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Website doanh nghiệp
+                                </a>
+                                <a href="website.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Website bán hàng
+                                </a>
+                                <a href="website.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Landing page
+                                </a>
+                                <a href="website.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Bảo trì website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="danh-gia.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-star mr-2"></i>ĐÁNH GIÁ
+                    </a>
+                    <a href="ban-tin.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-newspaper mr-2"></i>BẢN TIN
+                    </a>
+                    <a href="lien-he.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-phone mr-2"></i>LIÊN HỆ
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden">
+                    <i id="mobileMenuIcon" class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden hidden">
+        <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
+            id="mobileMenuPanel">
+            <div class="p-6">
+                <!-- Close button -->
+                <div class="flex justify-end mb-6">
+                    <button id="closeMobileMenu" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation Links -->
+                <nav class="space-y-2">
+                    <a href="index.html" class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-home mr-3 w-5"></i>HOME
+                    </a>
+
+                    <!-- GIỚI THIỆU with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="about">
+                            <div class="flex items-center">
+                                <i class="fas fa-info-circle mr-3 w-5"></i>GIỚI THIỆU
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-about">
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Về chúng tôi
+                            </a>
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tầm nhìn & sứ mệnh
+                            </a>
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Đội ngũ
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DỊCH VỤ with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="services">
+                            <div class="flex items-center">
+                                <i class="fas fa-cogs mr-3 w-5"></i>DỊCH VỤ
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-services">
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tư vấn giải pháp
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Chăm sóc web, fanpage
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Viết content, design
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Quảng cáo online
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WEBSITE with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left font-medium py-3 flex items-center justify-between submenu-toggle"
+                            style="color: #ff3205;" data-submenu="website">
+                            <div class="flex items-center">
+                                <i class="fas fa-globe mr-3 w-5"></i>WEBSITE
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-website">
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website doanh nghiệp
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website bán hàng
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Landing page
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Bảo trì website
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="danh-gia.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-star mr-3 w-5"></i>ĐÁNH GIÁ
+                    </a>
+                    <a href="ban-tin.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-newspaper mr-3 w-5"></i>BẢN TIN
+                    </a>
+                    <a href="lien-he.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-phone mr-3 w-5"></i>LIÊN HỆ
+                    </a>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <section class="py-20" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
+        <div class="container mx-auto px-4">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Thiết Kế Website</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Giải pháp website chuyên nghiệp cho doanh nghiệp của bạn
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Types -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Website Type 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Corporate Website" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Website Doanh Nghiệp</h3>
+                            <p class="text-sm opacity-90">Giao diện chuyên nghiệp</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Thiết kế theo thương hiệu</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tối ưu hóa SEO</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tương thích mọi thiết bị</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Xem demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website Type 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3182739/pexels-photo-3182739.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="E-commerce Website" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Website Bán Hàng</h3>
+                            <p class="text-sm opacity-90">Tối ưu cho bán lẻ</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Giỏ hàng & thanh toán</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Quản lý đơn hàng</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tích hợp vận chuyển</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Xem demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Website Type 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Landing Page" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Landing Page</h3>
+                            <p class="text-sm opacity-90">Tối ưu chuyển đổi</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Thiết kế thu hút</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tối ưu tỷ lệ chuyển đổi</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tích hợp form liên hệ</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Xem demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Tính Năng Nổi Bật</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Responsive Design</h3>
+                    <p class="text-gray-600">Tương thích hoàn hảo trên mọi thiết bị</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-search text-xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">SEO Friendly</h3>
+                    <p class="text-gray-600">Tối ưu cho công cụ tìm kiếm</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Tốc Độ Cao</h3>
+                    <p class="text-gray-600">Tải trang nhanh chóng</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Bảo Mật</h3>
+                    <p class="text-gray-600">An toàn và đáng tin cậy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">72</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">AGENCY</h3>
+                            <p class="text-xs text-gray-400">SÁNG TẠO - HIỆU QUẢ - TIN NHIỆM</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p>86/25 Nguyễn An Ninh</p>
+                        <p>Phường 7,Tp Vũng Tàu</p>
+                        <p>Tỉnh Bà Rịa - Vũng Tàu</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Phòng marketing 72agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Digital Marketing tổng thể</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Google, Facebook</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- More Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Thiết kế website trọn gói</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Seo từ khóa website</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Tiktok, Zalo</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Thiết kế ấn phẩm, Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Liên hệ với chúng tôi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Giới thiệu về 72agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bản tin 72agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-sm text-gray-400">Copyright 2020 © 72agency.vn | mktvungtau.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenuPanel.classList.remove('translate-x-full');
+                }, 10);
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            });
+
+            // Close mobile menu
+            function closeMobileMenuFunction() {
+                mobileMenuPanel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+
+            closeMobileMenu.addEventListener('click', closeMobileMenuFunction);
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    closeMobileMenuFunction();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenuFunction();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
