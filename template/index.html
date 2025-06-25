@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VV Agency - ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .gradient-purple {
+            background: linear-gradient(135deg, #ff3205 0%, #ff6b47 100%);
+        }
+
+        .gradient-brown {
+            background: linear-gradient(135deg, #ff3205 0%, #ff7a5c 100%);
+        }
+
+        .gradient-dark-blue {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+        }
+
+        .wave-bg {
+            background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+        .wave-bg>* {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                            class="h-12 w-auto">
+                        <div class="hidden sm:block">
+                            <p class="text-xs text-gray-600">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="font-medium flex items-center" style="color: #ff3205;">
+                        <i class="fas fa-home mr-2"></i>HOME
+                    </a>
+                    <!-- GIỚI THIỆU with submenu -->
+                    <div class="relative group">
+                        <a href="gioi-thieu.html" class="text-gray-700 flex items-center" style="transition: color 1s;"
+                            onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                            <i class="fas fa-info-circle mr-2"></i>GIỚI THIỆU
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div class="absolute left-0 mt-0 pt-4 w-48 bg-transparent z-20 hidden group-hover:block">
+                            <div class="bg-white rounded-lg shadow-lg py-2">
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Về chúng tôi
+                                </a>
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Tầm nhìn & sứ mệnh
+                                </a>
+                                <a href="gioi-thieu.html"
+                                    class="block px-4 py-3 text-sm text-gray-700 hover:text-white transition-colors"
+                                    style="transition: all 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                    onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                    <i class="fas fa-circle mr-2 text-xs"></i>Đội ngũ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DỊCH VỤ with submenu -->
+                    <div class="relative group">
+                        <a href="dich-vu.html" class="text-gray-700 flex items-center" style="transition: color 1s;"
+                            onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                            <i class="fas fa-cogs mr-2"></i>DỊCH VỤ
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-0 pt-4 w-48 bg-white rounded-lg shadow-lg py-2 z-20 hidden group-hover:block">
+                            <a href="dich-vu.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tư vấn giải pháp
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Chăm sóc web, fanpage
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Viết content, design
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Quảng cáo online
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WEBSITE with submenu -->
+                    <div class="relative group">
+                        <a href="website.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                            onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                            <i class="fas fa-globe mr-2"></i>WEBSITE
+                            <i
+                                class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <div
+                            class="absolute left-0 mt-0 pt-4 w-48 bg-white rounded-lg shadow-lg py-2 z-20 hidden group-hover:block">
+                            <a href="website.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website doanh nghiệp
+                            </a>
+                            <a href="website.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website bán hàng
+                            </a>
+                            <a href="website.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Landing page
+                            </a>
+                            <a href="website.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:text-white transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#374151'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Bảo trì website
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <a href="danh-gia.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-star mr-2"></i>ĐÁNH GIÁ
+                    </a>
+                    <a href="ban-tin.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-newspaper mr-2"></i>BẢN TIN
+                    </a>
+                    <a href="lien-he.html" class="text-gray-700 flex items-center" style="transition: color 0.3s;"
+                        onmouseover="this.style.color='#ff3205'" onmouseout="this.style.color='#374151'">
+                        <i class="fas fa-phone mr-2"></i>LIÊN HỆ
+                    </a>
+                </nav>
+
+
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden">
+                    <i id="mobileMenuIcon" class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden hidden">
+        <div class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
+            id="mobileMenuPanel">
+            <div class="p-6">
+                <!-- Close button -->
+                <div class="flex justify-end mb-6">
+                    <button id="closeMobileMenu" class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation Links -->
+                <nav class="space-y-2">
+                    <a href="index.html" class="block font-medium py-3 border-b border-gray-200 flex items-center"
+                        style="color: #ff3205;">
+                        <i class="fas fa-home mr-3 w-5"></i>HOME
+                    </a>
+
+                    <!-- GIỚI THIỆU with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="about">
+                            <div class="flex items-center">
+                                <i class="fas fa-info-circle mr-3 w-5"></i>GIỚI THIỆU
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-about">
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Về chúng tôi
+                            </a>
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tầm nhìn & sứ mệnh
+                            </a>
+                            <a href="gioi-thieu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Đội ngũ
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DỊCH VỤ with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="services">
+                            <div class="flex items-center">
+                                <i class="fas fa-cogs mr-3 w-5"></i>DỊCH VỤ
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-services">
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Tư vấn giải pháp
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Chăm sóc web, fanpage
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Viết content, design
+                            </a>
+                            <a href="dich-vu.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Quảng cáo online
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- WEBSITE with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="website">
+                            <div class="flex items-center">
+                                <i class="fas fa-globe mr-3 w-5"></i>WEBSITE
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-website">
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website doanh nghiệp
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Website bán hàng
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Landing page
+                            </a>
+                            <a href="website.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Bảo trì website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- KHÓA HỌC with submenu -->
+                    <div class="border-b border-gray-200">
+                        <button
+                            class="w-full text-left text-gray-700 hover:text-blue-600 py-3 flex items-center justify-between submenu-toggle"
+                            data-submenu="courses">
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap mr-3 w-5"></i>KHÓA HỌC
+                            </div>
+                            <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                        </button>
+                        <div class="submenu hidden pl-8 pb-2 space-y-2" id="submenu-courses">
+                            <a href="khoa-hoc.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Digital Marketing
+                            </a>
+                            <a href="khoa-hoc.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Facebook Ads
+                            </a>
+                            <a href="khoa-hoc.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>Google Ads
+                            </a>
+                            <a href="khoa-hoc.html"
+                                class="block text-gray-600 hover:text-white py-2 text-sm transition-colors"
+                                style="transition: all 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ff3205'; this.style.color='white'"
+                                onmouseout="this.style.backgroundColor=''; this.style.color='#4B5563'">
+                                <i class="fas fa-circle mr-2 text-xs"></i>SEO cơ bản
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="danh-gia.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-star mr-3 w-5"></i>ĐÁNH GIÁ
+                    </a>
+                    <a href="ban-tin.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-newspaper mr-3 w-5"></i>BẢN TIN
+                    </a>
+                    <a href="lien-he.html"
+                        class="block text-gray-700 hover:text-blue-600 py-3 border-b border-gray-200 flex items-center">
+                        <i class="fas fa-phone mr-3 w-5"></i>LIÊN HỆ
+                    </a>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero/Banner Section -->
+    <section class="py-20 text-white" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+                        VV AGENCY
+                    </h1>
+                    <h2 class="text-2xl lg:text-3xl font-semibold mb-6">
+                        ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90">
+                        Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải
+                        pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực
+                        tuyến hiệu quả.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                            style="color: #ff3205;">
+                            <a href="https://zalo.me/0336269485" target="_blank">
+                                <i class="fas fa-phone mr-2"></i>
+                                Liên hệ ngay
+                            </a>
+                        </button>
+                        <button
+                            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+                            style="transition: all 0.3s;"
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='#ff3205'"
+                            onmouseout="this.style.backgroundColor=''; this.style.color='white'">
+                            <i class="fas fa-play mr-2"></i>
+                            Xem dịch vụ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:w-1/2 lg:pl-12">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                            alt="Digital Marketing Team" class="rounded-lg shadow-2xl w-full">
+                        <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                            <div class="text-2xl font-bold">100+</div>
+                            <div class="text-sm">Dự án thành công</div>
+                        </div>
+                        <div class="absolute -top-6 -right-6 bg-green-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                            <div class="text-2xl font-bold">24/7</div>
+                            <div class="text-sm">Hỗ trợ khách hàng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    DỊCH VỤ CỦA VV AGENCY
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ
+                    trong kỷ nguyên số
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 - Thiết kế website & SEO -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Website Design & SEO"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fas fa-code text-2xl text-blue-600 group-hover:text-blue-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            THIẾT KẾ WEBSITE & SEO
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 - Quảng Cáo Google -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-red-400 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Google Ads"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-google text-2xl text-red-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            QUẢNG CÁO GOOGLE
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 - Quảng Cáo Facebook -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Facebook Ads"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-facebook-f text-2xl text-blue-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            QUẢNG CÁO FACEBOOK
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 - Quảng Cáo TikTok -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-pink-400 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="TikTok Ads"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-tiktok text-2xl text-pink-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            QUẢNG CÁO TIK TOK
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 - Quảng Cáo YouTube -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="YouTube Ads"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-youtube text-2xl text-red-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            QUẢNG CÁO YOUTUBE
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Quảng cáo video trên YouTube để tăng nhận diện thương hiệu
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card - Quảng Cáo Instagram -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Instagram Ads"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-instagram text-2xl text-purple-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            QUẢNG CÁO INSTAGRAM
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Tận dụng sức mạnh hình ảnh trên Instagram để thu hút khách hàng
+                        </p>
+                    </div>
+                </div>
+                <!-- Service Card - Chăm Sóc Website -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Website Management"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fas fa-desktop text-2xl text-green-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            CHĂM SÓC WEBSITE
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Quản trị nội dung, cập nhật bảo trì và tối ưu hóa hiệu suất website liên tục
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card - Chăm Sóc Fanpage -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative p-8">
+                        <div class="mb-6 overflow-hidden rounded-xl">
+                            <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop"
+                                alt="Fanpage Management"
+                                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                                <i class="fab fa-facebook-f text-2xl text-teal-600"></i>
+                            </div>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                            CHĂM SÓC FANPAGE
+                        </h3>
+                        <p
+                            class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                            Đăng bài định kỳ, tương tác khách hàng, thiết kế hình ảnh tăng nhận diện thương hiệu
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="wave-bg py-16 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-6">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-headset text-4xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Hỗ trợ liên tục 24/24</h3>
+                    <p class="text-lg opacity-90">Chúng tôi hỗ trợ đối tác khách hàng liên tục bất cứ thời gian nào hoàn
+                        cảnh nào.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    TẠI SAO CHỌN VV AGENCY?
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Chúng tôi mang đến giải pháp marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Content - Image with overlay -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                        alt="Digital Marketing Strategy"
+                        class="w-full rounded-2xl shadow-2xl relative z-10 transform group-hover:scale-[1.02] transition-transform duration-500">
+
+                    <!-- Floating Stats -->
+                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg z-20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">85%</div>
+                                <div class="text-xs text-gray-600">Tăng trưởng</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg z-20">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">1000+</div>
+                                <div class="text-xs text-gray-600">Khách hàng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Features -->
+                <div class="space-y-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                <i class="fas fa-share-alt text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Phủ sóng đa nền tảng MXH</h4>
+                            <p class="text-gray-600 leading-relaxed">Với sự phát triển của các nền tảng MXH, chúng tôi
+                                giúp thương hiệu của bạn hiện diện mạnh mẽ trên Facebook, Instagram, TikTok, LinkedIn và
+                                nhiều kênh khác.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Facebook</span>
+                                <span
+                                    class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-medium">Instagram</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">TikTok</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div
+                        class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                <i class="fas fa-dollar-sign text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Tối ưu chi phí & thời gian</h4>
+                            <p class="text-gray-600 leading-relaxed">VV Agency giúp doanh nghiệp vừa và nhỏ tiết kiệm
+                                đến
+                                60% chi phí marketing so với việc tự vận hành, đồng thời rút ngắn thời gian triển khai
+                                chiến dịch.</p>
+                            <div class="mt-4 grid grid-cols-2 gap-4">
+                                <div class="text-center p-3 bg-green-50 rounded-lg">
+                                    <div class="text-2xl font-bold text-green-600">60%</div>
+                                    <div class="text-xs text-gray-600">Tiết kiệm chi phí</div>
+                                </div>
+                                <div class="text-center p-3 bg-blue-50 rounded-lg">
+                                    <div class="text-2xl font-bold text-blue-600">2x</div>
+                                    <div class="text-xs text-gray-600">Tốc độ triển khai</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div
+                        class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-800 mb-3">Công nghệ AI tiên tiến</h4>
+                            <p class="text-gray-600 leading-relaxed">Ứng dụng AI và Big Data để phân tích hành vi khách
+                                hàng, tối ưu hóa chiến dịch real-time và dự đoán xu hướng thị trường.</p>
+                            <div class="mt-3">
+                                <div class="flex items-center space-x-2 text-sm text-purple-600">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Phân tích dữ liệu tự động</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 text-white" style="background-color: #ff3205;">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12">NĂNG LỰC CỦA VV AGENCY</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-4xl font-bold mb-2">100+</div>
+                    <div class="text-lg">Dự án hoàn thành</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-lg">Khách hàng tin tưởng</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-lg">Hỗ trợ khách hàng</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">10</div>
+                    <div class="text-lg">Năm kinh nghiệm</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-star text-purple-500 mr-2"></i>
+                    ĐỐI TÁC - KHÁCH HÀNG
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Chúng tôi tự hào được hợp tác với nhiều doanh nghiệp hàng đầu trong và ngoài nước
+                </p>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden">
+                <!-- Carousel Wrapper -->
+                <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 1" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Công ty ABC</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 2" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Tập đoàn XYZ</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 3" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Doanh nghiệp 123</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 4" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Công ty DEF</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 5" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Tổ chức GHI</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 6" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Startup JKL</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 7" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Công ty MNO</h4>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=200&h=120&fit=crop"
+                                    alt="Partner 8" class="w-full h-24 object-contain mb-3">
+                                <h4 class="text-sm font-semibold text-gray-700 text-center">Doanh nghiệp PQR</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button onclick="moveSlide(-1)"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-left text-gray-600"></i>
+                </button>
+                <button onclick="moveSlide(1)"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-chevron-right text-gray-600"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button onclick="goToSlide(0)"
+                        class="w-3 h-3 rounded-full bg-purple-500 transition-all duration-300" id="dot0"></button>
+                    <button onclick="goToSlide(1)"
+                        class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"
+                        id="dot1"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <a href="index.html" class="flex items-center space-x-3">
+                            <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                                class="h-12 w-auto">
+                            <div>
+                                <p class="text-xs text-gray-400">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <p>Tổ 1, khu vực 1</p>
+                        <p>Phường Quy Nhơn Nam</p>
+                        <p>Tỉnh Gia Lai</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <button class="px-4 py-2 rounded text-sm" style="background-color: #ff3205;">
+                            <i class="fas fa-phone mr-2"></i>GỌI ĐIỆN
+                        </button>
+                        <button class="bg-gray-600 px-4 py-2 rounded text-sm">
+                            <i class="fas fa-envelope mr-2"></i>EMAIL
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Phòng marketing VV Agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Digital Marketing tổng thể</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Google, Facebook</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- More Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Thiết kế website trọn gói</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Seo từ khóa website</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Tiktok, Zalo</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Thiết kế ấn phẩm, Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Liên hệ với chúng tôi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Bản tin VV Agency</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-sm text-gray-400">Copyright 2018 - 2025 © vvagency.vn</p>
+                <div class="mt-2 space-x-4">
+                    <span class="text-red-500">Zalo: 0336269485</span>
+                    <span class="text-blue-500">Hotline: 0336269485</span>
+                    <span class="text-purple-500">Telegram: 0336269485</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="fixed bottom-4 left-4 z-50">
+        <button class="text-white p-3 rounded-full shadow-lg transition-colors" style="background-color: #ff3205;"
+            onmouseover="this.style.backgroundColor='#e02a00'" onmouseout="this.style.backgroundColor='#ff3205'">
+            <i class="fas fa-comments"></i>
+            <span class="ml-2 text-sm">Chat với tôi</span>
+        </button>
+    </div>
+
+    <!-- Contact Widget -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button class="bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
+            <a href="https://zalo.me/0336269485" target="_blank"> <i class="fas fa-phone"></i>
+                <span class="ml-2 text-sm">Liên hệ</span>
+            </a>
+        </button>
+    </div>
+
+    <!-- Carousel JavaScript -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 2;
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carousel = document.getElementById('partnersCarousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.getElementById(`dot${i}`);
+                if (i === currentSlide) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-purple-500');
+                } else {
+                    dot.classList.remove('bg-purple-500');
+                    dot.classList.add('bg-gray-300');
+                }
+            }
+        }
+
+        // Auto-play carousel
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+
+        // Mobile Menu JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+            // Open mobile menu
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenuPanel.classList.remove('translate-x-full');
+                }, 10);
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+
+            // Close mobile menu
+            function closeMobileMenuFunction() {
+                mobileMenuPanel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Close menu when close button is clicked
+            closeMobileMenu.addEventListener('click', closeMobileMenuFunction);
+
+            // Close menu when clicking outside the panel
+            mobileMenu.addEventListener('click', function (e) {
+                // Only close if clicking directly on the overlay background (not on menu or submenu items)
+                if (e.target === mobileMenu) {
+                    closeMobileMenuFunction();
+                }
+            });
+
+            // Close menu when clicking on a menu item (except submenu links)
+            const mobileMenuLinks = mobileMenuPanel.querySelectorAll('a:not(.submenu a)');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenuFunction);
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenuFunction();
+                }
+            });
+
+            // Submenu toggle functionality
+            const submenuToggles = document.querySelectorAll('.submenu-toggle');
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Prevent the click from bubbling up
+
+                    const submenuId = this.getAttribute('data-submenu');
+                    const submenu = document.getElementById(`submenu-${submenuId}`);
+                    const chevron = this.querySelector('.fa-chevron-down');
+
+                    // Toggle submenu visibility
+                    if (submenu.classList.contains('hidden')) {
+                        // Close all other submenus first
+                        submenuToggles.forEach(otherToggle => {
+                            if (otherToggle !== this) {
+                                const otherSubmenuId = otherToggle.getAttribute('data-submenu');
+                                const otherSubmenu = document.getElementById(`submenu-${otherSubmenuId}`);
+                                const otherChevron = otherToggle.querySelector('.fa-chevron-down');
+                                otherSubmenu.classList.add('hidden');
+                                otherChevron.style.transform = 'rotate(0deg)';
+                            }
+                        });
+
+                        // Open current submenu
+                        submenu.classList.remove('hidden');
+                        chevron.style.transform = 'rotate(180deg)';
+                    } else {
+                        // Close current submenu
+                        submenu.classList.add('hidden');
+                        chevron.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // Prevent submenu item clicks from closing the menu
+            const submenuItems = document.querySelectorAll('.submenu a');
+            submenuItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Prevent the click from bubbling up
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
