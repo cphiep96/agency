@@ -1,6 +1,6 @@
 # agency
 
-Static marketing site for 72 Agency.
+Static marketing site for VV Agency.
 ## Running tests
 
 Install BeautifulSoup:

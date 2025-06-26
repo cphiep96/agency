@@ -105,14 +105,15 @@
                 </div>
                 <!-- Mobile Navigation Links -->
                 <?php
-                if ( has_nav_menu( 'primary' ) ) {
-                    wp_nav_menu( array(
-                        'theme_location' => 'primary',
-                        'container'      => 'nav',
-                        'menu_class'     => 'space-y-2',
-                    ) );
-                }
-                ?>
+                    if ( has_nav_menu( 'primary' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'primary',
+                            'container'      => 'nav',
+                            'menu_class'     => 'space-y-2',
+                            'walker'         => new Agency_Nav_Walker(), // THÊM DÒNG NÀY
+                        ) );
+                    }
+                    ?>
             </div>
         </div>
     </div> 
