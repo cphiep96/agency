@@ -5,6 +5,7 @@
 - **Template files**: Original HTML templates are stored in the `template/` directory, while WordPress PHP templates are in the root.
 - **Naming convention**: Page templates follow the pattern `page-{slug}.php` where `{slug}` corresponds to the page URL slug.
 - **CSS**: TailwindCSS is used for styling with PostCSS processing.
+- **Widget areas**: Widget areas are registered in functions.php with the agency_widgets_init() function.
 
 ## Development Patterns
 
@@ -12,31 +13,42 @@
   - Standard WordPress template hierarchy is used
   - Custom templates extend the base templates
   - WordPress hooks and filters are leveraged for customization
+  - WordPress Customizer is used for theme options and content management
 
 - **Component Structure**:
   - Custom navigation walker (Agency_Nav_Walker) for enhanced menus
   - Custom widgets for specialized content display
   - Separation of concerns between presentation and functionality
 
+- **Customizer Implementation**:
+  - Service cards configured through WordPress Customizer
+  - Custom Customizer controls for complex UI elements
+  - Widget areas provide placement flexibility
+
 ## User Preferences
 
 - **Documentation**: Maintain comprehensive memory bank documentation
 - **Code Organization**: Follow WordPress coding standards
 - **Performance**: Prioritize page load speed and mobile optimization
+- **Admin UX**: Provide intuitive admin interfaces for content management
 
 ## Implementation Patterns
 
 - **Navigation**: Menu items can include icons using the syntax "icon_class | Menu Item Name"
-- **Services Widget**: The VV_Agency_Services_Widget displays service cards in a grid layout
+- **Services Widget**: The VV_Agency_Services_Widget displays service cards in a grid layout and is configurable through WordPress Customizer
+- **Widget Areas**: Homepage sections can use either direct widget calls or sidebar widget areas
+- **Customizer Integration**: Complex settings use custom controls with JavaScript enhancements
 
 ## Known Challenges
 
 - **Responsive Design**: Ensure consistent experience across all device sizes
 - **WordPress Customizer**: Implement proper theme options in the customizer
 - **Performance**: Balance visual aesthetics with loading performance
+- **Admin UX**: Create intuitive interfaces for non-technical users
 
 ## Development Workflow
 
 - Use `npm run dev` for development with TailwindCSS watch mode
 - Use `npm run build` for production build with optimized CSS
+- Test admin configuration options in WordPress admin before deployment
 - Test on multiple devices and browsers before deployment 
