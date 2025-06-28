@@ -29,47 +29,86 @@
                     </div>
                 </div>
 
-                <!-- Services -->
+                <!-- Footer Widget Area 1 -->
                 <div>
-                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-blue-400">Phòng marketing VV Agency</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Digital Marketing tổng thể</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Google, Facebook</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
-                    </ul>
+                    <?php if (is_active_sidebar('footer-widget-1')) : ?>
+                        <?php dynamic_sidebar('footer-widget-1'); ?>
+                    <?php else : ?>
+                        <h4 class="font-semibold mb-4"><?php echo esc_html(get_theme_mod('agency_footer_widget1_title', 'Dịch vụ nổi bật')); ?></h4>
+                        <ul class="space-y-2 text-sm">
+                            <?php for ($i = 1; $i <= 5; $i++) : 
+                                $link_text = get_theme_mod("agency_footer_widget1_link{$i}_text", '');
+                                $link_url = get_theme_mod("agency_footer_widget1_link{$i}_url", '#');
+                                if (!empty($link_text)) : ?>
+                                <li><a href="<?php echo esc_url($link_url); ?>" class="hover:text-blue-400"><?php echo esc_html($link_text); ?></a></li>
+                            <?php endif; endfor; ?>
+                            <?php // Default links if no customizer settings
+                            if (empty(get_theme_mod('agency_footer_widget1_link1_text', ''))) : ?>
+                                <li><a href="#" class="hover:text-blue-400">Phòng marketing VV Agency</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Digital Marketing tổng thể</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Quảng cáo Google, Facebook</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
 
-                <!-- More Services -->
+                <!-- Footer Widget Area 2 -->
                 <div>
-                    <h4 class="font-semibold mb-4">Dịch vụ nổi bật</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-blue-400">Thiết kế website trọn gói</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Seo từ khóa website</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Quảng cáo Tiktok, Zalo</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Thiết kế ấn phẩm, Media</a></li>
-                    </ul>
+                    <?php if (is_active_sidebar('footer-widget-2')) : ?>
+                        <?php dynamic_sidebar('footer-widget-2'); ?>
+                    <?php else : ?>
+                        <h4 class="font-semibold mb-4"><?php echo esc_html(get_theme_mod('agency_footer_widget2_title', 'Dịch vụ khác')); ?></h4>
+                        <ul class="space-y-2 text-sm">
+                            <?php for ($i = 1; $i <= 5; $i++) : 
+                                $link_text = get_theme_mod("agency_footer_widget2_link{$i}_text", '');
+                                $link_url = get_theme_mod("agency_footer_widget2_link{$i}_url", '#');
+                                if (!empty($link_text)) : ?>
+                                <li><a href="<?php echo esc_url($link_url); ?>" class="hover:text-blue-400"><?php echo esc_html($link_text); ?></a></li>
+                            <?php endif; endfor; ?>
+                            <?php // Default links if no customizer settings
+                            if (empty(get_theme_mod('agency_footer_widget2_link1_text', ''))) : ?>
+                                <li><a href="#" class="hover:text-blue-400">Thiết kế website trọn gói</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Seo từ khóa website</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Quảng cáo Tiktok, Zalo</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Thiết kế ấn phẩm, Media</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
 
-                <!-- Contact -->
+                <!-- Footer Widget Area 3 -->
                 <div>
-                    <h4 class="font-semibold mb-4">Liên hệ với chúng tôi</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Bản tin VV Agency</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
-                        <li><a href="#" class="hover:text-blue-400">Liên hệ</a></li>
-                    </ul>
+                    <?php if (is_active_sidebar('footer-widget-3')) : ?>
+                        <?php dynamic_sidebar('footer-widget-3'); ?>
+                    <?php else : ?>
+                        <h4 class="font-semibold mb-4"><?php echo esc_html(get_theme_mod('agency_footer_widget3_title', 'Liên hệ với chúng tôi')); ?></h4>
+                        <ul class="space-y-2 text-sm">
+                            <?php for ($i = 1; $i <= 5; $i++) : 
+                                $link_text = get_theme_mod("agency_footer_widget3_link{$i}_text", '');
+                                $link_url = get_theme_mod("agency_footer_widget3_link{$i}_url", '#');
+                                if (!empty($link_text)) : ?>
+                                <li><a href="<?php echo esc_url($link_url); ?>" class="hover:text-blue-400"><?php echo esc_html($link_text); ?></a></li>
+                            <?php endif; endfor; ?>
+                            <?php // Default links if no customizer settings
+                            if (empty(get_theme_mod('agency_footer_widget3_link1_text', ''))) : ?>
+                                <li><a href="#" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Bản tin VV Agency</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
+                                <li><a href="#" class="hover:text-blue-400">Liên hệ</a></li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
             </div>
 
             <!-- Copyright -->
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-sm text-gray-400">Copyright 2018 - 2025 © vvagency.vn</p>
+                <p class="text-sm text-gray-400"><?php echo esc_html(get_theme_mod('agency_footer_copyright', 'Copyright 2018 - 2025 © vvagency.vn')); ?></p>
                 <div class="mt-2 space-x-4">
-                    <span class="text-red-500">Zalo: 0336269485</span>
-                    <span class="text-blue-500">Hotline: 0336269485</span>
-                    <span class="text-purple-500">Telegram: 0336269485</span>
+                    <span class="text-red-500">Zalo: <?php echo esc_html(get_theme_mod('agency_footer_zalo', '0336269485')); ?></span>
+                    <span class="text-blue-500">Hotline: <?php echo esc_html(get_theme_mod('agency_footer_hotline', '0336269485')); ?></span>
+                    <span class="text-purple-500">Telegram: <?php echo esc_html(get_theme_mod('agency_footer_telegram', '0336269485')); ?></span>
                 </div>
             </div>
         </div>

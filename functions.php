@@ -22,7 +22,15 @@ if ( ! function_exists( 'agency_setup' ) ) :
 
         register_nav_menus( array(
             'primary' => esc_html__( 'Primary Menu', 'agency' ),
+            'mobile' => esc_html__( 'Mobile Menu', 'agency' ),
+            'footer' => esc_html__( 'Footer Menu', 'agency' ),
         ) );
+        
+        // Include menu functionality
+        require_once get_template_directory() . '/menu.php';
+        
+        // Include page setup functionality
+        require_once get_template_directory() . '/setup-pages.php';
 
         /*
          * Switch default core markup for search form, comment form, and comments
@@ -989,6 +997,39 @@ function agency_widgets_init() {
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="text-lg font-bold mb-4 text-white">',
         'after_title'   => '</h3>',
+    ));
+    
+    // Footer Widget Area 1
+    register_sidebar( array(
+        'name'          => __( 'Footer Widget 1', 'agency' ),
+        'id'            => 'footer-widget-1',
+        'description'   => __( 'Add widgets here to appear in the first footer column.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="font-semibold mb-4">',
+        'after_title'   => '</h4>',
+    ));
+    
+    // Footer Widget Area 2
+    register_sidebar( array(
+        'name'          => __( 'Footer Widget 2', 'agency' ),
+        'id'            => 'footer-widget-2',
+        'description'   => __( 'Add widgets here to appear in the second footer column.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="font-semibold mb-4">',
+        'after_title'   => '</h4>',
+    ));
+    
+    // Footer Widget Area 3
+    register_sidebar( array(
+        'name'          => __( 'Footer Widget 3', 'agency' ),
+        'id'            => 'footer-widget-3',
+        'description'   => __( 'Add widgets here to appear in the third footer column.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="font-semibold mb-4">',
+        'after_title'   => '</h4>',
     ));
 }
 add_action( 'widgets_init', 'agency_widgets_init' );
@@ -2067,3 +2108,172 @@ function agency_flush_features_cache(): void {
 }
 add_action( 'customize_save_after', 'agency_flush_features_cache' );
 add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_features_cache' );
+
+/**
+ * Register Customizer settings for Footer section
+ */
+function agency_customizer_footer($wp_customize) {
+    // Add Footer section
+    $wp_customize->add_section('agency_footer_section', array(
+        'title'    => __('Agency Footer Settings', 'agency'),
+        'priority' => 35,
+    ));
+
+    // Footer Widget 1 Settings
+    $wp_customize->add_setting('agency_footer_widget1_title', array(
+        'default'           => 'Dịch vụ nổi bật',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_widget1_title', array(
+        'label'   => __('Footer Widget 1 Title', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    // Footer Widget 1 Links (up to 5 links)
+    for ($i = 1; $i <= 5; $i++) {
+        $wp_customize->add_setting("agency_footer_widget1_link{$i}_text", array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget1_link{$i}_text", array(
+            'label'   => sprintf(__('Footer Widget 1 Link %d Text', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'text',
+        ));
+
+        $wp_customize->add_setting("agency_footer_widget1_link{$i}_url", array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget1_link{$i}_url", array(
+            'label'   => sprintf(__('Footer Widget 1 Link %d URL', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'url',
+        ));
+    }
+
+    // Footer Widget 2 Settings
+    $wp_customize->add_setting('agency_footer_widget2_title', array(
+        'default'           => 'Dịch vụ khác',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_widget2_title', array(
+        'label'   => __('Footer Widget 2 Title', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    // Footer Widget 2 Links (up to 5 links)
+    for ($i = 1; $i <= 5; $i++) {
+        $wp_customize->add_setting("agency_footer_widget2_link{$i}_text", array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget2_link{$i}_text", array(
+            'label'   => sprintf(__('Footer Widget 2 Link %d Text', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'text',
+        ));
+
+        $wp_customize->add_setting("agency_footer_widget2_link{$i}_url", array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget2_link{$i}_url", array(
+            'label'   => sprintf(__('Footer Widget 2 Link %d URL', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'url',
+        ));
+    }
+
+    // Footer Widget 3 Settings
+    $wp_customize->add_setting('agency_footer_widget3_title', array(
+        'default'           => 'Liên hệ với chúng tôi',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_widget3_title', array(
+        'label'   => __('Footer Widget 3 Title', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    // Footer Widget 3 Links (up to 5 links)
+    for ($i = 1; $i <= 5; $i++) {
+        $wp_customize->add_setting("agency_footer_widget3_link{$i}_text", array(
+            'default'           => '',
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget3_link{$i}_text", array(
+            'label'   => sprintf(__('Footer Widget 3 Link %d Text', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'text',
+        ));
+
+        $wp_customize->add_setting("agency_footer_widget3_link{$i}_url", array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_footer_widget3_link{$i}_url", array(
+            'label'   => sprintf(__('Footer Widget 3 Link %d URL', 'agency'), $i),
+            'section' => 'agency_footer_section',
+            'type'    => 'url',
+        ));
+    }
+
+    // Footer Copyright Settings
+    $wp_customize->add_setting('agency_footer_copyright', array(
+        'default'           => 'Copyright 2018 - 2025 © vvagency.vn',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_copyright', array(
+        'label'   => __('Footer Copyright Text', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    // Contact Information
+    $wp_customize->add_setting('agency_footer_zalo', array(
+        'default'           => '0336269485',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_zalo', array(
+        'label'   => __('Zalo Number', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('agency_footer_hotline', array(
+        'default'           => '0336269485',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_hotline', array(
+        'label'   => __('Hotline Number', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+
+    $wp_customize->add_setting('agency_footer_telegram', array(
+        'default'           => '0336269485',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_footer_telegram', array(
+        'label'   => __('Telegram Number', 'agency'),
+        'section' => 'agency_footer_section',
+        'type'    => 'text',
+    ));
+}
+add_action('customize_register', 'agency_customizer_footer');
