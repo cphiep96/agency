@@ -768,11 +768,145 @@ class VV_Agency_Partners_Widget extends WP_Widget {
 }
 
 /**
+ * Register Agency Statistics Widget
+ */
+class VV_Agency_Statistics_Widget extends WP_Widget {
+    /**
+     * Register widget with WordPress.
+     */
+    public function __construct() {
+        parent::__construct(
+            'vv_agency_statistics', // Base ID
+            'VV Agency Statistics', // Name
+            array('description' => 'Display statistics in a four-column layout.') // Args
+        );
+    }
+
+    /**
+     * Front-end display of widget.
+     *
+     * @param array $args     Widget arguments.
+     * @param array $instance Saved values from database.
+     */
+    public function widget($args, $instance) {
+        echo $args['before_widget'];
+
+        // Get title from instance, fallback to Customizer, then to default
+        $title = !empty($instance['title']) ? $instance['title'] : get_theme_mod('agency_statistics_title', 'NĂNG LỰC CỦA VV AGENCY');
+        
+        $stats = array();
+        for ($i = 1; $i <= 4; $i++) {
+            // Get stats from instance, fallback to Customizer, then to default
+            $stats[] = array(
+                'number' => !empty($instance["stat_{$i}_number"]) 
+                    ? $instance["stat_{$i}_number"] 
+                    : get_theme_mod("agency_stat_{$i}_number", ''),
+                'label'  => !empty($instance["stat_{$i}_label"]) 
+                    ? $instance["stat_{$i}_label"] 
+                    : get_theme_mod("agency_stat_{$i}_label", ''),
+            );
+        }
+
+        // Default values if nothing is set in widget or customizer
+        $is_empty = true;
+        foreach($stats as $stat) {
+            if (!empty($stat['number'])) {
+                $is_empty = false;
+                break;
+            }
+        }
+
+        if ($is_empty) {
+             $stats = array(
+                array('number' => get_theme_mod('agency_stat_1_number', '100+'), 'label' => get_theme_mod('agency_stat_1_label', 'Dự án hoàn thành')),
+                array('number' => get_theme_mod('agency_stat_2_number', '50+'), 'label' => get_theme_mod('agency_stat_2_label', 'Khách hàng tin tưởng')),
+                array('number' => get_theme_mod('agency_stat_3_number', '24/7'), 'label' => get_theme_mod('agency_stat_3_label', 'Hỗ trợ khách hàng')),
+                array('number' => get_theme_mod('agency_stat_4_number', '10'), 'label' => get_theme_mod('agency_stat_4_label', 'Năm kinh nghiệm')),
+            );
+        }
+        ?>
+        <section class="py-16 text-white" style="background-color: #ff3205;">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-12"><?php echo esc_html($title); ?></h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <?php foreach ($stats as $stat) : ?>
+                        <?php if (!empty($stat['number']) && !empty($stat['label'])) : ?>
+                            <div>
+                                <div class="text-4xl font-bold mb-2"><?php echo esc_html($stat['number']); ?></div>
+                                <div class="text-lg"><?php echo esc_html($stat['label']); ?></div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+        <?php
+
+        echo $args['after_widget'];
+    }
+
+    /**
+     * Back-end widget form.
+     *
+     * @param array $instance Previously saved values from database.
+     */
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : '';
+        ?>
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title (optional):', 'agency'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder="<?php echo esc_attr(get_theme_mod('agency_statistics_title', 'NĂNG LỰC CỦA VV AGENCY')); ?>">
+        </p>
+        <p><em><?php esc_html_e('Leave fields blank to use the values from the Customizer (Appearance > Customize > Agency Statistics Settings).', 'agency'); ?></em></p>
+        <hr>
+        <?php for ($i = 1; $i <= 4; $i++) : 
+            $stat_number = !empty($instance["stat_{$i}_number"]) ? $instance["stat_{$i}_number"] : '';
+            $stat_label = !empty($instance["stat_{$i}_label"]) ? $instance["stat_{$i}_label"] : '';
+        ?>
+        <div style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+            <strong><?php printf(esc_html__('Statistic %d', 'agency'), $i); ?></strong>
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id("stat_{$i}_number")); ?>"><?php esc_html_e('Number/Text:', 'agency'); ?></label>
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id("stat_{$i}_number")); ?>" name="<?php echo esc_attr($this->get_field_name("stat_{$i}_number")); ?>" type="text" value="<?php echo esc_attr($stat_number); ?>" placeholder="<?php echo esc_attr(get_theme_mod('agency_stat_' . $i . '_number')); ?>">
+            </p>
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id("stat_{$i}_label")); ?>"><?php esc_html_e('Label:', 'agency'); ?></label>
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id("stat_{$i}_label")); ?>" name="<?php echo esc_attr($this->get_field_name("stat_{$i}_label")); ?>" type="text" value="<?php echo esc_attr($stat_label); ?>" placeholder="<?php echo esc_attr(get_theme_mod('agency_stat_' . $i . '_label')); ?>">
+            </p>
+        </div>
+        <?php endfor; ?>
+        <?php
+    }
+
+    /**
+     * Sanitize widget form values as they are saved.
+     *
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
+     *
+     * @return array Updated safe values to be saved.
+     */
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title'])) ? sanitize_text_field($new_instance['title']) : '';
+
+        for ($i = 1; $i <= 4; $i++) {
+            $instance["stat_{$i}_number"] = (!empty($new_instance["stat_{$i}_number"])) ? sanitize_text_field($new_instance["stat_{$i}_number"]) : '';
+            $instance["stat_{$i}_label"] = (!empty($new_instance["stat_{$i}_label"])) ? sanitize_text_field($new_instance["stat_{$i}_label"]) : '';
+        }
+
+        return $instance;
+    }
+}
+
+/**
  * Register the widget
  */
 function register_agency_widgets() {
     register_widget('VV_Agency_Services_Widget');
     register_widget('VV_Agency_Partners_Widget');
+    register_widget('VV_Agency_Statistics_Widget');
+    register_widget('VV_Agency_Hero_Widget');
 }
 add_action('widgets_init', 'register_agency_widgets');
 
@@ -780,6 +914,17 @@ add_action('widgets_init', 'register_agency_widgets');
  * Register widget areas and custom widgets
  */
 function agency_widgets_init() {
+    // Homepage Hero Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Homepage Hero', 'agency' ),
+        'id'            => 'homepage-hero',
+        'description'   => __( 'Add the Hero widget here to display it at the top of the homepage.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title" style="display:none;">',
+        'after_title'   => '</h2>',
+    ));
+
     // Homepage Widgets Area
     register_sidebar( array(
         'name'          => __( 'Homepage Services', 'agency' ),
@@ -799,6 +944,17 @@ function agency_widgets_init() {
         'before_widget' => '<div class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">',
+        'after_title'   => '</h2>',
+    ));
+    
+    // Statistics Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Homepage Statistics', 'agency' ),
+        'id'            => 'homepage-statistics',
+        'description'   => __( 'Add widgets here to appear in the statistics section on homepage.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title" style="display:none;">', // Title handled inside widget
         'after_title'   => '</h2>',
     ));
     
@@ -1314,3 +1470,311 @@ function agency_flush_partners_cache(): void {
 }
 add_action( 'customize_save_after', 'agency_flush_partners_cache' );
 add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_partners_cache' );
+
+/**
+ * Register Customizer settings for Statistics section
+ */
+function agency_customizer_statistics($wp_customize) {
+    // Add Statistics section
+    $wp_customize->add_section('agency_statistics_section', array(
+        'title'    => __('Agency Statistics Settings', 'agency'),
+        'priority' => 32,
+    ));
+
+    // Section title
+    $wp_customize->add_setting('agency_statistics_title', array(
+        'default'           => 'NĂNG LỰC CỦA VV AGENCY',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('agency_statistics_title', array(
+        'label'   => __('Statistics Section Title', 'agency'),
+        'section' => 'agency_statistics_section',
+        'type'    => 'text',
+    ));
+
+    // Default stats
+    $default_stats = array(
+        array('number' => '100+', 'label' => 'Dự án hoàn thành'),
+        array('number' => '50+', 'label' => 'Khách hàng tin tưởng'),
+        array('number' => '24/7', 'label' => 'Hỗ trợ khách hàng'),
+        array('number' => '10', 'label' => 'Năm kinh nghiệm'),
+    );
+    
+    // Individual statistics (4 total)
+    for ($i = 1; $i <= 4; $i++) {
+        $default_stat = $default_stats[$i-1];
+
+        // Statistic Number
+        $wp_customize->add_setting("agency_stat_{$i}_number", array(
+            'default'           => $default_stat['number'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_stat_{$i}_number", array(
+            'label'   => sprintf(__('Statistic %d Number/Text', 'agency'), $i),
+            'section' => 'agency_statistics_section',
+            'type'    => 'text',
+        ));
+
+        // Statistic Label
+        $wp_customize->add_setting("agency_stat_{$i}_label", array(
+            'default'           => $default_stat['label'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ));
+        $wp_customize->add_control("agency_stat_{$i}_label", array(
+            'label'   => sprintf(__('Statistic %d Label', 'agency'), $i),
+            'section' => 'agency_statistics_section',
+            'type'    => 'text',
+        ));
+    }
+}
+add_action('customize_register', 'agency_customizer_statistics');
+
+/**
+ * Register Customizer settings for Hero section
+ */
+function agency_customizer_hero($wp_customize) {
+    $wp_customize->add_section('agency_hero_section', array(
+        'title'    => __('Agency Hero Settings', 'agency'),
+        'priority' => 10,
+    ));
+
+    // Get default data from helper function
+    $defaults = agency_get_default_hero_data();
+
+    // Title
+    $wp_customize->add_setting('agency_hero_title', array('default' => $defaults['title'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_title', array('label' => 'Title', 'section' => 'agency_hero_section', 'type' => 'text'));
+
+    // Subtitle
+    $wp_customize->add_setting('agency_hero_subtitle', array('default' => $defaults['subtitle'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_subtitle', array('label' => 'Subtitle', 'section' => 'agency_hero_section', 'type' => 'text'));
+
+    // Description
+    $wp_customize->add_setting('agency_hero_description', array('default' => $defaults['description'], 'sanitize_callback' => 'wp_kses_post'));
+    $wp_customize->add_control('agency_hero_description', array('label' => 'Description', 'section' => 'agency_hero_section', 'type' => 'textarea'));
+
+    // Button 1
+    $wp_customize->add_setting('agency_hero_button1_text', array('default' => $defaults['button1_text'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_button1_text', array('label' => 'Button 1 Text', 'section' => 'agency_hero_section', 'type' => 'text'));
+    $wp_customize->add_setting('agency_hero_button1_link', array('default' => $defaults['button1_link'], 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('agency_hero_button1_link', array('label' => 'Button 1 Link', 'section' => 'agency_hero_section', 'type' => 'url'));
+
+    // Button 2
+    $wp_customize->add_setting('agency_hero_button2_text', array('default' => $defaults['button2_text'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_button2_text', array('label' => 'Button 2 Text', 'section' => 'agency_hero_section', 'type' => 'text'));
+    $wp_customize->add_setting('agency_hero_button2_link', array('default' => $defaults['button2_link'], 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control('agency_hero_button2_link', array('label' => 'Button 2 Link', 'section' => 'agency_hero_section', 'type' => 'url'));
+
+    // Main Image
+    $wp_customize->add_setting('agency_hero_main_image', array('default' => $defaults['main_image'], 'sanitize_callback' => 'esc_url_raw'));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'agency_hero_main_image', array('label' => 'Main Image', 'section' => 'agency_hero_section')));
+
+    // Stat 1
+    $wp_customize->add_setting('agency_hero_stat1_number', array('default' => $defaults['stat1_number'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_stat1_number', array('label' => 'Stat 1 Number', 'section' => 'agency_hero_section', 'type' => 'text'));
+    $wp_customize->add_setting('agency_hero_stat1_label', array('default' => $defaults['stat1_label'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_stat1_label', array('label' => 'Stat 1 Label', 'section' => 'agency_hero_section', 'type' => 'text'));
+    
+    // Stat 2
+    $wp_customize->add_setting('agency_hero_stat2_number', array('default' => $defaults['stat2_number'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_stat2_number', array('label' => 'Stat 2 Number', 'section' => 'agency_hero_section', 'type' => 'text'));
+    $wp_customize->add_setting('agency_hero_stat2_label', array('default' => $defaults['stat2_label'], 'sanitize_callback' => 'sanitize_text_field'));
+    $wp_customize->add_control('agency_hero_stat2_label', array('label' => 'Stat 2 Label', 'section' => 'agency_hero_section', 'type' => 'text'));
+}
+add_action('customize_register', 'agency_customizer_hero');
+
+/**
+ * Register Agency Hero Widget
+ */
+class VV_Agency_Hero_Widget extends WP_Widget {
+    public function __construct() {
+        parent::__construct('vv_agency_hero', 'VV Agency Hero', array('description' => 'Display the main hero section for the homepage.'));
+    }
+
+    public function widget($args, $instance) {
+        echo $args['before_widget'];
+        
+        $data = array();
+        $fields = array('title', 'subtitle', 'description', 'button1_text', 'button1_link', 'button2_text', 'button2_link', 'main_image', 'stat1_number', 'stat1_label', 'stat2_number', 'stat2_label');
+        foreach ($fields as $field) {
+            $data[$field] = !empty($instance[$field]) ? $instance[$field] : get_theme_mod('agency_hero_' . $field, '');
+        }
+        
+        ?>
+        <section class="py-20 text-white" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-10 lg:mb-0">
+                        <h1 class="text-4xl lg:text-6xl font-bold mb-6"><?php echo esc_html($data['title']); ?></h1>
+                        <h2 class="text-2xl lg:text-3xl font-semibold mb-6"><?php echo esc_html($data['subtitle']); ?></h2>
+                        <p class="text-xl mb-8 opacity-90"><?php echo wp_kses_post($data['description']); ?></p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="<?php echo esc_url($data['button1_link']); ?>" target="_blank" class="bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style="color: #ff3205;">
+                                <i class="fas fa-phone mr-2"></i> <?php echo esc_html($data['button1_text']); ?>
+                            </a>
+                            <a href="<?php echo esc_url($data['button2_link']); ?>" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold" style="transition: all 0.3s;" onmouseover="this.style.backgroundColor='white'; this.style.color='#ff3205'" onmouseout="this.style.backgroundColor=''; this.style.color='white'">
+                                <i class="fas fa-play mr-2"></i> <?php echo esc_html($data['button2_text']); ?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <div class="relative">
+                            <img src="<?php echo esc_url($data['main_image']); ?>" alt="Digital Marketing Team" class="rounded-lg shadow-2xl w-full">
+                            <?php if (!empty($data['stat1_number'])) : ?>
+                            <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                                <div class="text-2xl font-bold"><?php echo esc_html($data['stat1_number']); ?></div>
+                                <div class="text-sm"><?php echo esc_html($data['stat1_label']); ?></div>
+                            </div>
+                            <?php endif; ?>
+                            <?php if (!empty($data['stat2_number'])) : ?>
+                            <div class="absolute -top-6 -right-6 bg-green-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                                <div class="text-2xl font-bold"><?php echo esc_html($data['stat2_number']); ?></div>
+                                <div class="text-sm"><?php echo esc_html($data['stat2_label']); ?></div>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php
+        echo $args['after_widget'];
+    }
+
+    public function form($instance) {
+        $fields = array(
+            'title' => 'Title', 'subtitle' => 'Subtitle', 'description' => 'Description (Textarea)', 
+            'button1_text' => 'Button 1 Text', 'button1_link' => 'Button 1 Link', 
+            'button2_text' => 'Button 2 Text', 'button2_link' => 'Button 2 Link', 
+            'main_image' => 'Main Image URL', 'stat1_number' => 'Stat 1 Number', 'stat1_label' => 'Stat 1 Label',
+            'stat2_number' => 'Stat 2 Number', 'stat2_label' => 'Stat 2 Label'
+        );
+        echo '<p><em>' . __('Leave fields blank to use values from Customizer.', 'agency') . '</em></p>';
+        foreach ($fields as $key => $label) {
+            $value = !empty($instance[$key]) ? $instance[$key] : '';
+            $placeholder = get_theme_mod('agency_hero_' . $key);
+            $type = strpos($key, 'link') !== false || strpos($key, 'image') !== false ? 'url' : 'text';
+            echo '<p><label for="' . $this->get_field_id($key) . '">' . __($label, 'agency') . ':</label>';
+            if (strpos($label, 'Textarea') !== false) {
+                echo '<textarea class="widefat" id="' . $this->get_field_id($key) . '" name="' . $this->get_field_name($key) . '" rows="5" placeholder="' . esc_attr($placeholder) . '">' . esc_textarea($value) . '</textarea>';
+            } else {
+                echo '<input class="widefat" id="' . $this->get_field_id($key) . '" name="' . $this->get_field_name($key) . '" type="' . $type . '" value="' . esc_attr($value) . '" placeholder="' . esc_attr($placeholder) . '">';
+            }
+            echo '</p>';
+        }
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $fields = array('title', 'subtitle', 'description', 'button1_text', 'button1_link', 'button2_text', 'button2_link', 'main_image', 'stat1_number', 'stat1_label', 'stat2_number', 'stat2_label');
+        
+        foreach ($fields as $field) {
+            if ($field === 'description') {
+                $instance[$field] = isset($new_instance[$field]) ? wp_kses_post($new_instance[$field]) : '';
+            } elseif (strpos($field, 'link') !== false || strpos($field, 'image') !== false) {
+                $instance[$field] = isset($new_instance[$field]) ? esc_url_raw($new_instance[$field]) : '';
+            } else {
+                $instance[$field] = isset($new_instance[$field]) ? sanitize_text_field($new_instance[$field]) : '';
+            }
+        }
+        
+        return $instance;
+    }
+}
+
+if ( ! function_exists( 'agency_get_default_hero_data' ) ) {
+    /**
+     * Returns the default hero data array.
+     *
+     * @return array
+     */
+    function agency_get_default_hero_data(): array {
+        return array(
+            'title'         => 'VV AGENCY',
+            'subtitle'      => 'ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN',
+            'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
+            'button1_text'  => 'Liên hệ ngay',
+            'button1_link'  => 'https://zalo.me/0336269485',
+            'button2_text'  => 'Xem dịch vụ',
+            'button2_link'  => '#services',
+            'main_image'    => 'https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            'stat1_number'  => '100+',
+            'stat1_label'   => 'Dự án thành công',
+            'stat2_number'  => '24/7',
+            'stat2_label'   => 'Hỗ trợ khách hàng',
+        );
+    }
+}
+
+if ( ! function_exists( 'agency_render_hero_section' ) ) {
+    /**
+     * Outputs the Hero section markup using Customizer data.
+     * This mirrors the VV_Agency_Hero_Widget output so that templates can
+     * call agency_render_hero_section() directly (e.g. in front-page.php)
+     * when no widgets are placed in the "Homepage Hero" sidebar.
+     */
+    function agency_render_hero_section(): void {
+        $defaults = agency_get_default_hero_data();
+        $fields   = array_keys( $defaults );
+        $data     = array();
+        
+        foreach ( $fields as $field ) {
+            $customizer_value = get_theme_mod( 'agency_hero_' . $field, '' );
+            $data[ $field ]   = ! empty( $customizer_value ) ? $customizer_value : $defaults[ $field ];
+        }
+
+        ?>
+        <section class="py-20 text-white" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center">
+                    <div class="lg:w-1/2 mb-10 lg:mb-0">
+                        <?php if ( ! empty( $data['title'] ) ) : ?>
+                            <h1 class="text-4xl lg:text-6xl font-bold mb-6"><?php echo esc_html( $data['title'] ); ?></h1>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $data['subtitle'] ) ) : ?>
+                            <h2 class="text-2xl lg:text-3xl font-semibold mb-6"><?php echo esc_html( $data['subtitle'] ); ?></h2>
+                        <?php endif; ?>
+                        <?php if ( ! empty( $data['description'] ) ) : ?>
+                            <p class="text-xl mb-8 opacity-90"><?php echo wp_kses_post( $data['description'] ); ?></p>
+                        <?php endif; ?>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <?php if ( ! empty( $data['button1_text'] ) ) : ?>
+                                <a href="<?php echo esc_url( $data['button1_link'] ); ?>" target="_blank" class="bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" style="color: #ff3205;">
+                                    <i class="fas fa-phone mr-2"></i> <?php echo esc_html( $data['button1_text'] ); ?>
+                                </a>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $data['button2_text'] ) ) : ?>
+                                <a href="<?php echo esc_url( $data['button2_link'] ); ?>" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold" style="transition: all 0.3s;" onmouseover="this.style.backgroundColor='white'; this.style.color='#ff3205'" onmouseout="this.style.backgroundColor=''; this.style.color='white'">
+                                    <i class="fas fa-play mr-2"></i> <?php echo esc_html( $data['button2_text'] ); ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12">
+                        <div class="relative">
+                            <?php if ( ! empty( $data['main_image'] ) ) : ?>
+                                <img src="<?php echo esc_url( $data['main_image'] ); ?>" alt="Digital Marketing Team" class="rounded-lg shadow-2xl w-full" />
+                            <?php endif; ?>
+                            <?php if ( ! empty( $data['stat1_number'] ) ) : ?>
+                                <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                                    <div class="text-2xl font-bold"><?php echo esc_html( $data['stat1_number'] ); ?></div>
+                                    <div class="text-sm"><?php echo esc_html( $data['stat1_label'] ); ?></div>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ( ! empty( $data['stat2_number'] ) ) : ?>
+                                <div class="absolute -top-6 -right-6 bg-green-400 text-gray-800 p-4 rounded-lg shadow-lg">
+                                    <div class="text-2xl font-bold"><?php echo esc_html( $data['stat2_number'] ); ?></div>
+                                    <div class="text-sm"><?php echo esc_html( $data['stat2_label'] ); ?></div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <?php
+    }
+}

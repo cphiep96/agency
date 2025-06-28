@@ -1,63 +1,18 @@
 <?php get_header(); ?>
 
 <main id="main" class="site-main" role="main">
-    <!-- Hero/Banner Section -->
-    <section class="py-20 text-white" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row items-center">
-                <!-- Left Content -->
-                <div class="lg:w-1/2 mb-10 lg:mb-0">
-                    <h1 class="text-4xl lg:text-6xl font-bold mb-6">
-                        VV AGENCY
-                    </h1>
-                    <h2 class="text-2xl lg:text-3xl font-semibold mb-6">
-                        ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN
-                    </h2>
-                    <p class="text-xl mb-8 opacity-90">
-                        Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải
-                        pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực
-                        tuyến hiệu quả.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-                            style="color: #ff3205;">
-                            <a href="https://zalo.me/0336269485" target="_blank">
-                                <i class="fas fa-phone mr-2"></i>
-                                Liên hệ ngay
-                            </a>
-                        </button>
-                        <button
-                            class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-                            style="transition: all 0.3s;"
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='#ff3205'"
-                            onmouseout="this.style.backgroundColor=''; this.style.color='white'">
-                            <i class="fas fa-play mr-2"></i>
-                            Xem dịch vụ
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Content -->
-                <div class="lg:w-1/2 lg:pl-12">
-                    <div class="relative">
-                        <img src="https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                            alt="Digital Marketing Team" class="rounded-lg shadow-2xl w-full">
-                        <div class="absolute -bottom-6 -left-6 bg-yellow-400 text-gray-800 p-4 rounded-lg shadow-lg">
-                            <div class="text-2xl font-bold">100+</div>
-                            <div class="text-sm">Dự án thành công</div>
-                        </div>
-                        <div class="absolute -top-6 -right-6 bg-green-400 text-gray-800 p-4 rounded-lg shadow-lg">
-                            <div class="text-2xl font-bold">24/7</div>
-                            <div class="text-sm">Hỗ trợ khách hàng</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php
+    // Display the hero section widget area
+    if (is_active_sidebar('homepage-hero')) {
+        dynamic_sidebar('homepage-hero');
+    } else {
+        // Fallback: Render hero section via helper for consistency with other sections
+        agency_render_hero_section();
+    }
+    ?>
 
     <!-- Services Section -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="services">
         <div class="container mx-auto px-4">
             <?php
             // Check if homepage-services sidebar has widgets
@@ -243,29 +198,11 @@
     </section>
 
     <!-- Statistics Section -->
-    <section class="py-16 text-white" style="background-color: #ff3205;">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12">NĂNG LỰC CỦA VV AGENCY111</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="text-4xl font-bold mb-2">100+</div>
-                    <div class="text-lg">Dự án hoàn thành</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">50+</div>
-                    <div class="text-lg">Khách hàng tin tưởng</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">24/7</div>
-                    <div class="text-lg">Hỗ trợ khách hàng</div>
-                </div>
-                <div>
-                    <div class="text-4xl font-bold mb-2">10</div>
-                    <div class="text-lg">Năm kinh nghiệm</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php
+    if (is_active_sidebar('homepage-statistics')) {
+        dynamic_sidebar('homepage-statistics');
+    }
+    ?>
 
     <!-- Partners Section -->
     <section class="py-16 bg-gray-50">
