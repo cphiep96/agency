@@ -192,10 +192,10 @@ class VV_Agency_Services_Widget extends WP_Widget {
         $max_services = 8;
         
         for ($i = 0; $i < $max_services; $i++) {
-            $is_active = get_theme_mod("agency_service_{$i}_active", $i < 4);
+            $is_active = get_theme_mod("agency_service_{$i}_active", $i < 8);
             if ($is_active) {
                 // Default service data for the first 4 services
-                if ($i < 4) {
+                if ($i < 8) {
                     $default_titles = array(
                         'THIẾT KẾ WEBSITE & SEO',
                         'QUẢNG CÁO GOOGLE',
@@ -231,10 +231,10 @@ class VV_Agency_Services_Widget extends WP_Widget {
                         'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                         'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                         'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                        'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     );
                     $default_colors = array('blue', 'red', 'blue', 'pink', 'red', 'blue', 'blue', 'pink');
                     
@@ -289,29 +289,36 @@ class VV_Agency_Services_Widget extends WP_Widget {
                     'title' => 'QUẢNG CÁO TIK TOK',
                     'description' => 'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
                     'icon' => 'fab fa-tiktok',
-                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
                     'color' => 'pink',
                 ),
                 array(
                     'title' => 'QUẢNG CÁO YOUTUBE',
                     'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
                     'icon' => 'fab fa-youtube',
+                    'image' => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     'color' => 'red',
-                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 ),
                 array(
                     'title' => 'QUẢNG CÁO INSTAGRAM',
                     'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
                     'icon' => 'fab fa-instagram',
+                    'image' => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     'color' => 'blue',
-                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 ),
                 array(
                     'title' => 'QUẢNG CÁO LINKEDIN',
                     'description' => 'Khai thác sức mạnh LinkedIn để tiếp cận thế hệ khách hàng trẻ',
                     'icon' => 'fab fa-linkedin',
+                    'image' => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     'color' => 'pink',
-                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'title' => 'CHĂM SÓC WEBSITE',
+                    'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
+                    'icon' => 'fas fa-globe',
+                    'image' => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    'color' => 'blue',
                 ),
             );
         }
@@ -431,29 +438,29 @@ function agency_customizer_services($wp_customize) {
             'title' => 'QUẢNG CÁO YOUTUBE',
             'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
             'icon' => 'fab fa-youtube',
+            'image' => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'color' => 'red',
-            'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         ),
         array(
             'title' => 'QUẢNG CÁO INSTAGRAM',
             'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'icon' => 'fab fa-instagram',
+            'image' => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'color' => 'blue',
-            'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         ),
         array(
             'title' => 'CHĂM SÓC WEBSITE',
             'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
             'icon' => 'fas fa-globe',
+            'image' => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'color' => 'blue',
-            'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         ),
         array(
             'title' => 'CHĂM SÓC FANPAGE',
             'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
             'icon' => 'fab fa-linkedin',
+            'image' => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'color' => 'pink',
-            'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         ),
     );
 
@@ -481,6 +488,7 @@ function agency_customizer_services($wp_customize) {
         'section' => 'agency_services_section',
         'type' => 'textarea',
     ));
+    
 
     // Add individual services (up to 8 services)
     $colors = array('blue', 'red', 'green', 'yellow', 'purple', 'pink', 'teal');
@@ -670,14 +678,27 @@ function agency_customizer_scripts() {
             'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         ];
+
+        var defaultColors = [
+            'blue',
+            'red',
+            'blue',
+            'pink',
+            'red',
+            'blue',
+            'pink'
+        ];
+
+
         
         // Update section title and description
         wp.customize('agency_services_title').set('DỊCH VỤ CỦA VV AGENCY');
         wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+        
         
         // Reset first 4 services to defaults
         for (var i = 0; i < 4; i++) {
@@ -736,10 +757,268 @@ function agency_sanitize_services($value) {
 }
 
 /**
+ * Agency Partners Widget
+ */
+class VV_Agency_Partners_Widget extends WP_Widget {
+    /**
+     * Register widget with WordPress.
+     */
+    public function __construct() {
+        parent::__construct(
+            'vv_agency_partners', // Base ID
+            'VV Agency Partners', // Name
+            array('description' => 'Display partners in a carousel layout') // Args
+        );
+    }
+
+    /**
+     * Front-end display of widget.
+     *
+     * @param array $args     Widget arguments.
+     * @param array $instance Saved values from database.
+     */
+    public function widget($args, $instance) {
+        echo $args['before_widget'];
+        
+        // Widget title and description
+        $title = !empty($instance['title']) ? $instance['title'] : 'ĐỐI TÁC - KHÁCH HÀNG';
+        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi tự hào được hợp tác với nhiều doanh nghiệp hàng đầu trong và ngoài nước';
+        $show_icon = !empty($instance['show_icon']) ? (bool) $instance['show_icon'] : true;
+        
+        // Display title with optional icon
+        echo '<div class="text-center mb-12">';
+        echo '<h2 class="text-3xl font-bold text-gray-800 mb-4">';
+        if ($show_icon) {
+            echo '<i class="fas fa-star text-purple-500 mr-2"></i>';
+        }
+        echo apply_filters('widget_title', $title) . '</h2>';
+        
+        if (!empty($description)) {
+            echo '<p class="text-gray-600 max-w-2xl mx-auto">' . esc_html($description) . '</p>';
+        }
+        echo '</div>';
+        
+        // Get partner data from instance
+        $partners = array();
+        for ($i = 1; $i <= 8; $i++) {
+            if (!empty($instance["partner_{$i}_name"])) {
+                $partners[] = array(
+                    'name' => $instance["partner_{$i}_name"],
+                    'image' => $instance["partner_{$i}_image"],
+                );
+            }
+        }
+        
+        // If no partners defined, use defaults
+        if (empty($partners)) {
+            $partners = array(
+                array(
+                    'name' => 'Công ty ABC',
+                    'image' => 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Tập đoàn XYZ',
+                    'image' => 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Doanh nghiệp 123',
+                    'image' => 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Công ty DEF',
+                    'image' => 'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Tổ chức GHI',
+                    'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Startup JKL',
+                    'image' => 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Công ty MNO',
+                    'image' => 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+                array(
+                    'name' => 'Doanh nghiệp PQR',
+                    'image' => 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                ),
+            );
+        }
+        
+        // Display carousel
+        echo '<div class="relative overflow-hidden">';
+            echo '<div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">';
+                
+                // Split partners into 2 slides with 4 partners each
+                $partners_chunks = array_chunk($partners, 4);
+                foreach ($partners_chunks as $index => $chunk) {
+                    echo '<div class="w-full flex-shrink-0 px-4">';
+                        echo '<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">';
+                        
+                        foreach ($chunk as $partner) {
+                            echo '<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">';
+                                echo '<img src="' . esc_url($partner['image']) . '" alt="' . esc_attr($partner['name']) . '" class="w-full h-24 object-contain mb-3">';
+                                echo '<h4 class="text-sm font-semibold text-gray-700 text-center">' . esc_html($partner['name']) . '</h4>';
+                            echo '</div>';
+                        }
+                        
+                        echo '</div>';
+                    echo '</div>';
+                }
+                
+            echo '</div>';
+            
+            // Navigation buttons
+            echo '<button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">';
+                echo '<i class="fas fa-chevron-left text-gray-600"></i>';
+            echo '</button>';
+            echo '<button onclick="moveSlide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">';
+                echo '<i class="fas fa-chevron-right text-gray-600"></i>';
+            echo '</button>';
+            
+            // Dots indicator
+            echo '<div class="flex justify-center mt-8 space-x-2">';
+                echo '<button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-purple-500 transition-all duration-300" id="dot0"></button>';
+                echo '<button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" id="dot1"></button>';
+            echo '</div>';
+        echo '</div>';
+        
+        // Add JavaScript for carousel functionality
+        ?>
+        <script>
+            // Carousel functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('#partnersCarousel > div');
+                const dots = document.querySelectorAll('[id^="dot"]');
+                const totalSlides = slides.length;
+                
+                // Function to update carousel position
+                window.moveSlide = function(direction) {
+                    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                    updateCarousel();
+                };
+                
+                // Function to go to specific slide
+                window.goToSlide = function(slideIndex) {
+                    currentSlide = slideIndex;
+                    updateCarousel();
+                };
+                
+                // Update carousel position and dots
+                function updateCarousel() {
+                    const offset = -100 * currentSlide;
+                    document.getElementById('partnersCarousel').style.transform = `translateX(${offset}%)`;
+                    
+                    // Update dots
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide) {
+                            dot.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+                            dot.classList.add('bg-purple-500');
+                        } else {
+                            dot.classList.remove('bg-purple-500');
+                            dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
+                        }
+                    });
+                }
+                
+                // Auto-rotate carousel (optional)
+                let interval = setInterval(() => moveSlide(1), 5000);
+                
+                // Pause auto-rotation when mouse is over the carousel
+                document.getElementById('partnersCarousel').parentNode.addEventListener('mouseenter', () => {
+                    clearInterval(interval);
+                });
+                
+                // Resume auto-rotation when mouse leaves the carousel
+                document.getElementById('partnersCarousel').parentNode.addEventListener('mouseleave', () => {
+                    interval = setInterval(() => moveSlide(1), 5000);
+                });
+            });
+        </script>
+        <?php
+        
+        echo $args['after_widget'];
+    }
+
+    /**
+     * Back-end widget form.
+     *
+     * @param array $instance Previously saved values from database.
+     */
+    public function form($instance) {
+        $title = !empty($instance['title']) ? $instance['title'] : 'ĐỐI TÁC - KHÁCH HÀNG';
+        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi tự hào được hợp tác với nhiều doanh nghiệp hàng đầu trong và ngoài nước';
+        $show_icon = isset($instance['show_icon']) ? (bool) $instance['show_icon'] : true;
+        ?>
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'agency'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>">
+        </p>
+        
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('description')); ?>"><?php esc_html_e('Description:', 'agency'); ?></label>
+            <textarea class="widefat" id="<?php echo esc_attr($this->get_field_id('description')); ?>" name="<?php echo esc_attr($this->get_field_name('description')); ?>" rows="4"><?php echo esc_textarea($description); ?></textarea>
+        </p>
+        
+        <p>
+            <input type="checkbox" id="<?php echo esc_attr($this->get_field_id('show_icon')); ?>" name="<?php echo esc_attr($this->get_field_name('show_icon')); ?>" <?php checked($show_icon); ?>>
+            <label for="<?php echo esc_attr($this->get_field_id('show_icon')); ?>"><?php esc_html_e('Show star icon', 'agency'); ?></label>
+        </p>
+        
+        <hr>
+        <p><strong><?php esc_html_e('Partner Details:', 'agency'); ?></strong></p>
+        
+        <div style="max-height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px;">
+            <?php for ($i = 1; $i <= 8; $i++) : ?>
+                <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                    <p>
+                        <label for="<?php echo esc_attr($this->get_field_id("partner_{$i}_name")); ?>"><?php printf(esc_html__('Partner %d Name:', 'agency'), $i); ?></label>
+                        <input class="widefat" id="<?php echo esc_attr($this->get_field_id("partner_{$i}_name")); ?>" name="<?php echo esc_attr($this->get_field_name("partner_{$i}_name")); ?>" type="text" value="<?php echo isset($instance["partner_{$i}_name"]) ? esc_attr($instance["partner_{$i}_name"]) : ''; ?>">
+                    </p>
+                    
+                    <p>
+                        <label for="<?php echo esc_attr($this->get_field_id("partner_{$i}_image")); ?>"><?php printf(esc_html__('Partner %d Image URL:', 'agency'), $i); ?></label>
+                        <input class="widefat" id="<?php echo esc_attr($this->get_field_id("partner_{$i}_image")); ?>" name="<?php echo esc_attr($this->get_field_name("partner_{$i}_image")); ?>" type="url" value="<?php echo isset($instance["partner_{$i}_image"]) ? esc_attr($instance["partner_{$i}_image"]) : ''; ?>">
+                    </p>
+                </div>
+            <?php endfor; ?>
+        </div>
+        <?php
+    }
+
+    /**
+     * Sanitize widget form values as they are saved.
+     *
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
+     *
+     * @return array Updated safe values to be saved.
+     */
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title'])) ? sanitize_text_field($new_instance['title']) : '';
+        $instance['description'] = (!empty($new_instance['description'])) ? sanitize_textarea_field($new_instance['description']) : '';
+        $instance['show_icon'] = isset($new_instance['show_icon']) ? (bool) $new_instance['show_icon'] : false;
+        
+        // Save partner details
+        for ($i = 1; $i <= 8; $i++) {
+            $instance["partner_{$i}_name"] = (!empty($new_instance["partner_{$i}_name"])) ? sanitize_text_field($new_instance["partner_{$i}_name"]) : '';
+            $instance["partner_{$i}_image"] = (!empty($new_instance["partner_{$i}_image"])) ? esc_url_raw($new_instance["partner_{$i}_image"]) : '';
+        }
+        
+        return $instance;
+    }
+}
+
+/**
  * Register the widget
  */
 function register_agency_widgets() {
     register_widget('VV_Agency_Services_Widget');
+    register_widget('VV_Agency_Partners_Widget');
 }
 add_action('widgets_init', 'register_agency_widgets');
 
@@ -755,6 +1034,17 @@ function agency_widgets_init() {
         'before_widget' => '<div class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="text-4xl font-bold text-gray-800 mb-4 text-center">',
+        'after_title'   => '</h2>',
+    ));
+    
+    // Partners Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Homepage Partners', 'agency' ),
+        'id'            => 'homepage-partners',
+        'description'   => __( 'Add widgets here to appear in the partners section on homepage.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">',
         'after_title'   => '</h2>',
     ));
     

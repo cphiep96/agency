@@ -86,7 +86,7 @@
                     $has_services = false;
                     
                     for ($i = 0; $i < $max_services; $i++) {
-                        $is_active = get_theme_mod("agency_service_{$i}_active", $i < 4);
+                        $is_active = get_theme_mod("agency_service_{$i}_active", $i < 8);
                         
                         // Debug info to check if the values are being retrieved properly
                         // Uncomment to troubleshoot
@@ -107,12 +107,12 @@
                             // Get service details with fallback defaults for each field
                             $title = get_theme_mod("agency_service_{$i}_title", '');
                             $description = get_theme_mod("agency_service_{$i}_description", '');
-                            $icon = get_theme_mod("agency_service_{$i}_icon", 'fas fa-star');
+                            $icon = get_theme_mod("agency_service_{$i}_icon", '');
                             $image = get_theme_mod("agency_service_{$i}_image", '');
-                            $color = get_theme_mod("agency_service_{$i}_color", 'blue');
+                            $color = get_theme_mod("agency_service_{$i}_color", '');
                             
                             // Default service data for the first 4 services if values are empty
-                            if (empty($title) && $i < 4) {
+                            if (empty($title) && $i < 9) {
                                 $default_titles = array(
                                     'THIẾT KẾ WEBSITE & SEO',
                                     'QUẢNG CÁO GOOGLE',
@@ -140,20 +140,20 @@
                                     'fab fa-tiktok',
                                     'fab fa-youtube',
                                     'fab fa-instagram',
-                                    'fas fa-globe',
-                                    'fab fa-linkedin'
+                                    'fas fa-desktop',
+                                    'fab fa-facebook-f'
                                 );
                                 $default_images = array(
-                                    'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                                    'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                                    'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
                                 );
-                                $default_colors = array('blue', 'red', 'blue', 'pink', 'red', 'blue', 'blue', 'pink');
+                                $default_colors = array('blue', 'red', 'blue', 'pink', 'red', 'purple', 'green', 'teal');
                                 
                                 $title = empty($title) ? $default_titles[$i] : $title;
                                 $description = empty($description) ? $default_descriptions[$i] : $description;
@@ -345,9 +345,9 @@
     </section>
 
     <!-- Statistics Section -->
-    <section class.py-16 text-white" style="background-color: #ff3205;">
+    <section class="py-16 text-white" style="background-color: #ff3205;">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12">NĂNG LỰC CỦA VV AGENCY</h2>
+            <h2 class="text-3xl font-bold mb-12">NĂNG LỰC CỦA VV AGENCY111</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="text-4xl font-bold mb-2">100+</div>
@@ -372,6 +372,14 @@
     <!-- Partners Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
+            <?php
+            // Check if homepage-partners sidebar has widgets
+            if (is_active_sidebar('homepage-partners')) {
+                // Display widgets in homepage-partners sidebar
+                dynamic_sidebar('homepage-partners');
+            } else {
+                // Fall back to hardcoded partners section
+            ?>
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">
                     <i class="fas fa-star text-purple-500 mr-2"></i>
@@ -466,6 +474,9 @@
                         id="dot1"></button>
                 </div>
             </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
 </main>
