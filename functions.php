@@ -596,42 +596,9 @@ class VV_Agency_Partners_Widget extends WP_Widget {
             }
         }
         
-        // If no partners defined, use defaults
-        if (empty($partners)) {
-            $partners = array(
-                array(
-                    'name' => 'Công ty ABC',
-                    'image' => 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Tập đoàn XYZ',
-                    'image' => 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Doanh nghiệp 123',
-                    'image' => 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Công ty DEF',
-                    'image' => 'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Tổ chức GHI',
-                    'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Startup JKL',
-                    'image' => 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Công ty MNO',
-                    'image' => 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-                array(
-                    'name' => 'Doanh nghiệp PQR',
-                    'image' => 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                ),
-            );
+        // If no partners provided in widget instance, fall back to Customizer-driven partners list (or its defaults).
+        if ( empty( $partners ) ) {
+            $partners = agency_get_partners();
         }
         
         // Display carousel
@@ -1045,3 +1012,305 @@ function agency_flush_services_cache(): void {
 }
 add_action( 'customize_save_after', 'agency_flush_services_cache' );
 add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_services_cache' );
+
+// --------------------------------------------------------------------------------------------------
+// Agency Partners helpers
+// --------------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'agency_get_default_partners' ) ) {
+    /**
+     * Returns an array of the default Agency partners (8 max).
+     *
+     * Each partner contains: name, image.
+     *
+     * @return array
+     */
+    function agency_get_default_partners(): array {
+        return array(
+            array(
+                'name'  => 'Công ty ABC',
+                'image' => 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Tập đoàn XYZ',
+                'image' => 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Doanh nghiệp 123',
+                'image' => 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Công ty DEF',
+                'image' => 'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Tổ chức GHI',
+                'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Startup JKL',
+                'image' => 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Công ty MNO',
+                'image' => 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+            array(
+                'name'  => 'Doanh nghiệp PQR',
+                'image' => 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
+        );
+    }
+}
+
+if ( ! function_exists( 'agency_get_partners' ) ) {
+    /**
+     * Returns the list of partners configured in the Customizer.
+     * Falls back to the default list and caches the result for 1 hour.
+     *
+     * @return array
+     */
+    function agency_get_partners(): array {
+        $cache_key = 'agency_partners';
+        $partners  = wp_cache_get( $cache_key );
+
+        if ( false !== $partners ) {
+            return $partners;
+        }
+
+        $default_partners = agency_get_default_partners();
+        $max_partners     = 8;
+        $partners         = array();
+
+        for ( $i = 0; $i < $max_partners; $i++ ) {
+            $active = get_theme_mod( "agency_partner_{$i}_active", ! empty( $default_partners[ $i ]['name'] ) );
+            if ( ! $active ) {
+                continue;
+            }
+
+            $defaults   = $default_partners[ $i ] ?? array();
+            $partners[] = array(
+                'name'  => get_theme_mod( "agency_partner_{$i}_name", $defaults['name'] ?? '' ),
+                'image' => get_theme_mod( "agency_partner_{$i}_image", $defaults['image'] ?? '' ),
+            );
+        }
+
+        // If no partners are active, only fallback to defaults when the user has not customized the section yet.
+        if ( empty( $partners ) ) {
+            if ( null === get_theme_mod( 'agency_partner_0_active', null ) ) {
+                $partners = $default_partners;
+            }
+        }
+
+        wp_cache_set( $cache_key, $partners, '', HOUR_IN_SECONDS );
+
+        return $partners;
+    }
+}
+
+if ( ! function_exists( 'agency_render_partners_section' ) ) {
+    /**
+     * Outputs the Partners section markup using Customizer data.
+     */
+    function agency_render_partners_section(): void {
+        $title       = get_theme_mod( 'agency_partners_title', 'ĐỐI TÁC - KHÁCH HÀNG' );
+        $description = get_theme_mod( 'agency_partners_description', 'Chúng tôi tự hào được hợp tác với nhiều doanh nghiệp hàng đầu trong và ngoài nước' );
+        $show_icon   = (bool) get_theme_mod( 'agency_partners_show_icon', true );
+        $partners    = agency_get_partners();
+        ?>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                <?php if ( $show_icon ) : ?>
+                    <i class="fas fa-star text-purple-500 mr-2"></i>
+                <?php endif; ?>
+                <?php echo esc_html( $title ); ?>
+            </h2>
+            <?php if ( ! empty( $description ) ) : ?>
+                <p class="text-gray-600 max-w-2xl mx-auto"><?php echo esc_html( $description ); ?></p>
+            <?php endif; ?>
+        </div>
+
+        <div class="relative overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
+                <?php
+                $chunks = array_chunk( $partners, 4 );
+                foreach ( $chunks as $chunk ) : ?>
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            <?php foreach ( $chunk as $partner ) : ?>
+                                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                    <?php if ( ! empty( $partner['image'] ) ) : ?>
+                                        <img src="<?php echo esc_url( $partner['image'] ); ?>" alt="<?php echo esc_attr( $partner['name'] ); ?>" class="w-full h-24 object-contain mb-3" />
+                                    <?php endif; ?>
+                                    <h4 class="text-sm font-semibold text-gray-700 text-center"><?php echo esc_html( $partner['name'] ); ?></h4>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+                <i class="fas fa-chevron-left text-gray-600"></i>
+            </button>
+            <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+                <i class="fas fa-chevron-right text-gray-600"></i>
+            </button>
+
+            <!-- Dots Indicator -->
+            <?php if ( count( $chunks ) > 1 ) : ?>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <?php foreach ( range( 0, count( $chunks ) - 1 ) as $index ) : ?>
+                        <button onclick="goToSlide(<?php echo esc_attr( $index ); ?>)" class="w-3 h-3 rounded-full <?php echo 0 === $index ? 'bg-purple-500' : 'bg-gray-300 hover:bg-gray-400'; ?> transition-all duration-300" id="dot<?php echo esc_attr( $index ); ?>"></button>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+        <script>
+        // Reuse carousel JS if not already defined
+        if (typeof moveSlide === 'undefined') {
+            document.addEventListener('DOMContentLoaded', function() {
+                let currentSlide = 0;
+                const slides = document.querySelectorAll('#partnersCarousel > div');
+                const dots = document.querySelectorAll('[id^="dot"]');
+                const totalSlides = slides.length;
+
+                window.moveSlide = function(direction) {
+                    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                    updateCarousel();
+                };
+
+                window.goToSlide = function(slideIndex) {
+                    currentSlide = slideIndex;
+                    updateCarousel();
+                };
+
+                function updateCarousel() {
+                    const offset = -100 * currentSlide;
+                    document.getElementById('partnersCarousel').style.transform = `translateX(${offset}%)`;
+
+                    // Update dots
+                    dots.forEach((dot, index) => {
+                        if (index === currentSlide) {
+                            dot.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+                            dot.classList.add('bg-purple-500');
+                        } else {
+                            dot.classList.remove('bg-purple-500');
+                            dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
+                        }
+                    });
+                }
+
+                // Auto-rotate (optional)
+                let interval = setInterval(() => moveSlide(1), 5000);
+                document.getElementById('partnersCarousel').parentNode.addEventListener('mouseenter', () => clearInterval(interval));
+                document.getElementById('partnersCarousel').parentNode.addEventListener('mouseleave', () => interval = setInterval(() => moveSlide(1), 5000));
+            });
+        }
+        </script>
+        <?php
+    }
+}
+
+/**
+ * Register Customizer settings for Partners section
+ */
+function agency_customizer_partners( $wp_customize ) {
+    // Add Partners section
+    $wp_customize->add_section( 'agency_partners_section', array(
+        'title'    => __( 'Agency Partners Settings', 'agency' ),
+        'priority' => 31,
+    ) );
+
+    $default_partners = agency_get_default_partners();
+
+    // Section title, description, icon toggle
+    $wp_customize->add_setting( 'agency_partners_title', array(
+        'default'           => 'ĐỐI TÁC - KHÁCH HÀNG',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'agency_partners_title', array(
+        'label'   => __( 'Partners Section Title', 'agency' ),
+        'section' => 'agency_partners_section',
+        'type'    => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'agency_partners_description', array(
+        'default'           => 'Chúng tôi tự hào được hợp tác với nhiều doanh nghiệp hàng đầu trong và ngoài nước',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'agency_partners_description', array(
+        'label'   => __( 'Partners Section Description', 'agency' ),
+        'section' => 'agency_partners_section',
+        'type'    => 'textarea',
+    ) );
+
+    $wp_customize->add_setting( 'agency_partners_show_icon', array(
+        'default'           => true,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ) );
+    $wp_customize->add_control( 'agency_partners_show_icon', array(
+        'label'   => __( 'Show star icon in title', 'agency' ),
+        'section' => 'agency_partners_section',
+        'type'    => 'checkbox',
+    ) );
+
+    // Individual partners (up to 8)
+    $max_partners = 8;
+    for ( $i = 0; $i < $max_partners; $i++ ) {
+        $default = $default_partners[ $i ] ?? array( 'name' => '', 'image' => '' );
+
+        // Partner active
+        $wp_customize->add_setting( "agency_partner_{$i}_active", array(
+            'default'           => ! empty( $default['name'] ),
+            'sanitize_callback' => 'absint',
+            'transport'         => 'refresh',
+        ) );
+        $wp_customize->add_control( "agency_partner_{$i}_active", array(
+            'label'   => sprintf( __( 'Enable Partner %d', 'agency' ), $i + 1 ),
+            'section' => 'agency_partners_section',
+            'type'    => 'checkbox',
+        ) );
+
+        // Partner name
+        $wp_customize->add_setting( "agency_partner_{$i}_name", array(
+            'default'           => $default['name'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport'         => 'refresh',
+        ) );
+        $wp_customize->add_control( "agency_partner_{$i}_name", array(
+            'label'           => sprintf( __( 'Partner %d Name', 'agency' ), $i + 1 ),
+            'section'         => 'agency_partners_section',
+            'type'            => 'text',
+            'active_callback' => function() use ( $wp_customize, $i ) {
+                return $wp_customize->get_setting( "agency_partner_{$i}_active" )->value();
+            },
+        ) );
+
+        // Partner image
+        $wp_customize->add_setting( "agency_partner_{$i}_image", array(
+            'default'           => $default['image'],
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "agency_partner_{$i}_image", array(
+            'label'           => sprintf( __( 'Partner %d Image', 'agency' ), $i + 1 ),
+            'section'         => 'agency_partners_section',
+            'active_callback' => function() use ( $wp_customize, $i ) {
+                return $wp_customize->get_setting( "agency_partner_{$i}_active" )->value();
+            },
+        ) ) );
+    }
+}
+add_action( 'customize_register', 'agency_customizer_partners' );
+
+// Flush partners cache whenever Customizer is saved or theme mods updated.
+function agency_flush_partners_cache(): void {
+    wp_cache_delete( 'agency_partners' );
+}
+add_action( 'customize_save_after', 'agency_flush_partners_cache' );
+add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_partners_cache' );
