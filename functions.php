@@ -936,6 +936,17 @@ function agency_widgets_init() {
         'after_title'   => '</h2>',
     ));
     
+    // Homepage Features Widget Area
+    register_sidebar( array(
+        'name'          => __( 'Homepage Features', 'agency' ),
+        'id'            => 'homepage-features',
+        'description'   => __( 'Add widgets here to appear in the features section on homepage.', 'agency' ),
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="text-4xl font-bold text-gray-800 mb-4 text-center">',
+        'after_title'   => '</h2>',
+    ));
+    
     // Partners Widget Area
     register_sidebar( array(
         'name'          => __( 'Homepage Partners', 'agency' ),
@@ -1778,3 +1789,281 @@ if ( ! function_exists( 'agency_render_hero_section' ) ) {
         <?php
     }
 }
+
+// --------------------------------------------------------------------------------------------------
+// Agency Features helpers
+// --------------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'agency_get_default_features' ) ) {
+    /**
+     * Returns an array of the default Agency features (3 max).
+     *
+     * Each feature contains: title, description, icon, color.
+     *
+     * @return array
+     */
+    function agency_get_default_features(): array {
+        return array(
+            array(
+                'title'       => 'Phủ sóng đa nền tảng MXH',
+                'description' => 'Với sự phát triển của các nền tảng MXH, chúng tôi giúp thương hiệu của bạn hiện diện mạnh mẽ trên Facebook, Instagram, TikTok, LinkedIn và nhiều kênh khác.',
+                'icon'        => 'fas fa-share-alt',
+                'color'       => 'blue',
+            ),
+            array(
+                'title'       => 'Tối ưu chi phí & thời gian',
+                'description' => 'VV Agency giúp doanh nghiệp vừa và nhỏ tiết kiệm đến 60% chi phí marketing so với việc tự vận hành, đồng thời rút ngắn thời gian triển khai chiến dịch.',
+                'icon'        => 'fas fa-dollar-sign',
+                'color'       => 'green',
+            ),
+            array(
+                'title'       => 'Công nghệ AI tiên tiến',
+                'description' => 'Ứng dụng AI và Big Data để phân tích hành vi khách hàng, tối ưu hóa chiến dịch real-time và dự đoán xu hướng thị trường.',
+                'icon'        => 'fas fa-rocket',
+                'color'       => 'purple',
+            ),
+        );
+    }
+}
+
+if ( ! function_exists( 'agency_get_features' ) ) {
+    /**
+     * Returns the list of features configured in the Customizer.
+     * Falls back to the default list and caches the result for 1 hour.
+     *
+     * @return array
+     */
+    function agency_get_features(): array {
+        $cache_key = 'agency_features';
+        $features  = wp_cache_get( $cache_key );
+
+        if ( false !== $features ) {
+            return $features;
+        }
+
+        $default_features = agency_get_default_features();
+        $max_features     = 3;
+        $features         = array();
+
+        for ( $i = 0; $i < $max_features; $i++ ) {
+            // Determine if the feature is active.
+            $active = get_theme_mod( "agency_feature_{$i}_active", ! empty( $default_features[ $i ]['title'] ) );
+            if ( ! $active ) {
+                continue;
+            }
+
+            $defaults    = $default_features[ $i ] ?? array();
+            $features [] = array(
+                'title'       => get_theme_mod( "agency_feature_{$i}_title", $defaults['title'] ?? '' ),
+                'description' => get_theme_mod( "agency_feature_{$i}_description", $defaults['description'] ?? '' ),
+                'icon'        => get_theme_mod( "agency_feature_{$i}_icon", $defaults['icon'] ?? 'fas fa-star' ),
+                'color'       => get_theme_mod( "agency_feature_{$i}_color", $defaults['color'] ?? 'blue' ),
+            );
+        }
+
+        if ( empty( $features ) ) {
+            $features = $default_features;
+        }
+
+        // Cache for one hour.
+        wp_cache_set( $cache_key, $features, '', HOUR_IN_SECONDS );
+
+        return $features;
+    }
+}
+
+if ( ! function_exists( 'agency_render_single_feature' ) ) {
+    /**
+     * Outputs a single feature item.
+     *
+     * @param array $feature Feature data (title, description, icon, color).
+     */
+    function agency_render_single_feature( array $feature ): void {
+        $color = ! empty( $feature['color'] ) ? $feature['color'] : 'blue';
+        ?>
+        <div class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div class="flex-shrink-0">
+                <div class="w-14 h-14 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-500 to-<?php echo esc_attr( $color ); ?>-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <i class="<?php echo esc_attr( $feature['icon'] ); ?> text-white text-xl"></i>
+                </div>
+            </div>
+            <div class="flex-1">
+                <h4 class="text-xl font-bold text-gray-800 mb-3"><?php echo esc_html( $feature['title'] ); ?></h4>
+                <p class="text-gray-600 leading-relaxed"><?php echo esc_html( $feature['description'] ); ?></p>
+                <?php if ( $feature['title'] === 'Tối ưu chi phí & thời gian' ) : ?>
+                    <div class="mt-4 grid grid-cols-2 gap-4">
+                        <div class="text-center p-3 bg-green-50 rounded-lg">
+                            <div class="text-2xl font-bold text-green-600">60%</div>
+                            <div class="text-xs text-gray-600">Tiết kiệm chi phí</div>
+                        </div>
+                        <div class="text-center p-3 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-600">2x</div>
+                            <div class="text-xs text-gray-600">Tốc độ triển khai</div>
+                        </div>
+                    </div>
+                <?php elseif ( $feature['title'] === 'Phủ sóng đa nền tảng MXH' ) : ?>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Facebook</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-medium">Instagram</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">TikTok</span>
+                    </div>
+                <?php elseif ( $feature['title'] === 'Công nghệ AI tiên tiến' ) : ?>
+                    <div class="mt-3">
+                        <div class="flex items-center space-x-2 text-sm text-purple-600">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Phân tích dữ liệu tự động</span>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php
+    }
+}
+
+if ( ! function_exists( 'agency_render_features' ) ) {
+    /**
+     * Outputs the list of features.
+     *
+     * @param array $features List of features.
+     */
+    function agency_render_features( array $features ): void {
+        foreach ( $features as $feature ) {
+            agency_render_single_feature( $feature );
+        }
+    }
+}
+
+/**
+ * Register features customizer settings
+ */
+function agency_customizer_features($wp_customize) {
+    // Add features section
+    $wp_customize->add_section('agency_features_section', array(
+        'title'    => __('Agency Features Settings', 'agency'),
+        'priority' => 33,
+    ));
+
+    // Get default features
+    $default_features = agency_get_default_features();
+
+    // Register settings for features title and description
+    $wp_customize->add_setting('agency_features_title', array(
+        'default' => 'TẠI SAO CHỌN VV AGENCY?',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('agency_features_title', array(
+        'label' => __('Features Section Title', 'agency'),
+        'section' => 'agency_features_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('agency_features_description', array(
+        'default' => 'Chúng tôi mang đến giải pháp marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('agency_features_description', array(
+        'label' => __('Features Section Description', 'agency'),
+        'section' => 'agency_features_section',
+        'type' => 'textarea',
+    ));
+
+    // Add individual features (up to 3 features)
+    $max_features = 3;
+
+    for ($i = 0; $i < $max_features; $i++) {
+        $default = isset($default_features[$i]) ? $default_features[$i] : array(
+            'title' => '',
+            'description' => '',
+            'icon' => 'fas fa-star',
+            'color' => 'blue',
+        );
+
+        // Feature Active
+        $wp_customize->add_setting("agency_feature_{$i}_active", array(
+            'default' => !empty($default['title']),
+            'sanitize_callback' => 'absint',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("agency_feature_{$i}_active", array(
+            'label' => sprintf(__('Enable Feature %d', 'agency'), $i + 1),
+            'section' => 'agency_features_section',
+            'type' => 'checkbox',
+        ));
+
+        // Feature Title
+        $wp_customize->add_setting("agency_feature_{$i}_title", array(
+            'default' => $default['title'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("agency_feature_{$i}_title", array(
+            'label' => sprintf(__('Feature %d Title', 'agency'), $i + 1),
+            'section' => 'agency_features_section',
+            'type' => 'text',
+        ));
+
+        // Feature Description
+        $wp_customize->add_setting("agency_feature_{$i}_description", array(
+            'default' => $default['description'],
+            'sanitize_callback' => 'sanitize_textarea_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("agency_feature_{$i}_description", array(
+            'label' => sprintf(__('Feature %d Description', 'agency'), $i + 1),
+            'section' => 'agency_features_section',
+            'type' => 'textarea',
+        ));
+
+        // Feature Icon
+        $wp_customize->add_setting("agency_feature_{$i}_icon", array(
+            'default' => $default['icon'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("agency_feature_{$i}_icon", array(
+            'label' => sprintf(__('Feature %d Icon (FontAwesome class)', 'agency'), $i + 1),
+            'description' => __('Example: fas fa-star, fab fa-facebook-f', 'agency'),
+            'section' => 'agency_features_section',
+            'type' => 'text',
+        ));
+
+        // Feature Color
+        $wp_customize->add_setting("agency_feature_{$i}_color", array(
+            'default' => $default['color'],
+            'sanitize_callback' => 'sanitize_text_field',
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control("agency_feature_{$i}_color", array(
+            'label' => sprintf(__('Feature %d Color', 'agency'), $i + 1),
+            'section' => 'agency_features_section',
+            'type' => 'select',
+            'choices' => array(
+                'blue' => __('Blue', 'agency'),
+                'red' => __('Red', 'agency'),
+                'green' => __('Green', 'agency'),
+                'yellow' => __('Yellow', 'agency'),
+                'purple' => __('Purple', 'agency'),
+                'pink' => __('Pink', 'agency'),
+                'teal' => __('Teal', 'agency'),
+            ),
+        ));
+    }
+}
+add_action('customize_register', 'agency_customizer_features');
+
+// Flush the features cache whenever the Customizer is saved or theme mods are updated.
+function agency_flush_features_cache(): void {
+    wp_cache_delete( 'agency_features' );
+}
+add_action( 'customize_save_after', 'agency_flush_features_cache' );
+add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_features_cache' );
