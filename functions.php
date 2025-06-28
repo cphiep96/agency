@@ -177,180 +177,24 @@ class VV_Agency_Services_Widget extends WP_Widget {
     public function widget($args, $instance) {
         echo $args['before_widget'];
         
-        // Widget title
-        $title = !empty($instance['title']) ? $instance['title'] : get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
-        echo $args['before_title'] . apply_filters('widget_title', $title) . $args['after_title'];
-        
-        // Widget description
-        $description = !empty($instance['description']) ? $instance['description'] : get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
-        echo '<p class="text-gray-600 max-w-2xl mx-auto text-center mb-16">' . esc_html($description) . '</p>';
-        
-        echo '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">';
-        
-        // Build services array from customizer settings
-        $services = array();
-        $max_services = 8;
-        
-        for ($i = 0; $i < $max_services; $i++) {
-            $is_active = get_theme_mod("agency_service_{$i}_active", $i < 8);
-            if ($is_active) {
-                // Default service data for the first 4 services
-                if ($i < 8) {
-                    $default_titles = array(
-                        'THIẾT KẾ WEBSITE & SEO',
-                        'QUẢNG CÁO GOOGLE',
-                        'QUẢNG CÁO FACEBOOK',
-                        'QUẢNG CÁO TIK TOK',
-                        'QUẢNG CÁO YOUTUBE',
-                        'QUẢNG CÁO INSTAGRAM',
-                        'CHĂM SÓC WEBSITE',
-                        'CHĂM SÓC FANPAGE'
-                    );
-                    $default_descriptions = array(
-                        'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
-                        'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
-                        'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
-                        'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
-                        'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
-                        'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
-                        'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-                        'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi'
-                    );
-                    $default_icons = array(
-                        'fas fa-code',
-                        'fab fa-google',
-                        'fab fa-facebook-f',
-                        'fab fa-tiktok',
-                        'fab fa-youtube',
-                        'fab fa-instagram',
-                        'fas fa-globe',
-                        'fab fa-linkedin'
-                    );
-                    $default_images = array(
-                        'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    );
-                    $default_colors = array('blue', 'red', 'blue', 'pink', 'red', 'blue', 'blue', 'pink');
-                    
-                    $title = get_theme_mod("agency_service_{$i}_title", $default_titles[$i]);
-                    $description = get_theme_mod("agency_service_{$i}_description", $default_descriptions[$i]);
-                    $icon = get_theme_mod("agency_service_{$i}_icon", $default_icons[$i]);
-                    $image = get_theme_mod("agency_service_{$i}_image", $default_images[$i]);
-                    $color = get_theme_mod("agency_service_{$i}_color", $default_colors[$i]);
-                } else {
-                    $title = get_theme_mod("agency_service_{$i}_title", '');
-                    $description = get_theme_mod("agency_service_{$i}_description", '');
-                    $icon = get_theme_mod("agency_service_{$i}_icon", 'fas fa-star');
-                    $image = get_theme_mod("agency_service_{$i}_image", '');
-                    $color = get_theme_mod("agency_service_{$i}_color", 'blue');
-                }
-                
-                $services[] = array(
-                    'title' => $title,
-                    'description' => $description,
-                    'icon' => $icon,
-                    'image' => $image,
-                    'color' => $color
-                );
-            }
+        // Section title
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : get_theme_mod( 'agency_services_title', 'DỊCH VỤ CỦA VV AGENCY' );
+        echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
+
+        // Section description
+        $description = ! empty( $instance['description'] ) ? $instance['description'] : get_theme_mod( 'agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số' );
+        echo '<p class="text-gray-600 max-w-2xl mx-auto text-center mb-16">' . esc_html( $description ) . '</p>';
+
+        // Fetch and render services
+        $services = agency_get_services();
+        if ( empty( $services ) ) {
+            echo '<p>' . esc_html__( 'No services configured yet.', 'agency' ) . '</p>';
+        } else {
+            echo '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">';
+            agency_render_services( $services );
+            echo '</div>';
         }
-        
-        if (empty($services)) {
-            // Default services if none configured
-            $services = array(
-                array(
-                    'title' => 'THIẾT KẾ WEBSITE & SEO',
-                    'description' => 'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
-                    'icon' => 'fas fa-code',
-                    'image' => 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'blue',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO GOOGLE',
-                    'description' => 'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
-                    'icon' => 'fab fa-google',
-                    'image' => 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'red',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO FACEBOOK',
-                    'description' => 'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
-                    'icon' => 'fab fa-facebook-f',
-                    'image' => 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'blue',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO TIK TOK',
-                    'description' => 'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
-                    'icon' => 'fab fa-tiktok',
-                    'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                    'color' => 'pink',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO YOUTUBE',
-                    'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
-                    'icon' => 'fab fa-youtube',
-                    'image' => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'red',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO INSTAGRAM',
-                    'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
-                    'icon' => 'fab fa-instagram',
-                    'image' => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'blue',
-                ),
-                array(
-                    'title' => 'QUẢNG CÁO LINKEDIN',
-                    'description' => 'Khai thác sức mạnh LinkedIn để tiếp cận thế hệ khách hàng trẻ',
-                    'icon' => 'fab fa-linkedin',
-                    'image' => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'pink',
-                ),
-                array(
-                    'title' => 'CHĂM SÓC WEBSITE',
-                    'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-                    'icon' => 'fas fa-globe',
-                    'image' => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                    'color' => 'blue',
-                ),
-            );
-        }
-        
-        foreach ($services as $service) {
-            $color = !empty($service['color']) ? $service['color'] : 'blue';
-            ?>
-            <div class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr($color); ?>-400 to-<?php echo esc_attr($color); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="relative p-8">
-                    <div class="mb-6 overflow-hidden rounded-xl">
-                        <?php if (!empty($service['image'])) : ?>
-                            <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <?php endif; ?>
-                    </div>
-                    <div class="flex items-center justify-center mb-6">
-                        <div class="w-16 h-16 bg-<?php echo esc_attr($color); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                            <i class="<?php echo esc_attr($service['icon']); ?> text-2xl text-<?php echo esc_attr($color); ?>-600"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
-                        <?php echo esc_html($service['title']); ?>
-                    </h3>
-                    <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
-                        <?php echo esc_html($service['description']); ?>
-                    </p>
-                </div>
-            </div>
-            <?php
-        }
-        
-        echo '</div>';    
+
         echo $args['after_widget'];
     }
 
@@ -405,64 +249,7 @@ function agency_customizer_services($wp_customize) {
     ));
 
     // Get default services
-    $default_services = array(
-        array(
-            'title' => 'THIẾT KẾ WEBSITE & SEO',
-            'description' => 'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
-            'icon' => 'fas fa-code',
-            'image' => 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'blue',
-        ),
-        array(
-            'title' => 'QUẢNG CÁO GOOGLE',
-            'description' => 'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
-            'icon' => 'fab fa-google',
-            'image' => 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'red',
-        ),
-        array(
-            'title' => 'QUẢNG CÁO FACEBOOK',
-            'description' => 'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
-            'icon' => 'fab fa-facebook-f',
-            'image' => 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'blue',
-        ),
-        array(
-            'title' => 'QUẢNG CÁO TIK TOK',
-            'description' => 'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
-            'icon' => 'fab fa-tiktok',
-            'image' => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'pink',
-        ),
-        array(
-            'title' => 'QUẢNG CÁO YOUTUBE',
-            'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
-            'icon' => 'fab fa-youtube',
-            'image' => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'red',
-        ),
-        array(
-            'title' => 'QUẢNG CÁO INSTAGRAM',
-            'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
-            'icon' => 'fab fa-instagram',
-            'image' => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'blue',
-        ),
-        array(
-            'title' => 'CHĂM SÓC WEBSITE',
-            'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-            'icon' => 'fas fa-globe',
-            'image' => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'blue',
-        ),
-        array(
-            'title' => 'CHĂM SÓC FANPAGE',
-            'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
-            'icon' => 'fab fa-linkedin',
-            'image' => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'color' => 'pink',
-        ),
-    );
+    $default_services = agency_get_default_services();
 
     // Register settings for service title and description
     $wp_customize->add_setting('agency_services_title', array(
@@ -1083,3 +870,178 @@ if ( function_exists('register_sidebar') ) {
         'after_title'   => '</h2>',
     ));
 }
+
+// --------------------------------------------------------------------------------------------------
+// Agency Services helpers
+// --------------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'agency_get_default_services' ) ) {
+    /**
+     * Returns an array of the default Agency services (8 max).
+     *
+     * Each service contains: title, description, icon, image, color.
+     *
+     * @return array
+     */
+    function agency_get_default_services(): array {
+        return array(
+            array(
+                'title'       => 'THIẾT KẾ WEBSITE & SEO',
+                'description' => 'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
+                'icon'        => 'fas fa-code',
+                'image'       => 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'blue',
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO GOOGLE',
+                'description' => 'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
+                'icon'        => 'fab fa-google',
+                'image'       => 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'red',
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO FACEBOOK',
+                'description' => 'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
+                'icon'        => 'fab fa-facebook-f',
+                'image'       => 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'blue',
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO TIK TOK',
+                'description' => 'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
+                'icon'        => 'fab fa-tiktok',
+                'image'       => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'pink',
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO YOUTUBE',
+                'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
+                'icon'        => 'fab fa-youtube',
+                'image'       => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'red',
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO INSTAGRAM',
+                'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
+                'icon'        => 'fab fa-instagram',
+                'image'       => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'purple',
+            ),
+            array(
+                'title'       => 'CHĂM SÓC WEBSITE',
+                'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
+                'icon'        => 'fas fa-globe',
+                'image'       => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'green',
+            ),
+            array(
+                'title'       => 'CHĂM SÓC FANPAGE',
+                'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
+                'icon'        => 'fab fa-facebook-f',
+                'image'       => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'color'       => 'teal',
+            ),
+        );
+    }
+}
+
+if ( ! function_exists( 'agency_get_services' ) ) {
+    /**
+     * Returns the list of services configured in the Customizer.
+     * Falls back to the default list and caches the result for 1 hour.
+     *
+     * @return array
+     */
+    function agency_get_services(): array {
+        $cache_key = 'agency_services';
+        $services  = wp_cache_get( $cache_key );
+
+        if ( false !== $services ) {
+            return $services;
+        }
+
+        $default_services = agency_get_default_services();
+        $max_services     = 8;
+        $services         = array();
+
+        for ( $i = 0; $i < $max_services; $i++ ) {
+            // Determine if the service is active.
+            $active = get_theme_mod( "agency_service_{$i}_active", ! empty( $default_services[ $i ]['title'] ) );
+            if ( ! $active ) {
+                continue;
+            }
+
+            $defaults    = $default_services[ $i ] ?? array();
+            $services [] = array(
+                'title'       => get_theme_mod( "agency_service_{$i}_title", $defaults['title'] ?? '' ),
+                'description' => get_theme_mod( "agency_service_{$i}_description", $defaults['description'] ?? '' ),
+                'icon'        => get_theme_mod( "agency_service_{$i}_icon", $defaults['icon'] ?? 'fas fa-star' ),
+                'image'       => get_theme_mod( "agency_service_{$i}_image", $defaults['image'] ?? '' ),
+                'color'       => get_theme_mod( "agency_service_{$i}_color", $defaults['color'] ?? 'blue' ),
+            );
+        }
+
+        if ( empty( $services ) ) {
+            $services = $default_services;
+        }
+
+        // Cache for one hour.
+        wp_cache_set( $cache_key, $services, '', HOUR_IN_SECONDS );
+
+        return $services;
+    }
+}
+
+if ( ! function_exists( 'agency_render_single_service' ) ) {
+    /**
+     * Outputs a single service card.
+     *
+     * @param array $service Service data (title, description, icon, image, color).
+     */
+    function agency_render_single_service( array $service ): void {
+        $color = ! empty( $service['color'] ) ? $service['color'] : 'blue';
+        ?>
+        <div class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+            <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative p-8">
+                <div class="mb-6 overflow-hidden rounded-xl">
+                    <?php if ( ! empty( $service['image'] ) ) : ?>
+                        <img src="<?php echo esc_url( $service['image'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <?php endif; ?>
+                </div>
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                        <i class="<?php echo esc_attr( $service['icon'] ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                    <?php echo esc_html( $service['title'] ); ?>
+                </h3>
+                <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                    <?php echo esc_html( $service['description'] ); ?>
+                </p>
+            </div>
+        </div>
+        <?php
+    }
+}
+
+if ( ! function_exists( 'agency_render_services' ) ) {
+    /**
+     * Outputs the grid of services.
+     *
+     * @param array $services List of services.
+     */
+    function agency_render_services( array $services ): void {
+        foreach ( $services as $service ) {
+            agency_render_single_service( $service );
+        }
+    }
+}
+
+// Flush the services cache whenever the Customizer is saved or theme mods are updated.
+function agency_flush_services_cache(): void {
+    wp_cache_delete( 'agency_services' );
+}
+add_action( 'customize_save_after', 'agency_flush_services_cache' );
+add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_services_cache' );

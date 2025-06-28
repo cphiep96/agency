@@ -81,114 +81,12 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <?php
-                    // Display services from customizer settings
-                    $max_services = 8;
-                    $has_services = false;
-                    
-                    for ($i = 0; $i < $max_services; $i++) {
-                        $is_active = get_theme_mod("agency_service_{$i}_active", $i < 8);
-                        
-                        // Debug info to check if the values are being retrieved properly
-                        // Uncomment to troubleshoot
-                        /*
-                        echo '<div style="display:none">';
-                        echo "Service {$i} Active: " . ($is_active ? 'Yes' : 'No') . '<br>';
-                        echo "Title: " . get_theme_mod("agency_service_{$i}_title", '') . '<br>';
-                        echo "Description: " . get_theme_mod("agency_service_{$i}_description", '') . '<br>';
-                        echo "Icon: " . get_theme_mod("agency_service_{$i}_icon", '') . '<br>';
-                        echo "Image: " . get_theme_mod("agency_service_{$i}_image", '') . '<br>';
-                        echo "Color: " . get_theme_mod("agency_service_{$i}_color", '') . '<br>';
-                        echo '</div>';
-                        */
-                        
-                        if ($is_active) {
-                            $has_services = true;
-                            
-                            // Get service details with fallback defaults for each field
-                            $title = get_theme_mod("agency_service_{$i}_title", '');
-                            $description = get_theme_mod("agency_service_{$i}_description", '');
-                            $icon = get_theme_mod("agency_service_{$i}_icon", '');
-                            $image = get_theme_mod("agency_service_{$i}_image", '');
-                            $color = get_theme_mod("agency_service_{$i}_color", '');
-                            
-                            // Default service data for the first 4 services if values are empty
-                            if (empty($title) && $i < 9) {
-                                $default_titles = array(
-                                    'THIẾT KẾ WEBSITE & SEO',
-                                    'QUẢNG CÁO GOOGLE',
-                                    'QUẢNG CÁO FACEBOOK',
-                                    'QUẢNG CÁO TIK TOK',
-                                    'QUẢNG CÁO YOUTUBE',
-                                    'QUẢNG CÁO INSTAGRAM',
-                                    'CHĂM SÓC WEBSITE',
-                                    'CHĂM SÓC FANPAGE'
-                                );
-                                $default_descriptions = array(
-                                    'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
-                                    'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
-                                    'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
-                                    'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
-                                    'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
-                                    'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
-                                    'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-                                    'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi'
-                                );
-                                $default_icons = array(
-                                    'fas fa-code',
-                                    'fab fa-google',
-                                    'fab fa-facebook-f',
-                                    'fab fa-tiktok',
-                                    'fab fa-youtube',
-                                    'fab fa-instagram',
-                                    'fas fa-desktop',
-                                    'fab fa-facebook-f'
-                                );
-                                $default_images = array(
-                                    'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                    'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-                                );
-                                $default_colors = array('blue', 'red', 'blue', 'pink', 'red', 'purple', 'green', 'teal');
-                                
-                                $title = empty($title) ? $default_titles[$i] : $title;
-                                $description = empty($description) ? $default_descriptions[$i] : $description;
-                                $icon = empty($icon) ? $default_icons[$i] : $icon;
-                                $image = empty($image) ? $default_images[$i] : $image;
-                                $color = empty($color) ? $default_colors[$i] : $color;
-                            }
-                            ?>
-                            <div class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                                <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr($color); ?>-400 to-<?php echo esc_attr($color); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div class="relative p-8">
-                                    <div class="mb-6 overflow-hidden rounded-xl">
-                                        <?php if (!empty($image)) : ?>
-                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="flex items-center justify-center mb-6">
-                                        <div class="w-16 h-16 bg-<?php echo esc_attr($color); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                                            <i class="<?php echo esc_attr($icon); ?> text-2xl text-<?php echo esc_attr($color); ?>-600"></i>
-                                        </div>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
-                                        <?php echo esc_html($title); ?>
-                                    </h3>
-                                    <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
-                                        <?php echo esc_html($description); ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    }
-                    
-                    if (!$has_services) {
-                        echo '<p class="col-span-full text-center">Please configure services in the WordPress admin panel (Appearance > Customize > Agency Services Settings).</p>';
+                    // Get services via helper and render
+                    $services = agency_get_services();
+                    if ( empty( $services ) ) {
+                        echo '<p class="col-span-full text-center">' . esc_html__( 'Please configure services in the WordPress admin panel (Appearance > Customize > Agency Services Settings).', 'agency' ) . '</p>';
+                    } else {
+                        agency_render_services( $services );
                     }
                     ?>
                 </div>
