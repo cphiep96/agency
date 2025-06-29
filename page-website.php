@@ -26,10 +26,67 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            <!-- Thêm các loại website khác tương tự ở đây -->
+            <!-- Khối Website Thương Mại -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1181415/pexels-photo-1181415.jpeg?auto=compress&cs=tinysrgb&w=600" alt="E-Commerce Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Website Thương Mại</h3>
+                        <p class="text-sm opacity-90">Tối ưu cho bán hàng online</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Khối Website Cá Nhân -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1851414/pexels-photo-1851414.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Personal Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Website Cá Nhân</h3>
+                        <p class="text-sm opacity-90">Chia sẻ sở thích và dự án cá nhân</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Khối Website Tin Tức -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/267614/pexels-photo-267614.jpeg?auto=compress&cs=tinysrgb&w=600" alt="News Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Website Tin Tức</h3>
+                        <p class="text-sm opacity-90">Cập nhật tin tức nhanh chóng</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Khối Website Giáo Dục -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1695731/pexels-photo-1695731.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Educational Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Website Giáo Dục</h3>
+                        <p class="text-sm opacity-90">Tạo môi trường học tập trực tuyến</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Khối Website Du Lịch -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+                <div class="relative">
+                    <img src="https://images.pexels.com/photos/1997991/pexels-photo-1997991.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Travel Website" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Website Du Lịch</h3>
+                        <p class="text-sm opacity-90">Khám phá thế giới với những chuyến đi tuyệt vời</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
+
 <!-- Nội dung trang Website kết thúc -->
 
 <?php get_footer(); ?> 
