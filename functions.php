@@ -20,6 +20,14 @@ if ( ! function_exists( 'agency_setup' ) ) :
          */
         add_theme_support( 'post-thumbnails' );
 
+        // Enable support for Site Logo
+        add_theme_support( 'custom-logo', array(
+            'height'      => 80,
+            'width'       => 200,
+            'flex-height' => true,
+            'flex-width'  => true,
+        ) );
+
         register_nav_menus( array(
             'primary' => esc_html__( 'Primary Menu', 'agency' ),
             'mobile' => esc_html__( 'Mobile Menu', 'agency' ),
@@ -1059,61 +1067,62 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
      * @return array
      */
     function agency_get_default_services(): array {
+        $base_url = get_template_directory_uri() . '/src/img/service/';
         return array(
             array(
                 'title'       => 'THIẾT KẾ WEBSITE & SEO',
                 'description' => 'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
                 'icon'        => 'fas fa-code',
-                'image'       => 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'thiet-ke-website.jpg',
                 'color'       => 'blue',
             ),
             array(
                 'title'       => 'QUẢNG CÁO GOOGLE',
                 'description' => 'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
                 'icon'        => 'fab fa-google',
-                'image'       => 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'google.png',
                 'color'       => 'red',
             ),
             array(
                 'title'       => 'QUẢNG CÁO FACEBOOK',
                 'description' => 'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
                 'icon'        => 'fab fa-facebook-f',
-                'image'       => 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'quang-cao-facebook.jpg',
                 'color'       => 'blue',
             ),
             array(
                 'title'       => 'QUẢNG CÁO TIK TOK',
                 'description' => 'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
                 'icon'        => 'fab fa-tiktok',
-                'image'       => 'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'quang-cao-tiktok.jpg',
                 'color'       => 'pink',
             ),
             array(
                 'title'       => 'QUẢNG CÁO YOUTUBE',
                 'description' => 'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
                 'icon'        => 'fab fa-youtube',
-                'image'       => 'https://images.pexels.com/photos/5077062/pexels-photo-5077062.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'quang-cao-youtube.jpg',
                 'color'       => 'red',
             ),
             array(
                 'title'       => 'QUẢNG CÁO INSTAGRAM',
                 'description' => 'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
                 'icon'        => 'fab fa-instagram',
-                'image'       => 'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'quang-cao-INSTAGRAM.jpg',
                 'color'       => 'purple',
             ),
             array(
                 'title'       => 'CHĂM SÓC WEBSITE',
                 'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
                 'icon'        => 'fas fa-globe',
-                'image'       => 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'cham-soc-website.jpg',
                 'color'       => 'green',
             ),
             array(
                 'title'       => 'CHĂM SÓC FANPAGE',
                 'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
                 'icon'        => 'fab fa-facebook-f',
-                'image'       => 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
+                'image'       => $base_url . 'cham-soc-fanpage.jpg',
                 'color'       => 'teal',
             ),
         );
@@ -1236,36 +1245,24 @@ if ( ! function_exists( 'agency_get_default_partners' ) ) {
     function agency_get_default_partners(): array {
         return array(
             array(
-                'name'  => 'Công ty ABC',
-                'image' => 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'name'  => 'LOCKER & LOCK',
+                'image' => get_template_directory_uri() . '/src/img/1.jpg',
             ),
             array(
-                'name'  => 'Tập đoàn XYZ',
-                'image' => 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'name'  => 'SPERANZA',
+                'image' => get_template_directory_uri() . '/src/img/2.jpg',
             ),
             array(
-                'name'  => 'Doanh nghiệp 123',
-                'image' => 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'name'  => 'Nam Thủy Group',
+                'image' => get_template_directory_uri() . '/src/img/3.jpg',
             ),
             array(
-                'name'  => 'Công ty DEF',
-                'image' => 'https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'name'  => 'SMART LOCKER',
+                'image' => get_template_directory_uri() . '/src/img/4.jpg',
             ),
             array(
-                'name'  => 'Tổ chức GHI',
-                'image' => 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            ),
-            array(
-                'name'  => 'Startup JKL',
-                'image' => 'https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            ),
-            array(
-                'name'  => 'Công ty MNO',
-                'image' => 'https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            ),
-            array(
-                'name'  => 'Doanh nghiệp PQR',
-                'image' => 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'name'  => 'Thế Giới Tủ Locker',
+                'image' => get_template_directory_uri() . '/src/img/5.jpg',
             ),
         );
     }
@@ -1749,7 +1746,7 @@ if ( ! function_exists( 'agency_get_default_hero_data' ) ) {
             'subtitle'      => 'ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN',
             'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
             'button1_text'  => 'Liên hệ ngay',
-            'button1_link'  => 'https://zalo.me/0336269485',
+            'button1_link'  => 'https://zalo.me/0396693505',
             'button2_text'  => 'Xem dịch vụ',
             'button2_link'  => '#services',
             'main_image'    => 'https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -2232,7 +2229,7 @@ function agency_customizer_footer($wp_customize) {
 
     // Footer Copyright Settings
     $wp_customize->add_setting('agency_footer_copyright', array(
-        'default'           => 'Copyright 2018 - 2025 © vvagency.vn',
+        'default'           => 'Copyright 2018 - 2025 © vietvanagency.com',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -2244,7 +2241,7 @@ function agency_customizer_footer($wp_customize) {
 
     // Contact Information
     $wp_customize->add_setting('agency_footer_zalo', array(
-        'default'           => '0336269485',
+        'default'           => '0396693505',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -2255,7 +2252,7 @@ function agency_customizer_footer($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_footer_hotline', array(
-        'default'           => '0336269485',
+        'default'           => '0396693505',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -2266,7 +2263,7 @@ function agency_customizer_footer($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_footer_telegram', array(
-        'default'           => '0336269485',
+        'default'           => '0396693505',
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));

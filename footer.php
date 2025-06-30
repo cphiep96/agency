@@ -7,8 +7,14 @@
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center space-x-3">
-                            <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
-                                class="h-12 w-auto">
+                            <?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
+                                <div style="max-width:100px; max-height:80px; overflow:hidden;">
+                                    <?php the_custom_logo(); ?>
+                                </div>
+                            <?php else : ?>
+                                <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                                    class="h-12 w-auto">
+                            <?php endif; ?>
                             <div>
                                 <p class="text-xs text-gray-400">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
                             </div>
@@ -18,14 +24,18 @@
                         <p>489 Đ. Nguyễn Văn Công</p>
                         <p>Phường 3, Gò Vấp</p>
                         <p>Hồ Chí Minh</p>
+
+                         <p>Tổ 1, khu vực 1</p>
+                         <p>phường Quy Nhơn Nam</p>
+                         <p>Gia Lai</p>
                     </div>
                     <div class="flex space-x-4 mt-4">
-                        <button class="px-4 py-2 rounded text-sm" style="background-color: #ff3205;">
+                        <a href="tel:<?php echo esc_attr(get_theme_mod('agency_footer_hotline', '0396693505')); ?>" class="px-4 py-2 rounded text-sm" style="background-color: #ff3205; display: inline-flex; align-items: center;">
                             <i class="fas fa-phone mr-2"></i>GỌI ĐIỆN
-                        </button>
-                        <button class="bg-gray-600 px-4 py-2 rounded text-sm">
+                        </a>
+                        <a href="mailto:<?php echo esc_attr(get_theme_mod('agency_footer_email', 'contact@vvagency.com')); ?>" class="bg-gray-600 px-4 py-2 rounded text-sm" style="display: inline-flex; align-items: center;">
                             <i class="fas fa-envelope mr-2"></i>EMAIL
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -104,11 +114,11 @@
 
             <!-- Copyright -->
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-sm text-gray-400"><?php echo esc_html(get_theme_mod('agency_footer_copyright', 'Copyright 2018 - 2025 © vvagency.vn')); ?></p>
+                <p class="text-sm text-gray-400"><?php echo esc_html(get_theme_mod('agency_footer_copyright', 'Copyright 2018 - 2025 © vietvanagency.com')); ?></p>
                 <div class="mt-2 space-x-4">
-                    <span class="text-red-500">Zalo: <?php echo esc_html(get_theme_mod('agency_footer_zalo', '0336269485')); ?></span>
-                    <span class="text-blue-500">Hotline: <?php echo esc_html(get_theme_mod('agency_footer_hotline', '0336269485')); ?></span>
-                    <span class="text-purple-500">Telegram: <?php echo esc_html(get_theme_mod('agency_footer_telegram', '0336269485')); ?></span>
+                    <span class="text-red-500">Zalo: <?php echo esc_html(get_theme_mod('agency_footer_zalo', '0396693505')); ?></span>
+                    <span class="text-blue-500">Hotline: <?php echo esc_html(get_theme_mod('agency_footer_hotline', '0396693505')); ?></span>
+                    <span class="text-purple-500">Telegram: <?php echo esc_html(get_theme_mod('agency_footer_telegram', '0396693505')); ?></span>
                 </div>
             </div>
         </div>
@@ -116,17 +126,16 @@
 
     <!-- Chat Widget -->
     <div class="fixed bottom-4 left-4 z-50">
-        <button class="text-white p-3 rounded-full shadow-lg transition-colors" style="background-color: #ff3205;"
-            onmouseover="this.style.backgroundColor='#e02a00'" onmouseout="this.style.backgroundColor='#ff3205'">
-            <i class="fas fa-comments"></i>
-            <span class="ml-2 text-sm">Chat với tôi</span>
-        </button>
+        <a href="https://m.me/vvagencymarketing" target="_blank" rel="noopener" class="flex items-center text-white p-3 rounded-full shadow-lg transition-colors" style="background-color: #0084FF;">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="ml-2 text-sm hidden sm:inline">Messenger</span>
+        </a>
     </div>
 
     <!-- Contact Widget -->
     <div class="fixed bottom-4 right-4 z-50">
         <button class="bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
-            <a href="https://zalo.me/0336269485" target="_blank"> <i class="fas fa-phone"></i>
+            <a href="https://zalo.me/0396693505" target="_blank"> <i class="fas fa-phone"></i>
                 <span class="ml-2 text-sm">Liên hệ</span>
             </a>
         </button>

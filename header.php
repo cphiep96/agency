@@ -63,8 +63,14 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center space-x-3">
-                        <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
-                            class="h-12 w-auto">
+                        <?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
+                            <div style="max-width:100px; max-height:80px; overflow:hidden;">
+                                    <?php the_custom_logo(); ?>
+                                </div>
+                        <?php else : ?>
+                            <img src="https://placehold.co/200x80/ff3205/FFFFFF/png?text=VV+AGENCY" alt="VV Agency Logo"
+                                class="h-12 w-auto">
+                        <?php endif; ?>
                         <div class="hidden sm:block">
                             <p class="text-xs text-gray-600">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
                         </div>
@@ -105,16 +111,7 @@
                     </button>
                 </div>
                 <!-- Mobile Navigation Links -->
-                <?php
-                    if ( has_nav_menu( 'primary' ) ) {
-                        wp_nav_menu( array(
-                            'theme_location' => 'primary',
-                            'container'      => 'nav',
-                            'menu_class'     => 'space-y-2',
-                            'walker'         => new Agency_Nav_Walker(), // THÊM DÒNG NÀY
-                        ) );
-                    }
-                    ?>
+                <?php agency_main_menu(true); ?>
             </div>
         </div>
     </div> 
