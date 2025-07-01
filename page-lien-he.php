@@ -22,8 +22,8 @@ get_header(); ?>
                 <p class="mb-4"><strong>Hotline:</strong> <a href="tel:+8439669350489" class="text-orange-300">0396693505</a></p>
                 <p class="mb-4"><strong>Zalo:</strong> <a href="https://zalo.me/0396693505" class="text-orange-300">0396693505</a></p>
                 <p class="mb-4"><strong>Messenger:</strong> <a href="https://m.me/vvagencymarketing" class="text-orange-300">vvagencymarketing</a></p>
-                <p class="mb-4"><strong>Email:</strong> contact@vvagency.com</p>
-                <p class="mb-4"><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 6, 9:00 AM - 6:00 PM</p>
+                <p class="mb-4"><strong>Email:</strong> doquocvietts@gmail.com</p>
+                <p class="mb-4"><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7, 8:00 AM - 5:00 PM</p>
             </div>
        
         </div>

@@ -33,7 +33,7 @@
                         <a href="tel:<?php echo esc_attr(get_theme_mod('agency_footer_hotline', '0396693505')); ?>" class="px-4 py-2 rounded text-sm" style="background-color: #ff3205; display: inline-flex; align-items: center;">
                             <i class="fas fa-phone mr-2"></i>GỌI ĐIỆN
                         </a>
-                        <a href="mailto:<?php echo esc_attr(get_theme_mod('agency_footer_email', 'contact@vvagency.com')); ?>" class="bg-gray-600 px-4 py-2 rounded text-sm" style="display: inline-flex; align-items: center;">
+                        <a href="mailto:<?php echo esc_attr(get_theme_mod('agency_footer_email', 'doquocvietts@gmail.com')); ?>" class="bg-gray-600 px-4 py-2 rounded text-sm" style="display: inline-flex; align-items: center;">
                             <i class="fas fa-envelope mr-2"></i>EMAIL
                         </a>
                     </div>
@@ -54,34 +54,13 @@
                             <?php endif; endfor; ?>
                             <?php // Default links if no customizer settings
                             if (empty(get_theme_mod('agency_footer_widget1_link1_text', ''))) : ?>
-                                <li><a href="#" class="hover:text-blue-400">Phòng marketing VV Agency</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Digital Marketing tổng thể</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Quảng cáo Google, Facebook</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
-                            <?php endif; ?>
-                        </ul>
-                    <?php endif; ?>
-                </div>
-
-                <!-- Footer Widget Area 2 -->
-                <div>
-                    <?php if (is_active_sidebar('footer-widget-2')) : ?>
-                        <?php dynamic_sidebar('footer-widget-2'); ?>
-                    <?php else : ?>
-                        <h4 class="font-semibold mb-4"><?php echo esc_html(get_theme_mod('agency_footer_widget2_title', 'Dịch vụ khác')); ?></h4>
-                        <ul class="space-y-2 text-sm">
-                            <?php for ($i = 1; $i <= 5; $i++) : 
-                                $link_text = get_theme_mod("agency_footer_widget2_link{$i}_text", '');
-                                $link_url = get_theme_mod("agency_footer_widget2_link{$i}_url", '#');
-                                if (!empty($link_text)) : ?>
-                                <li><a href="<?php echo esc_url($link_url); ?>" class="hover:text-blue-400"><?php echo esc_html($link_text); ?></a></li>
-                            <?php endif; endfor; ?>
-                            <?php // Default links if no customizer settings
-                            if (empty(get_theme_mod('agency_footer_widget2_link1_text', ''))) : ?>
-                                <li><a href="#" class="hover:text-blue-400">Thiết kế website trọn gói</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Seo từ khóa website</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Quảng cáo Tiktok, Zalo</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Thiết kế ấn phẩm, Media</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học SEO</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Google</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Facebook</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Tiktok</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Instagram</a></li>
+                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Youtube</a></li>
                             <?php endif; ?>
                         </ul>
                     <?php endif; ?>
@@ -102,10 +81,10 @@
                             <?php endif; endfor; ?>
                             <?php // Default links if no customizer settings
                             if (empty(get_theme_mod('agency_footer_widget3_link1_text', ''))) : ?>
-                                <li><a href="#" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Bản tin VV Agency</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
-                                <li><a href="#" class="hover:text-blue-400">Liên hệ</a></li>
+                                <li><a href="lien-he" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
+                                <li><a href="lien-he" class="hover:text-blue-400">Bản tin VV Agency</a></li>
+                                <li><a href="lien-he" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
+                                <li><a href="lien-he" class="hover:text-blue-400">Liên hệ</a></li>
                             <?php endif; ?>
                         </ul>
                     <?php endif; ?>

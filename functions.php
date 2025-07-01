@@ -2274,3 +2274,67 @@ function agency_customizer_footer($wp_customize) {
     ));
 }
 add_action('customize_register', 'agency_customizer_footer');
+
+
+// Register custom Tailwind typography support for content areas (if using @tailwindcss/typography)
+function agency_content_styles() {
+    // Add Tailwind Typography support
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'responsive-embeds' );
+    add_editor_style( 'style-editor.css' );
+}
+add_action( 'after_setup_theme', 'agency_content_styles' );
+
+/**
+ * Makes images in post content responsive for mobile
+ * 
+ * @param string $content The post content
+ * @return string Modified content with responsive image attributes
+ */
+function agency_responsive_images($content) {
+    // Don't process if content is empty
+    if (empty($content)) {
+        return $content;
+    }
+    
+    // Use DOMDocument to properly parse and modify HTML
+    if (function_exists('libxml_use_internal_errors') && class_exists('DOMDocument')) {
+        // Suppress errors from invalid HTML
+        libxml_use_internal_errors(true);
+        
+        $dom = new DOMDocument();
+        // Load HTML with encoding to handle special characters
+        $dom->loadHTML('<?xml encoding="UTF-8">' . $content);
+        
+        // Find all images in content
+        $images = $dom->getElementsByTagName('img');
+        
+        foreach ($images as $image) {
+            // Add responsive classes
+            $current_class = $image->getAttribute('class');
+            $new_class = trim($current_class . ' img-fluid responsive-img');
+            $image->setAttribute('class', $new_class);
+            
+            // Make sure width attribute is not fixed
+            $image->removeAttribute('width');
+            
+            // Set loading to lazy for better performance
+            $image->setAttribute('loading', 'lazy');
+        }
+        
+        // Extract only the body content
+        $body = $dom->getElementsByTagName('body')->item(0);
+        $content = '';
+        
+        if ($body) {
+            foreach ($body->childNodes as $childNode) {
+                $content .= $dom->saveHTML($childNode);
+            }
+        }
+        
+        // Reset errors
+        libxml_clear_errors();
+    }
+    
+    return $content;
+}
