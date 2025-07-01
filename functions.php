@@ -2312,11 +2312,23 @@ function agency_responsive_images($content) {
         foreach ($images as $image) {
             // Add responsive classes
             $current_class = $image->getAttribute('class');
-            $new_class = trim($current_class . ' img-fluid responsive-img');
+            $new_class = trim($current_class . ' w-full h-auto img-fluid');
             $image->setAttribute('class', $new_class);
             
-            // Make sure width attribute is not fixed
+            // Remove width and height attributes to prevent fixed sizing
             $image->removeAttribute('width');
+            $image->removeAttribute('height');
+            
+            // Add comprehensive style for responsive behavior
+            $current_style = $image->getAttribute('style');
+            $responsive_style = 'max-width: 100%; height: auto; display: block; margin: 0 auto;';
+            $new_style = empty($current_style) ? $responsive_style : $current_style . '; ' . $responsive_style;
+            $image->setAttribute('style', $new_style);
+            
+            // Set sizes attribute for responsive images
+            if ($image->hasAttribute('srcset') && !$image->hasAttribute('sizes')) {
+                $image->setAttribute('sizes', '(max-width: 576px) 100vw, (max-width: 768px) 90vw, (max-width: 992px) 80vw, 750px');
+            }
             
             // Set loading to lazy for better performance
             $image->setAttribute('loading', 'lazy');
@@ -2338,3 +2350,129 @@ function agency_responsive_images($content) {
     
     return $content;
 }
+// Hook the function to the_content filter
+add_filter('the_content', 'agency_responsive_images');
+
+/**
+ * Add responsive image styles to head
+ */
+function agency_add_responsive_image_styles() {
+    ?>
+    <style>
+        /* Responsive image styles */
+        img.aligncenter, 
+        img.alignnone,
+        img.alignleft,
+        img.alignright,
+        img.size-large,
+        img.size-full,
+        .wp-block-image img,
+        .entry-content img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            /* Specific mobile fixes */
+            .entry-content img {
+                width: 100% !important;
+                object-fit: contain;
+            }
+            
+            /* Fix for specific out-of-width images */
+            .size-large,
+            .size-full {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'agency_add_responsive_image_styles', 999);
+
+// --------------------------------------------------------------------------------------------------
+// Custom Block Shortcode Implementation
+// --------------------------------------------------------------------------------------------------
+
+/**
+ * Register custom block shortcode to display content blocks
+ * Usage: [block id="block-id"]
+ */
+function agency_block_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'id' => '',
+    ), $atts, 'block');
+
+    // If no ID is provided, return empty
+    if (empty($atts['id'])) {
+        return '';
+    }
+    
+    // Start output buffering to capture any output
+    ob_start();
+    
+    // Handle specific blocks based on ID
+    switch ($atts['id']) {
+        case 'footer-vvagency':
+            // Footer agency block content
+            ?>
+                <!-- Custom footer content here -->
+                <!-- sửa là các services giống trang chủ -->
+                <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="services">
+        <div class="container mx-auto px-4">
+            <?php
+            // Check if homepage-services sidebar has widgets
+            if (is_active_sidebar('homepage-services')) {
+                // Display widgets in homepage-services sidebar
+                dynamic_sidebar('homepage-services');
+            } else {
+                // Get services section title and description from customizer
+                $services_title = get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
+                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                ?>
+                <!-- Section Title -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                        <?php echo esc_html($services_title); ?>
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        <?php echo esc_html($services_description); ?>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <?php
+                    // Get services via helper and render
+                    $services = agency_get_services();
+                    if ( empty( $services ) ) {
+                        echo '<p class="col-span-full text-center">' . esc_html__( 'Please configure services in the WordPress admin panel (Appearance > Customize > Agency Services Settings).', 'agency' ) . '</p>';
+                    } else {
+                        agency_render_services( $services );
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </section>
+
+            <?php
+            break;
+            
+        default:
+            // For other blocks, try to get content from a custom post type or similar source
+            // This is a placeholder - implement based on your content structure
+            break;
+    }
+    
+    // Get the buffered content
+    $content = ob_get_clean();
+    
+    return $content;
+}
+add_shortcode('block', 'agency_block_shortcode');
