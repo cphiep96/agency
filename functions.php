@@ -2286,10 +2286,7 @@ function agency_content_styles() {
 add_action( 'after_setup_theme', 'agency_content_styles' );
 
 /**
- * Makes images in post content responsive for mobile
- * 
- * @param string $content The post content
- * @return string Modified content with responsive image attributes
+ * Make images in content responsive
  */
 function agency_responsive_images($content) {
     // Don't process if content is empty
@@ -2304,7 +2301,8 @@ function agency_responsive_images($content) {
         
         $dom = new DOMDocument();
         // Load HTML with encoding to handle special characters
-        $dom->loadHTML('<?xml encoding="UTF-8">' . $content);
+        // The @ is to suppress warnings from invalid HTML, which is common in post content.
+        @$dom->loadHTML('<?xml encoding="UTF-8">' . $content);
         
         // Find all images in content
         $images = $dom->getElementsByTagName('img');
@@ -2312,87 +2310,95 @@ function agency_responsive_images($content) {
         foreach ($images as $image) {
             // Add responsive classes
             $current_class = $image->getAttribute('class');
-            $new_class = trim($current_class . ' w-full h-auto img-fluid');
+            // We let Tailwind's `prose` classes handle most styling.
+            // We just ensure the image is a block element and has some vertical margin.
+            $new_class = trim($current_class . ' block my-4 img-fluid');
             $image->setAttribute('class', $new_class);
             
             // Remove width and height attributes to prevent fixed sizing
             $image->removeAttribute('width');
             $image->removeAttribute('height');
             
-            // Add comprehensive style for responsive behavior
-            $current_style = $image->getAttribute('style');
-            $responsive_style = 'max-width: 100%; height: auto; display: block; margin: 0 auto;';
-            $new_style = empty($current_style) ? $responsive_style : $current_style . '; ' . $responsive_style;
-            $image->setAttribute('style', $new_style);
-            
-            // Set sizes attribute for responsive images
-            if ($image->hasAttribute('srcset') && !$image->hasAttribute('sizes')) {
-                $image->setAttribute('sizes', '(max-width: 576px) 100vw, (max-width: 768px) 90vw, (max-width: 992px) 80vw, 750px');
+            // Set loading to lazy for better performance
+            if (!$image->hasAttribute('loading')) {
+                $image->setAttribute('loading', 'lazy');
             }
             
-            // Set loading to lazy for better performance
-            $image->setAttribute('loading', 'lazy');
+            // Ensure srcset is properly applied if image has an attachment ID
+            if ($image->hasAttribute('data-id')) {
+                $attachment_id = $image->getAttribute('data-id');
+                $img_src = $image->getAttribute('src');
+                
+                // Only proceed if we have a valid attachment ID
+                if (is_numeric($attachment_id) && function_exists('wp_get_attachment_image_srcset')) {
+                    $srcset = wp_get_attachment_image_srcset($attachment_id);
+                    $sizes = wp_get_attachment_image_sizes($attachment_id);
+                    
+                    if ($srcset) {
+                        $image->setAttribute('srcset', $srcset);
+                    }
+                    
+                    if ($sizes) {
+                        $image->setAttribute('sizes', $sizes);
+                    }
+                }
+            }
+        }
+        
+        // Ensure caption wrappers are responsive by removing fixed width styles
+        $divs = $dom->getElementsByTagName('div');
+        foreach ($divs as $div) {
+            if ($div->hasAttribute('class') && strpos($div->getAttribute('class'), 'wp-caption') !== false) {
+                // Remove any inline width/height styling
+                if ($div->hasAttribute('style')) {
+                    $div->removeAttribute('style');
+                }
+                // Guarantee full width on small screens
+                $cap_class = $div->getAttribute('class');
+                $div->setAttribute('class', trim($cap_class . ' w-full'));
+            }
+        }
+        
+        // Handle WordPress block editor figure elements
+        $figures = $dom->getElementsByTagName('figure');
+        foreach ($figures as $figure) {
+            if ($figure->hasAttribute('class') && 
+                (strpos($figure->getAttribute('class'), 'wp-block-image') !== false || 
+                 strpos($figure->getAttribute('class'), 'wp-block-media') !== false)) {
+                
+                // Remove any inline width styling
+                if ($figure->hasAttribute('style')) {
+                    $style = $figure->getAttribute('style');
+                    // Remove width style but keep other styles
+                    $style = preg_replace('/width:\s*\d+px;?/', '', $style);
+                    $figure->setAttribute('style', $style);
+                }
+                
+                // Add responsive class
+                $figure_class = $figure->getAttribute('class');
+                $figure->setAttribute('class', trim($figure_class . ' responsive-figure'));
+            }
         }
         
         // Extract only the body content
         $body = $dom->getElementsByTagName('body')->item(0);
-        $content = '';
+        $new_content = '';
         
         if ($body) {
             foreach ($body->childNodes as $childNode) {
-                $content .= $dom->saveHTML($childNode);
+                $new_content .= $dom->saveHTML($childNode);
             }
         }
         
         // Reset errors
         libxml_clear_errors();
+
+        // Return the modified content if it's not empty, otherwise return original
+        return !empty($new_content) ? $new_content : $content;
     }
     
     return $content;
 }
-// Hook the function to the_content filter
-add_filter('the_content', 'agency_responsive_images');
-
-/**
- * Add responsive image styles to head
- */
-function agency_add_responsive_image_styles() {
-    ?>
-    <style>
-        /* Responsive image styles */
-        img.aligncenter, 
-        img.alignnone,
-        img.alignleft,
-        img.alignright,
-        img.size-large,
-        img.size-full,
-        .wp-block-image img,
-        .entry-content img {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        @media (max-width: 768px) {
-            /* Specific mobile fixes */
-            .entry-content img {
-                width: 100% !important;
-                object-fit: contain;
-            }
-            
-            /* Fix for specific out-of-width images */
-            .size-large,
-            .size-full {
-                width: 100% !important;
-                height: auto !important;
-            }
-        }
-    </style>
-    <?php
-}
-add_action('wp_head', 'agency_add_responsive_image_styles', 999);
 
 // --------------------------------------------------------------------------------------------------
 // Custom Block Shortcode Implementation
@@ -2476,3 +2482,39 @@ function agency_block_shortcode($atts) {
     return $content;
 }
 add_shortcode('block', 'agency_block_shortcode');
+
+/**
+ * Apply responsive images filter to all post content automatically
+ */
+function agency_apply_responsive_images() {
+    // Apply to post content
+    add_filter('the_content', 'agency_responsive_images');
+    
+    // Apply to widget content
+    add_filter('widget_text_content', 'agency_responsive_images');
+    
+    // Apply to excerpts
+    add_filter('the_excerpt', 'agency_responsive_images');
+}
+add_action('wp', 'agency_apply_responsive_images');
+
+/**
+ * Add responsive attributes to post thumbnails
+ */
+function agency_responsive_post_thumbnails($html, $post_id, $post_thumbnail_id, $size, $attr) {
+    // Don't modify if specific classes are already set
+    if (isset($attr['class'])) {
+        return $html;
+    }
+    
+    // Add responsive attributes to the image
+    $html = str_replace('class="', 'class="img-fluid ', $html);
+    
+    // Add loading="lazy" for better performance if not already set
+    if (strpos($html, 'loading=') === false) {
+        $html = str_replace('<img ', '<img loading="lazy" ', $html);
+    }
+    
+    return $html;
+}
+add_filter('post_thumbnail_html', 'agency_responsive_post_thumbnails', 10, 5);

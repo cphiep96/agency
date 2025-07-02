@@ -19,7 +19,7 @@ get_header();
         $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
         ?>
         
-        <div class="container mx-auto px-4 py-8">
+        <div class="container mx-auto py-8">
             <div class="mb-4">
                 <div class="uppercase text-gray-500 font-semibold text-sm tracking-wide">
                     <span>BLOG, </span><span class="text-gray-600">TIN TỨC</span>
@@ -30,7 +30,7 @@ get_header();
                 <div class="w-full border-b border-gray-200 mb-6"></div>
             </div>
 
-        <div class="container mx-auto px-4 py-12">
+        <div class="container mx-auto py-3">
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-3/4 lg:pr-4 xl:pr-12">
                     <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-xl shadow-lg overflow-hidden'); ?>>
@@ -54,13 +54,7 @@ get_header();
                         
                         <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:w-full sm:prose-img:max-w-lg md:prose-img:max-w-xl lg:prose-img:max-w-2xl">
                             <?php
-                            // Add image responsive filter
-                            add_filter('the_content', 'agency_responsive_images');
-                            
                             the_content();
-                            
-                            // Remove filter after content is displayed
-                            remove_filter('the_content', 'agency_responsive_images');
 
                             wp_link_pages(
                                 array(

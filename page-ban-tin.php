@@ -20,7 +20,7 @@ get_header(); ?>
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'post_type' => 'post',
-            'posts_per_page' => 6,
+            'posts_per_page' => 9,
             'paged' => $paged,
         );
         $query = new WP_Query($args);
@@ -41,18 +41,44 @@ get_header(); ?>
                     </div>
                 <?php endwhile; ?>
             </div>
-            <div class="mt-8">
+            <div class="mt-12 text-center">
                 <?php
                 echo paginate_links(array(
                     'total' => $query->max_num_pages,
                     'prev_text' => __('« Trước', 'agency'),
                     'next_text' => __('Tiếp »', 'agency'),
+                    'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                    'format' => '?paged=%#%',
+                    'current' => max(1, get_query_var('paged')),
+                    'before_page_number' => '',
+                    'after_page_number' => '',
+                    'mid_size' => 1,
+                    'class' => 'pagination',
                 ));
                 ?>
+                <style>
+                    .page-numbers {
+                        display: inline-block;
+                        padding: 8px 16px;
+                        margin: 0 4px;
+                        background-color: #ffffff;
+                        color: #333333;
+                        border-radius: 4px;
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+                    .page-numbers.current {
+                        background-color: #ff3205;
+                        color: white;
+                    }
+                    .page-numbers:hover:not(.current) {
+                        background-color: #f0f0f0;
+                    }
+                </style>
             </div>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
-            <p class="text-center text-white">Chưa có bài viết nào.</p>
+            <p class="text-center text-gray-800 bg-white p-4 rounded-lg">Chưa có bài viết nào.</p>
         <?php endif; ?>
     </div>
 </section>
