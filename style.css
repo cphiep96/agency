@@ -1740,6 +1740,119 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Custom styles */
 
+/* Responsive Images for Blog Content */
+.responsive-images img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.responsive-images figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.responsive-images figure img {
+  margin: 0 auto 0.5rem;
+}
+
+.responsive-images figcaption {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Gallery Images */
+.responsive-images .wp-block-gallery,
+.responsive-images .gallery {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.responsive-images .wp-block-gallery .wp-block-image,
+.responsive-images .gallery .gallery-item {
+  margin: 0;
+}
+
+/* Responsive gallery grid */
+@media (max-width: 640px) {
+  .responsive-images .wp-block-gallery,
+  .responsive-images .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .responsive-images .wp-block-gallery,
+  .responsive-images .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 769px) {
+  .responsive-images .wp-block-gallery,
+  .responsive-images .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* WordPress specific image classes */
+.responsive-images .size-thumbnail,
+.responsive-images .size-medium,
+.responsive-images .size-large,
+.responsive-images .size-full {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Alignment classes */
+.responsive-images .alignleft,
+.responsive-images .alignright {
+  max-width: 50% !important;
+}
+
+@media (max-width: 768px) {
+  .responsive-images .alignleft,
+  .responsive-images .alignright {
+    float: none !important;
+    display: block !important;
+    margin: 1rem auto !important;
+    max-width: 100% !important;
+  }
+}
+
+.responsive-images .aligncenter {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Featured images in post cards */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(9 / 16 * 100%);
+}
+
+.aspect-h-9 {
+  position: relative;
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  object-fit: cover;
+}
+
 /* Wave Background */
 
 .wave-bg {

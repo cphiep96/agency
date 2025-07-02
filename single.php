@@ -52,7 +52,7 @@ get_header();
                             </div>
                         <?php endif; ?>
                         
-                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:w-full sm:prose-img:max-w-lg md:prose-img:max-w-xl lg:prose-img:max-w-2xl">
+                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none responsive-images prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:w-full prose-img:h-auto prose-img:max-w-full">
                             <?php
                             the_content();
 

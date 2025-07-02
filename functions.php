@@ -2488,15 +2488,112 @@ add_shortcode('block', 'agency_block_shortcode');
  */
 function agency_apply_responsive_images() {
     // Apply to post content
-    add_filter('the_content', 'agency_responsive_images');
+    add_filter('the_content', 'agency_responsive_images', 20);
     
     // Apply to widget content
-    add_filter('widget_text_content', 'agency_responsive_images');
+    add_filter('widget_text_content', 'agency_responsive_images', 20);
     
     // Apply to excerpts
-    add_filter('the_excerpt', 'agency_responsive_images');
+    add_filter('the_excerpt', 'agency_responsive_images', 20);
+    
+    // Apply to comment text
+    add_filter('comment_text', 'agency_responsive_images', 20);
 }
 add_action('wp', 'agency_apply_responsive_images');
+
+/**
+ * Enqueue JavaScript for responsive images and lazy loading
+ */
+function agency_responsive_images_script() {
+    $script = "
+    document.addEventListener('DOMContentLoaded', function() {
+        // Ensure all images in content are responsive
+        const contentImages = document.querySelectorAll('.entry-content img, .responsive-images img, .widget img');
+        
+        contentImages.forEach(function(img) {
+            // Add responsive classes if they don't exist
+            if (!img.classList.contains('img-fluid')) {
+                img.classList.add('img-fluid');
+            }
+            
+            // Ensure max-width and height auto
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+            
+            // Add loading lazy if not set
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+            
+            // Handle image load errors
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+            });
+        });
+        
+        // Handle galleries
+        const galleries = document.querySelectorAll('.wp-block-gallery, .gallery');
+        galleries.forEach(function(gallery) {
+            gallery.classList.add('responsive-gallery');
+        });
+        
+        // Handle WordPress captions and figures
+        const figures = document.querySelectorAll('figure.wp-block-image, .wp-caption');
+        figures.forEach(function(figure) {
+            figure.style.maxWidth = '100%';
+            figure.style.width = '100%';
+        });
+    });
+    ";
+    
+    wp_add_inline_script('agency-navigation', $script);
+}
+add_action('wp_enqueue_scripts', 'agency_responsive_images_script');
+
+/**
+ * Add CSS for responsive images in the admin editor
+ */
+function agency_add_editor_responsive_styles() {
+    add_editor_style();
+    
+    $custom_css = '
+    .block-editor-writing-flow img,
+    .editor-styles-wrapper img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .block-editor-writing-flow figure,
+    .editor-styles-wrapper figure {
+        max-width: 100% !important;
+    }
+    ';
+    
+    wp_add_inline_style('wp-edit-blocks', $custom_css);
+}
+add_action('enqueue_block_editor_assets', 'agency_add_editor_responsive_styles');
+
+/**
+ * Force responsive behavior on image blocks
+ */
+function agency_filter_image_size_names($sizes) {
+    return array_merge($sizes, array(
+        'mobile-small' => __('Mobile Small (320px)', 'agency'),
+        'mobile-medium' => __('Mobile Medium (480px)', 'agency'),
+        'tablet' => __('Tablet (768px)', 'agency'),
+    ));
+}
+add_filter('image_size_names_choose', 'agency_filter_image_size_names');
+
+/**
+ * Add custom image sizes for responsive images
+ */
+function agency_custom_image_sizes() {
+    add_image_size('mobile-small', 320, 240, false);
+    add_image_size('mobile-medium', 480, 360, false);
+    add_image_size('tablet', 768, 576, false);
+}
+add_action('after_setup_theme', 'agency_custom_image_sizes');
 
 /**
  * Add responsive attributes to post thumbnails
