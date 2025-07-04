@@ -2498,6 +2498,8 @@ function agency_apply_responsive_images() {
     
     // Apply to comment text
     add_filter('comment_text', 'agency_responsive_images', 20);
+
+    add_filter('wp_img_tag_add_auto_sizes', '__return_false');
 }
 add_action('wp', 'agency_apply_responsive_images');
 
@@ -2550,28 +2552,6 @@ function agency_responsive_images_script() {
 }
 add_action('wp_enqueue_scripts', 'agency_responsive_images_script');
 
-/**
- * Add CSS for responsive images in the admin editor
- */
-function agency_add_editor_responsive_styles() {
-    add_editor_style();
-    
-    $custom_css = '
-    .block-editor-writing-flow img,
-    .editor-styles-wrapper img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    .block-editor-writing-flow figure,
-    .editor-styles-wrapper figure {
-        max-width: 100% !important;
-    }
-    ';
-    
-    wp_add_inline_style('wp-edit-blocks', $custom_css);
-}
-add_action('enqueue_block_editor_assets', 'agency_add_editor_responsive_styles');
 
 /**
  * Force responsive behavior on image blocks
@@ -2615,3 +2595,121 @@ function agency_responsive_post_thumbnails($html, $post_id, $post_thumbnail_id, 
     return $html;
 }
 add_filter('post_thumbnail_html', 'agency_responsive_post_thumbnails', 10, 5);
+
+// Add after agency_custom_image_sizes function
+
+/**
+ * Generate WebP versions of uploaded images
+ * 
+ * @param array $metadata Image metadata
+ * @return array Modified metadata
+ */
+function agency_generate_webp_images($metadata) {
+    // Skip if we don't have the right data or GD is not available
+    if (!is_array($metadata) || !function_exists('imagewebp')) {
+        return $metadata;
+    }
+    
+    // Get WordPress upload directory
+    $upload_dir = wp_upload_dir();
+    $file = trailingslashit($upload_dir['basedir']) . $metadata['file'];
+    
+    // Only process JPG and PNG files
+    if (!in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png'])) {
+        return $metadata;
+    }
+    
+    // Generate WebP for the main file
+    agency_convert_to_webp($file);
+    
+    // Generate WebP for each thumbnail size
+    if (isset($metadata['sizes']) && is_array($metadata['sizes'])) {
+        $path_parts = pathinfo($file);
+        $base_dir = $path_parts['dirname'];
+        
+        foreach ($metadata['sizes'] as $size => $size_info) {
+            $size_file = trailingslashit($base_dir) . $size_info['file'];
+            agency_convert_to_webp($size_file);
+        }
+    }
+    
+    return $metadata;
+}
+add_filter('wp_generate_attachment_metadata', 'agency_generate_webp_images', 10, 1);
+
+/**
+ * Convert an image file to WebP format
+ * 
+ * @param string $file Path to the image file
+ * @return bool True on success, false on failure
+ */
+function agency_convert_to_webp($file) {
+    // Skip if file doesn't exist
+    if (!file_exists($file)) {
+        return false;
+    }
+    
+    // Determine output path
+    $output_file = preg_replace('/\.(jpe?g|png)$/i', '.webp', $file);
+    
+    // Skip if WebP already exists and is newer than source
+    if (file_exists($output_file) && filemtime($output_file) >= filemtime($file)) {
+        return true;
+    }
+    
+    // Get image extension
+    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+    
+    // Create image resource based on file type
+    if ($ext === 'jpg' || $ext === 'jpeg') {
+        $image = imagecreatefromjpeg($file);
+    } elseif ($ext === 'png') {
+        $image = imagecreatefrompng($file);
+        // Handle transparency for PNG
+        imagepalettetotruecolor($image);
+        imagealphablending($image, true);
+        imagesavealpha($image, true);
+    } else {
+        return false;
+    }
+    
+    // Generate WebP image with 80% quality (good balance between quality and size)
+    $result = imagewebp($image, $output_file, 80);
+    
+    // Free up memory
+    imagedestroy($image);
+    
+    return $result;
+}
+
+/**
+ * Add WebP support to allowed mime types
+ */
+function agency_add_webp_mime_type($mimes) {
+    $mimes['webp'] = 'image/webp';
+    return $mimes;
+}
+add_filter('upload_mimes', 'agency_add_webp_mime_type');
+
+/**
+ * Update image HTML to use WebP if available
+ */
+function agency_use_webp_images($html, $id, $caption, $title, $align, $url, $size, $alt) {
+    // Get image source
+    $src = wp_get_attachment_image_src($id, $size);
+    if (!$src) {
+        return $html;
+    }
+    
+    // Check if WebP version exists
+    $webp_url = preg_replace('/\.(jpe?g|png)(\?.*)?$/i', '.webp$2', $src[0]);
+    $webp_path = preg_replace('/\.(jpe?g|png)$/i', '.webp', get_attached_file($id));
+    
+    if (file_exists($webp_path)) {
+        // Add srcset with WebP
+        $html = preg_replace('/<img([^>]+)src=[\'"](.*?)[\'"]/i', '<img$1src="' . esc_url($src[0]) . '" srcset="' . esc_url($webp_url) . ' 1x, ' . esc_url($src[0]) . ' 1x"', $html);
+    }
+    
+    return $html;
+}
+add_filter('image_send_to_editor', 'agency_use_webp_images', 10, 8);

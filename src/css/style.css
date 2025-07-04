@@ -33,6 +33,71 @@
     .card {
         @apply bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2;
     }
+    
+    /* Blog post content image fixes */
+    .entry-content img {
+        @apply max-w-full h-auto mx-auto my-4 rounded-lg;
+        max-height: 600px;
+        object-fit: contain;
+        width: auto !important;
+    }
+    
+    .entry-content figure {
+        @apply my-6 mx-auto text-center;
+        max-width: 100% !important;
+        width: auto !important;
+    }
+    
+    .entry-content figure img {
+        @apply inline-block;
+        width: auto !important;
+        max-width: 100% !important;
+    }
+    
+    .entry-content figure.aligncenter {
+        @apply mx-auto;
+    }
+    
+    .entry-content figure.alignleft {
+        @apply float-left mr-4;
+        max-width: 50% !important;
+    }
+    
+    .entry-content figure.alignright {
+        @apply float-right ml-4;
+        max-width: 50% !important;
+    }
+    
+    .entry-content figure figcaption {
+        @apply text-sm text-gray-600 mt-2;
+    }
+    
+    /* Fix for images with fixed width/height attributes */
+    .entry-content img[width],
+    .entry-content img[height] {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Fix for images in WordPress galleries */
+    .gallery-item img {
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Fix for images in WordPress blocks */
+    .wp-block-image {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    .wp-block-image img {
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important;
+    }
 }
 
 /* Wave Background */

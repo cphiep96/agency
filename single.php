@@ -34,25 +34,8 @@ get_header();
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-3/4 lg:pr-4 xl:pr-12">
                     <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-xl shadow-lg overflow-hidden'); ?>>
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <div class="post-featured-image mb-6">
-                                <?php 
-                                // Get post thumbnail ID for responsive images
-                                $thumbnail_id = get_post_thumbnail_id();
-                                $thumbnail_srcset = wp_get_attachment_image_srcset($thumbnail_id, 'full');
-                                $thumbnail_sizes = '(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 1024px';
-                                
-                                the_post_thumbnail('full', [
-                                    'class' => 'w-full h-auto rounded-t-xl',
-                                    'srcset' => $thumbnail_srcset,
-                                    'sizes' => $thumbnail_sizes,
-                                    'alt' => get_the_title()
-                                ]); 
-                                ?>
-                            </div>
-                        <?php endif; ?>
                         
-                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none responsive-images prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:w-full prose-img:h-auto prose-img:max-w-full">
+                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none responsive-images prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-full prose-img:object-contain">
                             <?php
                             the_content();
 
