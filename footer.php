@@ -16,7 +16,7 @@
                                     class="h-12 w-auto">
                             <?php endif; ?>
                             <div>
-                                <p class="text-xs text-gray-400">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                                <p class="text-xs text-gray-400">ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ</p>
                             </div>
                         </a>
                     </div>

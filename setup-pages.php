@@ -66,6 +66,62 @@ function vv_agency_create_pages() {
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'page-lien-he.php'
+        ),
+        array(
+            'post_title'   => 'Quảng Cáo Google',
+            'post_name'    => 'quang-cao-google',
+            'post_content' => '<p>Giải pháp quảng cáo Google Ads tối ưu, tiếp cận khách hàng đúng lúc, đúng nơi với VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-quang-cao-google.php'
+        ),
+        array(
+            'post_title'   => 'Quảng Cáo Facebook',
+            'post_name'    => 'quang-cao-facebook',
+            'post_content' => '<p>Chạy quảng cáo Facebook hiệu quả, tăng tương tác và nhận diện thương hiệu cùng VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-quang-cao-facebook.php'
+        ),
+        array(
+            'post_title'   => 'Quảng Cáo TikTok',
+            'post_name'    => 'quang-cao-tik-tok',
+            'post_content' => '<p>Bùng nổ thương hiệu với TikTok Ads – tiếp cận thế hệ khách hàng trẻ, sáng tạo và năng động.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-quang-cao-tik-tok.php'
+        ),
+        array(
+            'post_title'   => 'Quảng Cáo YouTube',
+            'post_name'    => 'quang-cao-youtube',
+            'post_content' => '<p>Truyền tải thông điệp thương hiệu mạnh mẽ qua quảng cáo video trên YouTube.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-quang-cao-youtube.php'
+        ),
+        array(
+            'post_title'   => 'Quảng Cáo Instagram',
+            'post_name'    => 'quang-cao-instagram',
+            'post_content' => '<p>Quảng cáo Instagram sáng tạo, thu hút giới trẻ với hình ảnh và video nổi bật.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-quang-cao-instagram.php'
+        ),
+        array(
+            'post_title'   => 'Chăm Sóc Website',
+            'post_name'    => 'cham-soc-website',
+            'post_content' => '<p>Dịch vụ chăm sóc website toàn diện, đảm bảo vận hành ổn định và bảo mật tối đa.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-cham-soc-website.php'
+        ),
+        array(
+            'post_title'   => 'Chăm Sóc Fanpage',
+            'post_name'    => 'cham-soc-fanpage',
+            'post_content' => '<p>Tối ưu hóa fanpage, tăng tương tác và xây dựng cộng đồng trung thành cho thương hiệu.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-cham-soc-fanpage.php'
         )
     );
 
@@ -105,7 +161,7 @@ function vv_agency_setup_theme_pages() {
         echo "<ul>";
         echo "<li><a href='" . home_url('/gioi-thieu') . "'>Giới Thiệu</a></li>";
         echo "<li><a href='" . home_url('/dich-vu') . "'>Dịch Vụ</a></li>";
-        echo "<li><a href='" . home_url('/website') . "'>Website</a></li>";
+        echo "<li><a href='" . home_url('/thiet-ke-website') . "'>Website</a></li>";
         echo "<li><a href='" . home_url('/danh-gia') . "'>Đánh Giá</a></li>";
         echo "<li><a href='" . home_url('/ban-tin') . "'>Bản Tin</a></li>";
         echo "<li><a href='" . home_url('/lien-he') . "'>Liên Hệ</a></li>";

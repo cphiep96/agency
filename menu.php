@@ -17,7 +17,7 @@ function agency_main_menu($is_mobile = false) {
         <a href="<?php echo esc_url( home_url( '/dich-vu' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-cogs mr-2"></i>DỊCH VỤ
         </a>
-        <a href="<?php echo esc_url( home_url( '/website' ) ); ?>" class="<?php echo $link_class; ?>">
+        <a href="<?php echo esc_url( home_url( '/thiet-ke-website' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-globe mr-2"></i>WEBSITE
         </a>
         <a href="<?php echo esc_url( home_url( '/danh-gia' ) ); ?>" class="<?php echo $link_class; ?>">

@@ -17,6 +17,10 @@ module.exports = {
         purple: {
           600: '#764ba2',
         },
+        brand: {
+          DEFAULT: '#ff3205',
+          dark: '#e02a00',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

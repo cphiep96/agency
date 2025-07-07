@@ -22,6 +22,11 @@
           "slug": "gray",
           "color": "#6b7280",
           "name": "Gray"
+        },
+        {
+          "slug": "brand",
+          "color": "#ff3205",
+          "name": "Brand"
         }
       ],
       "custom": false

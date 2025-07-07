@@ -83,7 +83,7 @@
                                 class="h-12 w-auto">
                         <?php endif; ?>
                         <div class="hidden sm:block">
-                            <p class="text-xs text-gray-600">ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN</p>
+                            <p class="text-xs text-gray-600">ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ</p>
                         </div>
                     </a>
                 </div>

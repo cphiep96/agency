@@ -408,6 +408,21 @@ function agency_customizer_services($wp_customize) {
                 return $wp_customize->get_setting("agency_service_{$i}_active")->value();
             }
         ));
+
+        // Service Link
+        $wp_customize->add_setting("agency_service_{$i}_link", array(
+            'default' => isset($default['link']) ? $default['link'] : '',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport' => 'refresh',
+        ));
+        $wp_customize->add_control("agency_service_{$i}_link", array(
+            'label' => sprintf(__('Service %d Link (URL)', 'agency'), $i + 1),
+            'section' => 'agency_services_section',
+            'type' => 'url',
+            'active_callback' => function() use ($wp_customize, $i) {
+                return $wp_customize->get_setting("agency_service_{$i}_active")->value();
+            }
+        ));
     }
 
     // Add reset button
@@ -496,7 +511,16 @@ function agency_customizer_scripts() {
             'pink'
         ];
 
-
+        var defaultLinks = [
+            '/thiet-ke-website',
+            '/quang-cao-google',
+            '/quang-cao-facebook',
+            '/quang-cao-tik-tok',
+            '/quang-cao-youtube',
+            '/quang-cao-instagram',
+            '/cham-soc-website',
+            '/cham-soc-fanpage'
+        ];
         
         // Update section title and description
         wp.customize('agency_services_title').set('DỊCH VỤ CỦA VV AGENCY');
@@ -1075,6 +1099,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fas fa-code',
                 'image'       => $base_url . 'thiet-ke-website.jpg',
                 'color'       => 'blue',
+                'link'        => home_url('/thiet-ke-website'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO GOOGLE',
@@ -1082,6 +1107,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-google',
                 'image'       => $base_url . 'google.png',
                 'color'       => 'red',
+                'link'        => home_url('/quang-cao-google'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO FACEBOOK',
@@ -1089,6 +1115,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-facebook-f',
                 'image'       => $base_url . 'quang-cao-facebook.jpg',
                 'color'       => 'blue',
+                'link'        => home_url('/quang-cao-facebook'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO TIK TOK',
@@ -1096,6 +1123,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-tiktok',
                 'image'       => $base_url . 'quang-cao-tiktok.jpg',
                 'color'       => 'pink',
+                'link'        => home_url('/quang-cao-tik-tok'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO YOUTUBE',
@@ -1103,6 +1131,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-youtube',
                 'image'       => $base_url . 'quang-cao-youtube.jpg',
                 'color'       => 'red',
+                'link'        => home_url('/quang-cao-youtube'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO INSTAGRAM',
@@ -1110,6 +1139,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-instagram',
                 'image'       => $base_url . 'quang-cao-INSTAGRAM.jpg',
                 'color'       => 'purple',
+                'link'        => home_url('/quang-cao-instagram'),
             ),
             array(
                 'title'       => 'CHĂM SÓC WEBSITE',
@@ -1117,6 +1147,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fas fa-globe',
                 'image'       => $base_url . 'cham-soc-website.jpg',
                 'color'       => 'green',
+                'link'        => home_url('/cham-soc-website'),
             ),
             array(
                 'title'       => 'CHĂM SÓC FANPAGE',
@@ -1124,6 +1155,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'icon'        => 'fab fa-facebook-f',
                 'image'       => $base_url . 'cham-soc-fanpage.jpg',
                 'color'       => 'teal',
+                'link'        => home_url('/cham-soc-fanpage'),
             ),
         );
     }
@@ -1162,6 +1194,7 @@ if ( ! function_exists( 'agency_get_services' ) ) {
                 'icon'        => get_theme_mod( "agency_service_{$i}_icon", $defaults['icon'] ?? 'fas fa-star' ),
                 'image'       => get_theme_mod( "agency_service_{$i}_image", $defaults['image'] ?? '' ),
                 'color'       => get_theme_mod( "agency_service_{$i}_color", $defaults['color'] ?? 'blue' ),
+                'link'        => get_theme_mod( "agency_service_{$i}_link", $defaults['link'] ?? '' ),
             );
         }
 
@@ -1204,6 +1237,13 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
                 <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
                     <?php echo esc_html( $service['description'] ); ?>
                 </p>
+                <?php if ( ! empty( $service['link'] ) ) : ?>
+                    <div class="mt-6 flex justify-center">
+                        <a href="<?php echo esc_url( $service['link'] ); ?>" class="inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md" style="min-width:140px; text-align:center;">
+                            Xem chi tiết
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
         <?php
@@ -1743,7 +1783,7 @@ if ( ! function_exists( 'agency_get_default_hero_data' ) ) {
     function agency_get_default_hero_data(): array {
         return array(
             'title'         => 'VV AGENCY',
-            'subtitle'      => 'ĐỒNG HÀNH – TỐI ƯU – NIỀM TIN',
+            'subtitle'      => 'ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ',
             'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
             'button1_text'  => 'Liên hệ ngay',
             'button1_link'  => 'https://zalo.me/0396693505',
