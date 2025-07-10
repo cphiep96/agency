@@ -1143,7 +1143,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
             ),
             array(
                 'title'       => 'CHĂM SÓC WEBSITE',
-                'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi',
+                'description' => 'Chăm sóc website để tăng tỷ lệ chuyển đổi	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;',
                 'icon'        => 'fas fa-globe',
                 'image'       => $base_url . 'cham-soc-website.jpg',
                 'color'       => 'green',
@@ -1151,7 +1151,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
             ),
             array(
                 'title'       => 'CHĂM SÓC FANPAGE',
-                'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
+                'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;',
                 'icon'        => 'fab fa-facebook-f',
                 'image'       => $base_url . 'cham-soc-fanpage.jpg',
                 'color'       => 'teal',
@@ -1240,7 +1240,7 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
                 <?php if ( ! empty( $service['link'] ) ) : ?>
                     <div class="mt-6 flex justify-center">
                         <a href="<?php echo esc_url( $service['link'] ); ?>" class="inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md" style="min-width:140px; text-align:center;">
-                            Xem chi tiết
+                           Liên hệ tư vấn
                         </a>
                     </div>
                 <?php endif; ?>

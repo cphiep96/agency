@@ -142,7 +142,7 @@ $search_query = get_search_query();
 
                             <footer class="entry-footer mt-auto pt-4 flex justify-end">
                                 <a href="<?php the_permalink(); ?>" class="inline-flex items-center px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors duration-200">
-                                    <?php _e('Xem chi tiết', 'agency'); ?>
+                                    <?php _e('Liên hệ tư vấn', 'agency'); ?>
                                     <i class="fas fa-arrow-right ml-2"></i>
                                 </a>
                             </footer><!-- .entry-footer -->
