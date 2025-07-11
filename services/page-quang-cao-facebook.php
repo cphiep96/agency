@@ -146,11 +146,23 @@ get_header(); ?>
             <td class="py-2 px-4 border-b"><i class="fas fa-check text-green-500"></i></td>
           </tr>
           <tr>
-            <td class="py-2 px-4 border-b text-left font-semibold">Đăng ký dịch vụ</td>
-            <td class="py-2 px-4 border-b"><a href="https://zalo.me/0396693505" class="text-blue-600 underline">Liên hệ tư vấn</a></td>
-            <td class="py-2 px-4 border-b"><a href="https://zalo.me/0396693505" class="text-blue-600 underline">Liên hệ tư vấn</a></td>
-            <td class="py-2 px-4 border-b"><a href="https://zalo.me/0396693505" class="text-blue-600 underline">Liên hệ tư vấn</a></td>
-          </tr>
+                <td class="py-2 px-2  border-b text-left font-semibold">Đăng ký dịch vụ</td>
+                <td class="py-2 px-2 text-center">
+                    <div class="flex justify-center">
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
+                    </div>
+                </td>
+                <td class="py-2 px-2 text-center">
+                    <div class="flex justify-center">
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
+                    </div>
+                </td>     
+                <td class="py-2 px-2 text-center">
+                    <div class="flex justify-center">
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
+                    </div>
+                </td>
+              </tr>
         </tbody>
       </table>
     </div>

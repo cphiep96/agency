@@ -200,16 +200,17 @@ get_header(); ?>
                 <td class="py-2 px-2  border-b text-left font-semibold">Đăng ký dịch vụ</td>
                 <td class="py-2 px-2 text-center">
                     <div class="flex justify-center">
-                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#319795] hover:bg-[#3182ce] text-white font-bold py-2 px-6 rounded-lg shadow transition-colors">Liên hệ tư vấn</a>
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
                     </div>
                 </td>
                 <td class="py-2 px-2 text-center">
                     <div class="flex justify-center">
-                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#319795] hover:bg-[#3182ce] text-white font-bold py-2 px-6 rounded-lg shadow transition-colors">Liên hệ tư vấn</a>
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
                     </div>
-                </td>     <td class="py-2 px-2 text-center">
+                </td>     
+                <td class="py-2 px-2 text-center">
                     <div class="flex justify-center">
-                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#319795] hover:bg-[#3182ce] text-white font-bold py-2 px-6 rounded-lg shadow transition-colors">Liên hệ tư vấn</a>
+                        <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
                     </div>
                 </td>
               </tr>
