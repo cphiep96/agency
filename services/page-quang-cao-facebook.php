@@ -69,7 +69,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-    <section class="py-12 bg-blue-50">
+    <section class="py-12">
   <div class="container mx-auto px-4">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Quy trình triển khai dự án tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
@@ -168,7 +168,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<section class="py-12 bg-blue-50">
+<section class="py-12">
   <div class="container mx-auto px-4">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
