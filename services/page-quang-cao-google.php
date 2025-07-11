@@ -127,7 +127,7 @@ get_header(); ?>
       <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Bảng giá chạy quảng cáo Google tại VV Agency</h2>
         <div class="overflow-x-auto">
-          <table class="min-w-full bg-white rounded-xl shadow-lg">
+          <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
             <thead>
               <tr>
                 <th class="py-3 px-4 border-b text-left">Gói dịch vụ</th>
@@ -215,8 +215,8 @@ get_header(); ?>
       </div>
     </section>
 
-    <section class="py-12">
-  <div class="container mx-auto px-4">
+    <section class="py-12 bg-white">
+  <div class="container mx-auto px-4 ">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
       <!-- Thay thế src bằng logo thực tế nếu có -->

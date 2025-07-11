@@ -1239,7 +1239,7 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
                 </p>
                 <?php if ( ! empty( $service['link'] ) ) : ?>
                     <div class="mt-6 flex justify-center">
-                        <a href="<?php echo esc_url( $service['link'] ); ?>" class="inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md" style="min-width:140px; text-align:center;">
+                        <a href="<?php echo esc_url( $service['link'] ); ?>" class="service-button inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md">
                            Liên hệ tư vấn
                         </a>
                     </div>

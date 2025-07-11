@@ -1853,6 +1853,51 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
 }
 
+/* Mobile responsive service buttons */
+.service-button {
+  width: 100%;
+  min-width: 140px;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .service-button {
+    width: auto;
+  }
+}
+
+/* Mobile responsive grid fixes */
+@media (max-width: 639px) {
+  .grid.grid-cols-1 > div {
+    margin-bottom: 1.5rem;
+  }
+  
+  .grid.grid-cols-1 > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Pricing table responsive styles */
+.pricing-table {
+  font-size: 0.875rem; /* text-sm */
+}
+
+@media (max-width: 767px) {
+  .pricing-table {
+    font-size: 0.75rem; /* text-xs for mobile */
+  }
+  
+  .pricing-table th,
+  .pricing-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .pricing-table .btn {
+    font-size: 0.625rem; /* Extra small text for buttons on mobile */
+    padding: 0.25rem 0.5rem;
+  }
+}
+
 /* Wave Background */
 
 .wave-bg {

@@ -101,7 +101,7 @@ get_header(); ?>
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Bảng giá dịch vụ chăm sóc Fanpage</h2>
             <div class="overflow-x-auto">
-                <table class="min-w-full bg-white rounded-xl shadow-lg text-center">
+      <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
                     <thead>
                         <tr class="bg-[#319795] text-white">
                             <th class="py-2 px-2 font-semibold">Gói dịch vụ</th>
