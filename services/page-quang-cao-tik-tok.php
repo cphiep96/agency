@@ -182,4 +182,32 @@ get_header(); ?>
   </div>
 </section>
 </main>
-<?php get_footer(); ?> 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+<style>
+    section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+</style>
+<?php get_footer(); ?>

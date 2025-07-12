@@ -4,9 +4,9 @@ get_header(); ?>
 
 <style>
 .animated-gradient-facebook {
-    background: linear-gradient(135deg, #1877f3, #0052cc, #1877f3, #0052cc);
+    background: linear-gradient(135deg, #8e44ad, #3498db, #8e44ad, #3498db);
     background-size: 400% 400%;
-    animation: gradientFacebook 12s ease infinite;
+    animation: gradientFacebook 18s ease infinite;
 }
 @keyframes gradientFacebook {
     0% { background-position: 0% 50%; }
@@ -162,7 +162,7 @@ get_header(); ?>
                         <a href="https://zalo.me/0396693505" class="inline-block bg-[#f22f03] hover:bg-[#f28f03] text-white py-1 px-2 w-auto rounded-lg shadow transition-colors text-xs">Liên hệ tư vấn</a>
                     </div>
                 </td>
-              </tr>
+              </tr>Bảng giá dịch vụ chăm sóc Fanpage
         </tbody>
       </table>
     </div>
@@ -180,5 +180,33 @@ get_header(); ?>
     </div>
   </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+<style>
+    section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+</style>
 </main>
 <?php get_footer(); ?> 

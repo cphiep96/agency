@@ -4,9 +4,9 @@ get_header(); ?>
 
 <style>
 .animated-gradient-website {
-    background: linear-gradient(135deg, #38b2ac, #4299e1, #38b2ac, #4299e1);
+    background: linear-gradient(135deg, #2b5876, #4e4376, #2b5876, #4e4376);
     background-size: 400% 400%;
-    animation: gradientWebsite 14s ease infinite;
+    animation: gradientWebsite 16s ease infinite;
 }
 @keyframes gradientWebsite {
     0% { background-position: 0% 50%; }
@@ -232,5 +232,33 @@ get_header(); ?>
     </div>
   </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+<style>
+    section {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+</style>
 </main>
 <?php get_footer(); ?> 

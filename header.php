@@ -59,6 +59,91 @@
         }
     </style>
     <?php wp_head(); ?>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "VV Agency",
+  "image": "https://vietvanagency.com/wp-content/uploads/2025/06/cropped-logo.png",
+  "@id": "https://vietvanagency.com/",
+  "url": "https://vietvanagency.com/",
+  "telephone": "0396693505",
+  "priceRange": "1.000.000 VNĐ - 10.000.000 VNĐ",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tổ 1, khu vực 1, phường Quy Nhơn Nam , Gia Lai",
+    "addressLocality": "Gia Lai",
+    "postalCode": "55000",
+    "addressCountry": "VN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.6870607,
+    "longitude": 109.2303731
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
+  "sameAs": [
+    "https://web.facebook.com/vvagencymarketing",
+    "https://www.pinterest.com/vvagencymarketting/",
+    "https://vietvanagency.com/"
+  ] 
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "VV Agency",
+  "alternateName": "VV Agency",
+  "url": "https://vietvanagency.com/",
+  "logo": "https://vietvanagency.com/wp-content/uploads/2025/06/cropped-logo.png",
+  "sameAs": [
+    "https://web.facebook.com/vvagencymarketing",
+    "https://www.pinterest.com/vvagencymarketting/",
+    "https://vietvanagency.com/"
+  ]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Đỗ Quốc Việt",
+  "url": "https://vietvanagency.com/author/vietdo/",
+  "image": "https://vietvanagency.com/author/vietdo/",
+  "sameAs": [
+    "https://web.facebook.com/quocviet.vv",
+    "https://www.linkedin.com/in/do-viet01/"
+  ],
+  "jobTitle": "marketing expert",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Việt Vân Agency"
+  }  
+}
+</script>
+
+
 </head>
 
 <body <?php body_class('bg-gray-50'); ?>>
