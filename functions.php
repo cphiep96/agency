@@ -1217,35 +1217,47 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
      */
     function agency_render_single_service( array $service ): void {
         $color = ! empty( $service['color'] ) ? $service['color'] : 'blue';
+        $card_link = ! empty( $service['link'] ) ? $service['link'] : '#';
         ?>
-        <div class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-            <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative p-8">
-                <div class="mb-6 overflow-hidden rounded-xl">
-                    <?php if ( ! empty( $service['image'] ) ) : ?>
-                        <img src="<?php echo esc_url( $service['image'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
-                    <?php endif; ?>
-                </div>
-                <div class="flex items-center justify-center mb-6">
-                    <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                        <i class="<?php echo esc_attr( $service['icon'] ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
-                    <?php echo esc_html( $service['title'] ); ?>
-                </h3>
-                <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
-                    <?php echo esc_html( $service['description'] ); ?>
-                </p>
-                <?php if ( ! empty( $service['link'] ) ) : ?>
-                    <div class="mt-6 flex justify-center">
-                        <a href="<?php echo esc_url( $service['link'] ); ?>" class="service-button inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md">
-                           Liên hệ tư vấn
-                        </a>
-                    </div>
-                <?php endif; ?>
+ <div class="relative group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
+    <!-- Lớp phủ toàn bộ card để click -->
+    <?php if ( ! empty( $service['link'] ) ) : ?>
+        <a href="<?php echo esc_url( $service['link'] ); ?>" class="absolute inset-0 z-10 pointer-events-auto" aria-label="Xem chi tiết dịch vụ"></a>
+    <?php endif; ?>
+
+    <!-- Background hiệu ứng -->
+    <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+    <!-- Nội dung chính -->
+    <div class="relative z-20 p-8 flex flex-col flex-1 pointer-events-none">
+        <div class="mb-6 overflow-hidden rounded-xl">
+            <?php if ( ! empty( $service['image'] ) ) : ?>
+                <img src="<?php echo esc_url( $service['image'] ); ?>" alt="<?php echo esc_attr( $service['title'] ); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+            <?php endif; ?>
+        </div>
+        <div class="flex items-center justify-center mb-6">
+            <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                <i class="<?php echo esc_attr( $service['icon'] ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
             </div>
         </div>
+        <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+            <?php echo esc_html( $service['title'] ); ?>
+        </h3>
+        <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+            <?php echo esc_html( $service['description'] ); ?>
+        </p>
+
+        <!-- Nút Zalo (cần pointer-events-auto để click được) -->
+        <div class="mt-auto pt-6 flex justify-center">
+            <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto">
+                Liên hệ tư vấn
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
         <?php
     }
 }
@@ -1286,7 +1298,7 @@ if ( ! function_exists( 'agency_get_default_partners' ) ) {
         return array(
             array(
                 'name'  => 'LOCKER & LOCK',
-                'image' => get_template_directory_uri() . '/src/img/1.jpg',
+                'image' => get_template_directory_uri() . '/src/img/1.jpg?123',
             ),
             array(
                 'name'  => 'SPERANZA',

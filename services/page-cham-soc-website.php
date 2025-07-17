@@ -119,82 +119,82 @@ get_header(); ?>
             </thead>
             <tbody class="text-center">
               <tr>
-                <td class="py-2 px-2  border-b text-left">Tư vấn miễn phí</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Tư vấn miễn phí</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Nghiên cứu từ khóa</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Nghiên cứu từ khóa</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left">Lập kế hoạch phát triển nội dung SEO</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Lập kế hoạch phát triển nội dung SEO</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Viết bài chuẩn SEO</td>
-                <td class="py-2 px-2  border-b">5 bài chuẩn SEO</td>
-                <td class="py-2 px-2  border-b">15 bài chuẩn SEO</td>
-                <td class="py-2 px-2  border-b">40 bài chuẩn SEO</td>
+                <td class="py-2 px-2 text-center border-b text-left">Viết bài chuẩn SEO</td>
+                <td class="py-2 px-2 text-center border-b">5 bài chuẩn SEO</td>
+                <td class="py-2 px-2 text-center border-b">15 bài chuẩn SEO</td>
+                <td class="py-2 px-2 text-center border-b">40 bài chuẩn SEO</td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left">Kiểm tra SEO Onpage</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Kiểm tra SEO Onpage</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Kiểm tra backlink</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Kiểm tra backlink</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left">Hỗ trợ đi link trên Social, Profile</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Hỗ trợ đi link trên Social, Profile</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Cài đặt Google Search Console</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Cài đặt Google Search Console</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left">Cài đặt Google Analytics</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Cài đặt Google Analytics</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Báo cáo hàng tuần</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Báo cáo hàng tuần</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left">Chăm sóc Google Maps</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Chăm sóc Google Maps</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr class="bg-gray-50">
-                <td class="py-2 px-2  border-b text-left">Sao lưu (backup) dữ liệu</td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-times text-red-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
-                <td class="py-2 px-2  border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b text-left">Sao lưu (backup) dữ liệu</td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-times text-red-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
+                <td class="py-2 px-2 text-center border-b"><i class="fas fa-check text-green-500"></i></td>
               </tr>
               <tr>
-                <td class="py-2 px-2  border-b text-left font-semibold">Giá dịch vụ</td>
-                <td class="py-2 px-2  border-b font-semibold">2.000.000</td>
-                <td class="py-2 px-2  border-b font-semibold">7.000.000</td>
-                <td class="py-2 px-2  border-b font-semibold">10.000.000</td>
+                <td class="py-2 px-2 text-center border-b text-left font-semibold">Giá dịch vụ</td>
+                <td class="py-2 px-2 text-center border-b font-semibold">2.000.000</td>
+                <td class="py-2 px-2 text-center border-b font-semibold">7.000.000</td>
+                <td class="py-2 px-2 text-center border-b font-semibold">10.000.000</td>
               </tr>
               <tr>
                 <td class="py-2 px-2  border-b text-left font-semibold">Đăng ký dịch vụ</td>
@@ -220,17 +220,94 @@ get_header(); ?>
       </div>
     </section>
 
+
+    
     <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-      <!-- Thay thế src bằng logo thực tế nếu có -->
-      <img src="<?php echo get_template_directory_uri(); ?>/src/img/1.jpg" alt="Đối tác 1" class="h-16 mx-auto  transition">
-      <img src="<?php echo get_template_directory_uri(); ?>/src/img/2.jpg" alt="Đối tác 2" class="h-16 mx-auto  transition">
-      <img src="<?php echo get_template_directory_uri(); ?>/src/img/3.jpg" alt="Đối tác 3" class="h-16 mx-auto  transition">
-      <img src="<?php echo get_template_directory_uri(); ?>/src/img/4.jpg" alt="Đối tác 4" class="h-16 mx-auto  transition">
+    <div class="relative overflow-hidden">
+      <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/1.jpg?123" alt="Đối tác 1" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/2.jpg" alt="Đối tác 2" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/3.jpg" alt="Đối tác 3" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/4.jpg" alt="Đối tác 4" class="h-16 mx-auto transition">
+          </div>
+        </div>
+        <div class="w-full flex-shrink-0 px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/5.jpg" alt="Đối tác 5" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/1.jpg?123" alt="Đối tác 6" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/2.jpg" alt="Đối tác 7" class="h-16 mx-auto transition">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/img/3.jpg" alt="Đối tác 8" class="h-16 mx-auto transition">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button onclick="movePartnerSlide(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+        <i class="fas fa-chevron-left text-gray-600"></i>
+      </button>
+      <button onclick="movePartnerSlide(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
+        <i class="fas fa-chevron-right text-gray-600"></i>
+      </button>
+      
+      <!-- Dots Indicator -->
+      <div class="flex justify-center mt-8 space-x-2">
+        <button onclick="goToPartnerSlide(0)" class="w-3 h-3 rounded-full bg-purple-500 transition-all duration-300" id="partnerDot0"></button>
+        <button onclick="goToPartnerSlide(1)" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" id="partnerDot1"></button>
+      </div>
     </div>
   </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentPartnerSlide = 0;
+      const partnerSlides = document.querySelectorAll('#partnersCarousel > div');
+      const partnerDots = document.querySelectorAll('[id^="partnerDot"]');
+      const totalPartnerSlides = partnerSlides.length;
+      
+      window.movePartnerSlide = function(direction) {
+        currentPartnerSlide = (currentPartnerSlide + direction + totalPartnerSlides) % totalPartnerSlides;
+        updatePartnerCarousel();
+      };
+      
+      window.goToPartnerSlide = function(slideIndex) {
+        currentPartnerSlide = slideIndex;
+        updatePartnerCarousel();
+      };
+      
+      function updatePartnerCarousel() {
+        const offset = -100 * currentPartnerSlide;
+        document.getElementById('partnersCarousel').style.transform = `translateX(${offset}%)`;
+        
+        // Update dots
+        partnerDots.forEach((dot, index) => {
+          if (index === currentPartnerSlide) {
+            dot.classList.remove('bg-gray-300', 'hover:bg-gray-400');
+            dot.classList.add('bg-purple-500');
+          } else {
+            dot.classList.remove('bg-purple-500');
+            dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
+          }
+        });
+      }
+      
+      // Auto-rotate carousel
+      let partnerInterval = setInterval(() => movePartnerSlide(1), 5000);
+      
+      // Pause auto-rotation when mouse is over the carousel
+      document.getElementById('partnersCarousel').parentNode.addEventListener('mouseenter', () => {
+        clearInterval(partnerInterval);
+      });
+      
+      // Resume auto-rotation when mouse leaves the carousel
+      document.getElementById('partnersCarousel').parentNode.addEventListener('mouseleave', () => {
+        partnerInterval = setInterval(() => movePartnerSlide(1), 5000);
+      });
+    });
+  </script>
 </section>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

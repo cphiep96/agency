@@ -35,7 +35,7 @@ get_header();
                 <div class="w-full lg:w-3/4 lg:pr-4 xl:pr-12">
                     <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white rounded-xl shadow-lg overflow-hidden'); ?>>
                         
-                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none responsive-images prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-full prose-img:object-contain">
+                        <div class="entry-content p-4 sm:p-8 prose prose-lg max-w-none responsive-images text-justify prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-700 prose-blockquote:border-l-orange-500 prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:italic prose-img:rounded-lg prose-img:mx-auto prose-img:max-w-full prose-img:object-contain">
                             <?php
                             the_content();
 
