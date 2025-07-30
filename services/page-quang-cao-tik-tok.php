@@ -123,9 +123,9 @@ get_header(); ?>
           </tr>
           <tr class="border-b">
             <td class="py-2 px-2">Tư vấn</td>
-            <td class="py-2 px-2"><i class="fas fa-check text-green-500"></i></td>
-            <td class="py-2 px-2"><i class="fas fa-check text-green-500"></i></td>
-            <td class="py-2 px-2"><i class="fas fa-check text-green-500"></i></td>
+            <td class="py-2 px-2 text-center"><i class="fas fa-check text-green-500"></i></td>
+            <td class="py-2 px-2 text-center"><i class="fas fa-check text-green-500"></i></td>
+            <td class="py-2 px-2 text-center"><i class="fas fa-check text-green-500"></i></td>
           </tr>
           <tr class="border-b">
             <td class="py-2 px-2">Cài đặt tài khoản quảng cáo</td>

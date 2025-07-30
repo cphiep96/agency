@@ -22,7 +22,7 @@
                     </div>
                     <div class="space-y-2 text-sm">
                         <p>489 Đ. Nguyễn Văn Công</p>
-                        <p>Phường 3, Gò Vấp</p>
+                        <p>Phường Hạnh Thông</p>
                         <p>Hồ Chí Minh</p>
 
                          <p>Tổ 1, khu vực 1</p>
@@ -54,13 +54,11 @@
                             <?php endif; endfor; ?>
                             <?php // Default links if no customizer settings
                             if (empty(get_theme_mod('agency_footer_widget1_link1_text', ''))) : ?>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Digital Marketing</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học SEO</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Google</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Facebook</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Tiktok</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Instagram</a></li>
-                                <li><a href="dich-vu" class="hover:text-blue-400">Khóa học Quảng cáo Youtube</a></li>
+                                <li><a href="quang-cao-google" class="hover:text-blue-400">Dịch vụ Quảng cáo Google</a></li>
+                                <li><a href="quang-cao-facebook" class="hover:text-blue-400">Dịch vụ Quảng cáo Facebook</a></li>
+                                <li><a href="quang-cao-tik-tok" class="hover:text-blue-400">Dịch vụ Quảng cáo Tiktok</a></li>
+                                <li><a href="quang-cao-instagram" class="hover:text-blue-400">Dịch vụ Quảng cáo Instagram</a></li>
+                                <li><a href="quang-cao-youtube" class="hover:text-blue-400">Dịch vụ Quảng cáo Youtube</a></li>
                             <?php endif; ?>
                         </ul>
                     <?php endif; ?>
@@ -81,9 +79,8 @@
                             <?php endif; endfor; ?>
                             <?php // Default links if no customizer settings
                             if (empty(get_theme_mod('agency_footer_widget3_link1_text', ''))) : ?>
-                                <li><a href="lien-he" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
-                                <li><a href="lien-he" class="hover:text-blue-400">Bản tin VV Agency</a></li>
-                                <li><a href="lien-he" class="hover:text-blue-400">Kiến thức về Marketing</a></li>
+                                <li><a href="gioi-thieu" class="hover:text-blue-400">Giới thiệu về VV Agency</a></li>
+                                <li><a href="ban-tin" class="hover:text-blue-400">Bản tin VV Agency</a></li>
                                 <li><a href="lien-he" class="hover:text-blue-400">Liên hệ</a></li>
                             <?php endif; ?>
                         </ul>
