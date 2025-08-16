@@ -109,12 +109,15 @@
     </div>
 
     <!-- Contact Widget -->
-    <div class="fixed bottom-4 right-4 z-50">
-        <button class="bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
-            <a href="https://zalo.me/0396693505" target="_blank"> <i class="fas fa-phone"></i>
-                <span class="ml-2 text-sm">Liên hệ</span>
-            </a>
-        </button>
+    <div class="fixed bottom-4 right-4 z-50 space-y-2 flex flex-col items-end">
+        <a href="tel:<?php echo esc_attr(get_theme_mod('agency_footer_hotline', '0396693505')); ?>" class="bg-orange-500 text-white p-3 rounded-full shadow-lg hover:bg-orange-600 transition-colors flex items-center">
+            <i class="fas fa-phone"></i>
+            <span class="ml-2 text-sm">Gọi điện</span>
+        </a>
+        <a href="https://zalo.me/<?php echo esc_attr(get_theme_mod('agency_footer_zalo', '0396693505')); ?>" target="_blank" rel="noopener" class="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors flex items-center">
+            <i class="fas fa-comment-dots"></i>
+            <span class="ml-2 text-sm">Zalo</span>
+        </a>
     </div>
 
     <!-- Carousel JavaScript -->
