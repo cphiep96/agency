@@ -208,7 +208,7 @@
                     <h1 class="page-title text-2xl font-bold"><?php esc_html_e( 'Không tìm thấy bài viết', 'agency' ); ?></h1>
                 </header>
 
-                <div class="page-content prose max-w-none">
+                <div class="page-content prose max-w-none prose-h1:text-4xl prose-h1:font-bold prose-h1:text-gray-900 prose-h2:text-3xl prose-h2:font-bold prose-h2:text-gray-900 prose-h3:text-2xl prose-h3:font-bold prose-h3:text-gray-900 prose-h4:text-xl prose-h4:font-bold prose-h4:text-gray-900 prose-h5:text-lg prose-h5:font-bold prose-h5:text-gray-900 prose-h6:text-base prose-h6:font-bold prose-h6:text-gray-900">
                     <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
                         <p>
                         <?php

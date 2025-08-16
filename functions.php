@@ -1248,9 +1248,10 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
         </p>
 
         <!-- Nút Zalo (cần pointer-events-auto để click được) -->
-        <div class="mt-auto pt-6 flex justify-center">
-            <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-6 py-2 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto">
-                Liên hệ tư vấn
+        <div class="mt-auto pt-2 flex justify-center">
+            <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap">
+                <span class="hidden sm:inline">Liên hệ tư vấn</span>
+                <span class="sm:hidden">Tư vấn</span>
             </a>
         </div>
     </div>
