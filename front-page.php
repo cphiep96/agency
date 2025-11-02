@@ -51,23 +51,6 @@
         </div>
     </section>
 
-    <!-- Support Section -->
-    <section class="relative py-16 text-white bg-gradient-to-r from-blue-500 to-purple-600 overflow-hidden">
-        <!-- SVG Wave Bottom -->
-  
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="flex items-center space-x-6">
-                <div class="flex-shrink-0">
-                    <i class="fas fa-headset text-4xl"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">Hỗ trợ liên tục 24/24</h3>
-                    <p class="text-lg opacity-90">Chúng tôi hỗ trợ đối tác khách hàng liên tục bất cứ thời gian nào hoàn cảnh nào.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div class="container mx-auto px-4">

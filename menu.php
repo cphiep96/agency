@@ -17,15 +17,18 @@ function agency_main_menu($is_mobile = false) {
         <a href="<?php echo esc_url( home_url( '/dich-vu' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-cogs mr-2"></i>DỊCH VỤ
         </a>
+        <a href="<?php echo esc_url( home_url( '/giai-phap' ) ); ?>" class="<?php echo $link_class; ?>">
+            <i class="fas fa-lightbulb mr-2"></i>GIẢI PHÁP
+        </a>
         <a href="<?php echo esc_url( home_url( '/thiet-ke-website' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-globe mr-2"></i>WEBSITE
         </a>
         <a href="<?php echo esc_url( home_url( '/danh-gia' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-star mr-2"></i>ĐÁNH GIÁ
         </a>
-        <a href="<?php echo esc_url( home_url( '/ban-tin' ) ); ?>" class="<?php echo $link_class; ?>">
+        <!-- <a href="<?php echo esc_url( home_url( '/ban-tin' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-newspaper mr-2"></i>BẢN TIN
-        </a>
+        </a> -->
         <a href="<?php echo esc_url( home_url( '/lien-he' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-phone mr-2"></i>LIÊN HỆ
         </a>

@@ -36,12 +36,12 @@ function vv_agency_create_pages() {
             'page_template' => 'page-dich-vu.php'
         ),
         array(
-            'post_title'   => 'Website',
-            'post_name'    => 'website',
-            'post_content' => '<p>Tìm hiểu về dịch vụ thiết kế và phát triển website chuyên nghiệp của VV Agency.</p>',
+            'post_title'   => 'Giải Pháp',
+            'post_name'    => 'giai-phap',
+            'post_content' => '<p>Khám phá các giải pháp marketing toàn diện của VV Agency. Chúng tôi cung cấp giải pháp từ chiến lược marketing số đến thương mại điện tử.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
-            'page_template' => 'page-website.php'
+            'page_template' => 'page-giai-phap.php'
         ),
         array(
             'post_title'   => 'Đánh Giá',
@@ -122,7 +122,145 @@ function vv_agency_create_pages() {
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'services/page-cham-soc-fanpage.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp',
+            'post_name'    => 'giai-phap',
+            'post_content' => '<p>Giải pháp marketing toàn diện cho các ngành khác nhau, tăng doanh số và tăng lợi nhuận cho doanh nghiệp.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'page-giai-phap.php'
+        ),
+        // Industry Solution Pages
+        array(
+            'post_title'   => 'Giải Pháp Bán Lẻ',
+            'post_name'    => 'ban-le',
+            'post_content' => '<p>Giải pháp digital branding toàn diện cho ngành bán lẻ tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/ban-le.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Chế Biến Thực Phẩm',
+            'post_name'    => 'che-bien-thuc-pham',
+            'post_content' => '<p>Giải pháp digital branding cho ngành chế biến thực phẩm tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/che-bien-thuc-pham.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Cơ Khí',
+            'post_name'    => 'co-khi',
+            'post_content' => '<p>Giải pháp digital branding cho ngành cơ khí tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/co-khi.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Công Nghệ',
+            'post_name'    => 'cong-nghe',
+            'post_content' => '<p>Giải pháp digital branding cho ngành công nghệ tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/cong-nghe.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Dệt May',
+            'post_name'    => 'det-may',
+            'post_content' => '<p>Giải pháp digital branding cho ngành dệt may tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/det-may.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Du Lịch',
+            'post_name'    => 'du-lich',
+            'post_content' => '<p>Giải pháp digital branding cho ngành du lịch tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/du-lich.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Dược',
+            'post_name'    => 'duoc',
+            'post_content' => '<p>Giải pháp digital branding cho ngành dược tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/duoc.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp F&B',
+            'post_name'    => 'fnb',
+            'post_content' => '<p>Giải pháp digital branding cho ngành F&B tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/fnb.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Giáo Dục',
+            'post_name'    => 'giao-duc',
+            'post_content' => '<p>Giải pháp digital branding cho ngành giáo dục tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/giao-duc.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Hóa Chất',
+            'post_name'    => 'hoa-chat',
+            'post_content' => '<p>Giải pháp digital branding cho ngành hóa chất tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/hoa-chat.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Ngành Xây Dựng',
+            'post_name'    => 'nganh-xay-dung',
+            'post_content' => '<p>Giải pháp digital branding cho ngành xây dựng tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/nganh-xay-dung.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Nông Nghiệp',
+            'post_name'    => 'nong-nghiep',
+            'post_content' => '<p>Giải pháp digital branding cho ngành nông nghiệp tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/nong-nghiep.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Tài Chính',
+            'post_name'    => 'tai-chinh',
+            'post_content' => '<p>Giải pháp digital branding cho ngành tài chính tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/tai-chinh.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Thép',
+            'post_name'    => 'thep',
+            'post_content' => '<p>Giải pháp digital branding cho ngành thép tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/thep.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Vận Tải Logistics',
+            'post_name'    => 'van-tai-logistics',
+            'post_content' => '<p>Giải pháp digital branding cho ngành vận tải logistics tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/van-tai-logistics.php'
+        ),
+        array(
+            'post_title'   => 'Giải Pháp Vật Liệu Xây Dựng',
+            'post_name'    => 'vat-lieu-xay-dung',
+            'post_content' => '<p>Giải pháp digital branding cho ngành vật liệu xây dựng tại VV Agency.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'giai-phap/vat-lieu-xay-dung.php'
         )
+        // them cac page trong folder giai-phap vao mang $pages
     );
 
     foreach ($pages as $page_data) {
@@ -161,9 +299,10 @@ function vv_agency_setup_theme_pages() {
         echo "<ul>";
         echo "<li><a href='" . home_url('/gioi-thieu') . "'>Giới Thiệu</a></li>";
         echo "<li><a href='" . home_url('/dich-vu') . "'>Dịch Vụ</a></li>";
+        echo "<li><a href='" . home_url('/giai-phap') . "'>Giải Pháp</a></li>";
         echo "<li><a href='" . home_url('/thiet-ke-website') . "'>Website</a></li>";
         echo "<li><a href='" . home_url('/danh-gia') . "'>Đánh Giá</a></li>";
-        echo "<li><a href='" . home_url('/ban-tin') . "'>Bản Tin</a></li>";
+        // echo "<li><a href='" . home_url('/ban-tin') . "'>Bản Tin</a></li>";
         echo "<li><a href='" . home_url('/lien-he') . "'>Liên Hệ</a></li>";
         echo "</ul>";
     } else {

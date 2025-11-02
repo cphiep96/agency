@@ -120,130 +120,23 @@ get_header();
                 
                 <div class="w-full lg:w-1/4 mt-8 lg:mt-0">
                     <div class="sidebar lg:sticky lg:top-8">
-                        <!-- Related Posts -->
-                        <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
-                            <h3 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200"><?php _e('Bài viết liên quan', 'agency'); ?></h3>
-                            
-                            <?php
-                            // Get current post categories
-                            $categories = get_the_category(get_the_ID());
-                            $category_ids = array();
-                            foreach($categories as $category) {
-                                $category_ids[] = $category->term_id;
-                            }
-                            
-                            // Query related posts
-                            $related_args = array(
-                                'post_type' => 'post',
-                                'category__in' => $category_ids,
-                                'post__not_in' => array(get_the_ID()),
-                                'posts_per_page' => 4,
-                                'orderby' => 'rand'
-                            );
-                            
-                            $related_query = new WP_Query($related_args);
-                            
-                            if ($related_query->have_posts()) :
-                                while ($related_query->have_posts()) : $related_query->the_post();
-                                ?>
-                                <div class="flex items-center mb-4 pb-4 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <?php 
-                                        // Get thumbnail ID for responsive images
-                                        $related_thumb_id = get_post_thumbnail_id();
-                                        $related_img_srcset = wp_get_attachment_image_srcset($related_thumb_id, 'thumbnail');
-                                        $related_img_sizes = '(max-width: 768px) 60px, 80px';
-                                        ?>
-                                        <a href="<?php the_permalink(); ?>" class="block w-16 h-16 sm:w-20 sm:h-20 mr-3 sm:mr-4 overflow-hidden rounded-lg flex-shrink-0">
-                                            <?php the_post_thumbnail('thumbnail', [
-                                                'class' => 'w-full h-full object-cover',
-                                                'srcset' => $related_img_srcset,
-                                                'sizes' => $related_img_sizes,
-                                                'loading' => 'lazy'
-                                            ]); ?>
-                                        </a>
-                                    <?php endif; ?>
-                                    <div>
-                                        <h4 class="text-sm font-semibold mb-1">
-                                            <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-orange-600 transition-colors">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h4>
-                                        <div class="text-xs text-gray-500">
-                                            <?php echo get_the_date(); ?>
-                                        </div>
-                                    </div>
+                        <!-- Banner Image Full Height -->
+                        <div class="relative bg-white rounded-xl shadow-lg overflow-hidden" style="height: 100vh; min-height: 600px;">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/banner/banner-right.jpg"
+                                 alt="Banner"
+                                 class="w-full h-full object-cover absolute inset-0">
+
+                            <!-- Overlay Content -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-start justify-center">
+                                <div class="p-6 text-white max-w-sm w-full text-center">
+                                    <h3 class="text-xl font-bold mb-2"><?php _e('Liên hệ tư vấn', 'agency'); ?></h3>
+                                    <p class="text-sm mb-4 opacity-90"><?php _e('Chúng tôi sẵn sàng hỗ trợ bạn', 'agency'); ?></p>
+                                    <a href="<?php echo esc_url(home_url('/lien-he/')); ?>"
+                                       class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                        <?php _e('Liên hệ ngay', 'agency'); ?>
+                                    </a>
                                 </div>
-                                <?php
-                                endwhile;
-                                wp_reset_postdata();
-                            else :
-                                echo '<p class="text-gray-500">' . __('Không có bài viết liên quan.', 'agency') . '</p>';
-                            endif;
-                            ?>
-                        </div>
-                        
-                        <!-- Categories -->
-                        <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-8">
-                            <h3 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200"><?php _e('Danh mục', 'agency'); ?></h3>
-                            <ul class="space-y-3">
-                                <?php
-                                $categories = get_categories(array(
-                                    'orderby' => 'name',
-                                    'order'   => 'ASC'
-                                ));
-                                
-                                foreach($categories as $category) {
-                                    printf(
-                                        '<li><a href="%1$s" class="flex justify-between items-center text-gray-700 hover:text-orange-600 transition-colors">%2$s <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-2 py-1 rounded-full">%3$s</span></a></li>',
-                                        esc_url(get_category_link($category->term_id)),
-                                        esc_html($category->name),
-                                        esc_html($category->count)
-                                    );
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                        
-                        <!-- Recent Posts -->
-                        <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6">
-                            <h3 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200"><?php _e('Bài viết gần đây', 'agency'); ?></h3>
-                            <?php
-                            $recent_args = array(
-                                'post_type' => 'post',
-                                'posts_per_page' => 5,
-                                'post__not_in' => array(get_the_ID()),
-                                'orderby' => 'date',
-                                'order' => 'DESC'
-                            );
-                            
-                            $recent_query = new WP_Query($recent_args);
-                            
-                            if ($recent_query->have_posts()) :
-                                while ($recent_query->have_posts()) : $recent_query->the_post();
-                                ?>
-                                <div class="flex items-center mb-4 pb-4 border-b border-gray-100 last:border-0 last:mb-0 last:pb-0">
-                                    <div class="mr-4 text-orange-600 font-semibold text-2xl">
-                                        <?php echo get_the_date('d'); ?>
-                                        <div class="text-xs text-gray-500 font-normal">
-                                            <?php echo get_the_date('M'); ?>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-sm font-semibold">
-                                            <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-orange-600 transition-colors">
-                                                <?php the_title(); ?>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <?php
-                                endwhile;
-                                wp_reset_postdata();
-                            else :
-                                echo '<p class="text-gray-500">' . __('Không có bài viết gần đây.', 'agency') . '</p>';
-                            endif;
-                            ?>
+                            </div>
                         </div>
                     </div>
                 </div>

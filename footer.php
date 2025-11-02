@@ -89,14 +89,14 @@
             </div>
 
             <!-- Copyright -->
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <!-- <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p class="text-sm text-gray-400"><?php echo esc_html(get_theme_mod('agency_footer_copyright', 'Copyright 2018 - 2025 © vietvanagency.com')); ?></p>
                 <div class="mt-2 space-x-4">
                     <span class="text-red-500">Zalo: <?php echo esc_html(get_theme_mod('agency_footer_zalo', '0396693505')); ?></span>
                     <span class="text-blue-500">Hotline: <?php echo esc_html(get_theme_mod('agency_footer_hotline', '0396693505')); ?></span>
                     <span class="text-purple-500">Telegram: <?php echo esc_html(get_theme_mod('agency_footer_telegram', '0396693505')); ?></span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </footer>
 
