@@ -502,7 +502,7 @@ function agency_customizer_scripts() {
             '<?php echo get_template_directory_uri(); ?>/src/img/service/cham-soc-fanpage.jpg',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/google.png',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/thiet-ke-website.jpg',
-            '<?php echo get_template_directory_uri(); ?>/src/img/service/google.png',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/google-maps.png',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-facebook.jpg',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-tiktok.jpg',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-youtube.jpg',
@@ -1130,7 +1130,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'title'       => 'QUẢNG CÁO GOOGLE MAPS',
                 'description' => 'Tối ưu Google Maps và quảng cáo địa phương để tăng khả năng hiển thị và thu hút khách hàng',
                 'icon'        => 'fas fa-map-marked-alt',
-                'image'       => $base_url . 'google.png',
+                'image'       => $base_url . 'google-maps.png',
                 'color'       => 'red',
                 'link'        => home_url('/quang-cao-google-maps'),
             ),
@@ -2797,6 +2797,44 @@ function agency_block_shortcode($atts) {
         </div>
     </section>
 
+            <?php
+            break;
+            
+        case 'footer-vvagency-solutions':
+            ?>
+            <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="giai-phap">
+                <div class="container mx-auto px-4">
+                    <?php
+                    if (is_active_sidebar('homepage-solutions')) {
+                        dynamic_sidebar('homepage-solutions');
+                    } else {
+                        $solutions_title = get_theme_mod('agency_solutions_title', 'GIẢI PHÁP CỦA VV AGENCY');
+                        $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                        ?>
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                                <?php echo esc_html($solutions_title); ?>
+                            </h2>
+                            <p class="text-gray-600 max-w-2xl mx-auto">
+                                <?php echo esc_html($solutions_description); ?>
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <?php
+                            $solutions = agency_get_solutions();
+                            if ( empty( $solutions ) ) {
+                                echo '<p class="col-span-full text-center">' . esc_html__( 'Please configure solutions in the WordPress admin panel.', 'agency' ) . '</p>';
+                            } else {
+                                agency_render_solutions( $solutions );
+                            }
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </section>
             <?php
             break;
             

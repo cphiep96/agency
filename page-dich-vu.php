@@ -54,4 +54,6 @@ get_header(); ?>
     </section>
 <!-- Nội dung trang Dịch Vụ kết thúc -->
 
+<?php echo do_shortcode('[block id="footer-vvagency-solutions"]'); ?>
+
 <?php get_footer(); ?> 

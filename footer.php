@@ -1,6 +1,6 @@
     </main>
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer style="background-color: #ff3205;" class="text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Info -->
@@ -8,7 +8,7 @@
                     <div class="flex items-center space-x-3 mb-4">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center space-x-3">
                             <?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
-                                <div style="max-width:100px; max-height:80px; overflow:hidden;">
+                                <div style="max-width:100px; max-height:80px; overflow:hidden; background: #fff; padding: 10px; border-radius: 5px;">
                                     <?php the_custom_logo(); ?>
                                 </div>
                             <?php else : ?>
