@@ -458,73 +458,85 @@ function agency_customizer_scripts() {
     function resetServices() {
         // Reset service fields
         var defaultTitles = [
-            'THIẾT KẾ WEBSITE & SEO',
+            'CHĂM SÓC FANPAGE',
             'QUẢNG CÁO GOOGLE',
+            'THIẾT KẾ WEBSITE & SEO',
+            'QUẢNG CÁO GOOGLE MAPS',
             'QUẢNG CÁO FACEBOOK',
             'QUẢNG CÁO TIK TOK',
             'QUẢNG CÁO YOUTUBE',
             'QUẢNG CÁO INSTAGRAM',
             'CHĂM SÓC WEBSITE',
-            'CHĂM SÓC FANPAGE',
+            'VIẾT BÀI SEO',
             'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ'
         ];
         
         var defaultDescriptions = [
+            'Tối ưu hóa fanpage – tăng tương tác, xây dựng cộng đồng trung thành cho thương hiệu của bạn',
+            'Tăng trưởng doanh số với Google Ads – tiếp cận khách hàng tiềm năng đúng lúc, đúng nơi',
             'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
-            'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
+            'Tối ưu Google Maps và quảng cáo địa phương để tăng khả năng hiển thị và thu hút khách hàng',
             'Tối ưu quảng cáo Facebook để tiếp cận đúng khách hàng mục tiêu',
             'Khai thác sức mạnh TikTok để tiếp cận thế hệ khách hàng trẻ',
             'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
             'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-            'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
+            'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
             'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing'
         ];
         
         var defaultIcons = [
-            'fas fa-code',
+            'fab fa-facebook-f',
             'fab fa-google',
+            'fas fa-code',
             'fab fa-facebook-f',
             'fab fa-tiktok',
             'fab fa-youtube',
             'fab fa-instagram',
             'fas fa-globe',
-            'fab fa-linkedin',
+            'fab fa-facebook-f',
             'fas fa-chart-line'
         ];
         
         var defaultImages = [
-            'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/cham-soc-fanpage.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/google.png',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/thiet-ke-website.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/google.png',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-facebook.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-tiktok.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-youtube.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-INSTAGRAM.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/cham-soc-website.jpg',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/seo.png',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/marketing.png'
         ];
 
         var defaultColors = [
             'blue',
             'red',
             'blue',
-            'pink',
             'red',
             'blue',
             'pink',
+            'red',
+            'purple',
+            'green',
+            'blue',
             'purple'
         ];
 
         var defaultLinks = [
-            '/thiet-ke-website',
+            '/cham-soc-fanpage',
             '/quang-cao-google',
+            '/thiet-ke-website',
+            '/quang-cao-google-maps',
             '/quang-cao-facebook',
             '/quang-cao-tik-tok',
             '/quang-cao-youtube',
             '/quang-cao-instagram',
             '/cham-soc-website',
-            '/cham-soc-fanpage',
+            '/viet-bai-seo',
             '/giai-phap-digital-marketing'
         ];
         
@@ -533,24 +545,15 @@ function agency_customizer_scripts() {
         wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
         
         
-        // Reset first 5 services to defaults
-        for (var i = 0; i < 5; i++) {
+        // Reset first 11 services to defaults
+        for (var i = 0; i < 11; i++) {
             wp.customize('agency_service_' + i + '_active').set(true);
             wp.customize('agency_service_' + i + '_title').set(defaultTitles[i]);
             wp.customize('agency_service_' + i + '_description').set(defaultDescriptions[i]);
             wp.customize('agency_service_' + i + '_icon').set(defaultIcons[i]);
             wp.customize('agency_service_' + i + '_image').set(defaultImages[i]);
             wp.customize('agency_service_' + i + '_color').set(defaultColors[i]);
-        }
-
-        // Disable remaining services
-        for (var i = 5; i < 8; i++) {
-            wp.customize('agency_service_' + i + '_active').set(false);
-            wp.customize('agency_service_' + i + '_title').set('');
-            wp.customize('agency_service_' + i + '_description').set('');
-            wp.customize('agency_service_' + i + '_icon').set('fas fa-star');
-            wp.customize('agency_service_' + i + '_image').set('');
-            wp.customize('agency_service_' + i + '_color').set('blue');
+            wp.customize('agency_service_' + i + '_link').set(defaultLinks[i]);
         }
         
         // Refresh preview
@@ -1100,6 +1103,22 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
         $base_url = get_template_directory_uri() . '/src/img/service/';
         return array(
             array(
+                'title'       => 'CHĂM SÓC FANPAGE',
+                'description' => 'Tối ưu hóa fanpage – tăng tương tác, xây dựng cộng đồng trung thành cho thương hiệu của bạn',
+                'icon'        => 'fab fa-facebook-f',
+                'image'       => $base_url . 'cham-soc-fanpage.jpg',
+                'color'       => 'blue',
+                'link'        => home_url('/cham-soc-fanpage'),
+            ),
+            array(
+                'title'       => 'QUẢNG CÁO GOOGLE',
+                'description' => 'Tăng trưởng doanh số với Google Ads – tiếp cận khách hàng tiềm năng đúng lúc, đúng nơi',
+                'icon'        => 'fab fa-google',
+                'image'       => $base_url . 'google.png',
+                'color'       => 'red',
+                'link'        => home_url('/quang-cao-google'),
+            ),
+            array(
                 'title'       => 'THIẾT KẾ WEBSITE & SEO',
                 'description' => 'Thiết kế website chuyên nghiệp và tối ưu SEO để tăng thứ hạng trên Google',
                 'icon'        => 'fas fa-code',
@@ -1159,7 +1178,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'title'       => 'VIẾT BÀI SEO',
                 'description' => 'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
                 'icon'        => 'fas fa-pen-nib',
-                'image'       => $base_url . 'action/Dich-Vu-SEO.jpeg',
+                'image'       => $base_url . 'seo.png',
                 'color'       => 'blue',
                 'link'        => home_url('/viet-bai-seo'),
             ),
@@ -1167,7 +1186,7 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'title'       => 'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ',
                 'description' => 'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
                 'icon'        => 'fas fa-chart-line',
-                'image'       => $base_url . 'action/Dich-Vu-SEO.jpeg',
+                'image'       => $base_url . 'marketing.png',
                 'color'       => 'purple',
                 'link'        => home_url('/giai-phap-digital-marketing'),
             ),
@@ -1191,7 +1210,7 @@ if ( ! function_exists( 'agency_get_services' ) ) {
         }
 
         $default_services = agency_get_default_services();
-        $max_services     = 9;
+        $max_services     = 11;
         $services         = array();
 
         for ( $i = 0; $i < $max_services; $i++ ) {
@@ -1296,6 +1315,250 @@ function agency_flush_services_cache(): void {
 }
 add_action( 'customize_save_after', 'agency_flush_services_cache' );
 add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_services_cache' );
+
+// --------------------------------------------------------------------------------------------------
+// Agency Solutions helpers
+// --------------------------------------------------------------------------------------------------
+
+if ( ! function_exists( 'agency_get_default_solutions' ) ) {
+    /**
+     * Returns an array of the default Agency solutions.
+     *
+     * Each solution contains: title, description, icon, image, color, link.
+     *
+     * @return array
+     */
+    function agency_get_default_solutions(): array {
+        $colors = array('blue', 'red', 'green', 'yellow', 'purple', 'pink', 'teal', 'indigo', 'orange', 'cyan', 'emerald', 'violet', 'rose', 'sky', 'lime', 'amber');
+        $icons = array('fas fa-store', 'fas fa-utensils', 'fas fa-cogs', 'fas fa-microchip', 'fas fa-tshirt', 'fas fa-plane', 'fas fa-pills', 'fas fa-utensils', 'fas fa-graduation-cap', 'fas fa-flask', 'fas fa-building', 'fas fa-tractor', 'fas fa-money-bill-wave', 'fas fa-tools', 'fas fa-truck', 'fas fa-hard-hat');
+
+        return array(
+            array(
+                'title'       => 'Bán lẻ',
+                'description' => 'Giải pháp marketing toàn diện cho ngành bán lẻ',
+                'icon'        => 'fas fa-store',
+                'image'       => 'https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'blue',
+                'link'        => home_url('/giai-phap/ban-le'),
+            ),
+            array(
+                'title'       => 'Chế biến thực phẩm',
+                'description' => 'Giải pháp marketing toàn diện cho ngành chế biến thực phẩm',
+                'icon'        => 'fas fa-utensils',
+                'image'       => 'https://images.pexels.com/photos/8549605/pexels-photo-8549605.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'red',
+                'link'        => home_url('/giai-phap/che-bien-thuc-pham'),
+            ),
+            array(
+                'title'       => 'Cơ khí',
+                'description' => 'Giải pháp marketing toàn diện cho ngành cơ khí',
+                'icon'        => 'fas fa-cogs',
+                'image'       => 'https://images.pexels.com/photos/1267325/pexels-photo-1267325.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'green',
+                'link'        => home_url('/giai-phap/co-khi'),
+            ),
+            array(
+                'title'       => 'Công nghệ',
+                'description' => 'Giải pháp marketing toàn diện cho ngành công nghệ',
+                'icon'        => 'fas fa-microchip',
+                'image'       => 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'purple',
+                'link'        => home_url('/giai-phap/cong-nghe'),
+            ),
+            array(
+                'title'       => 'Dệt May',
+                'description' => 'Giải pháp marketing toàn diện cho ngành dệt may',
+                'icon'        => 'fas fa-tshirt',
+                'image'       => 'https://images.pexels.com/photos/5998124/pexels-photo-5998124.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'pink',
+                'link'        => home_url('/giai-phap/det-may'),
+            ),
+            array(
+                'title'       => 'Du lịch',
+                'description' => 'Giải pháp marketing toàn diện cho ngành du lịch',
+                'icon'        => 'fas fa-plane',
+                'image'       => 'https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'teal',
+                'link'        => home_url('/giai-phap/du-lich'),
+            ),
+            array(
+                'title'       => 'Dược',
+                'description' => 'Giải pháp marketing toàn diện cho ngành dược',
+                'icon'        => 'fas fa-pills',
+                'image'       => 'https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'indigo',
+                'link'        => home_url('/giai-phap/duoc'),
+            ),
+            array(
+                'title'       => 'F&B',
+                'description' => 'Giải pháp marketing toàn diện cho ngành F&B',
+                'icon'        => 'fas fa-utensils',
+                'image'       => 'https://images.pexels.com/photos/8549605/pexels-photo-8549605.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'orange',
+                'link'        => home_url('/giai-phap/fnb'),
+            ),
+            array(
+                'title'       => 'Giáo dục',
+                'description' => 'Giải pháp marketing toàn diện cho ngành giáo dục',
+                'icon'        => 'fas fa-graduation-cap',
+                'image'       => 'https://images.pexels.com/photos/1267325/pexels-photo-1267325.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'cyan',
+                'link'        => home_url('/giai-phap/giao-duc'),
+            ),
+            array(
+                'title'       => 'Hóa chất',
+                'description' => 'Giải pháp marketing toàn diện cho ngành hóa chất',
+                'icon'        => 'fas fa-flask',
+                'image'       => 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'emerald',
+                'link'        => home_url('/giai-phap/hoa-chat'),
+            ),
+            array(
+                'title'       => 'Ngành xây dựng',
+                'description' => 'Giải pháp marketing toàn diện cho ngành xây dựng',
+                'icon'        => 'fas fa-building',
+                'image'       => 'https://images.pexels.com/photos/5998124/pexels-photo-5998124.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'violet',
+                'link'        => home_url('/giai-phap/nganh-xay-dung'),
+            ),
+            array(
+                'title'       => 'Nông nghiệp',
+                'description' => 'Giải pháp marketing toàn diện cho ngành nông nghiệp',
+                'icon'        => 'fas fa-tractor',
+                'image'       => 'https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'rose',
+                'link'        => home_url('/giai-phap/nong-nghiep'),
+            ),
+            array(
+                'title'       => 'Tài chính',
+                'description' => 'Giải pháp marketing toàn diện cho ngành tài chính',
+                'icon'        => 'fas fa-money-bill-wave',
+                'image'       => 'https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'sky',
+                'link'        => home_url('/giai-phap/tai-chinh'),
+            ),
+            array(
+                'title'       => 'Thép',
+                'description' => 'Giải pháp marketing toàn diện cho ngành thép',
+                'icon'        => 'fas fa-tools',
+                'image'       => 'https://images.pexels.com/photos/8549605/pexels-photo-8549605.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'lime',
+                'link'        => home_url('/giai-phap/thep'),
+            ),
+            array(
+                'title'       => 'Vận tải, Logistics',
+                'description' => 'Giải pháp marketing toàn diện cho ngành vận tải, logistics',
+                'icon'        => 'fas fa-truck',
+                'image'       => 'https://images.pexels.com/photos/1267325/pexels-photo-1267325.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'amber',
+                'link'        => home_url('/giai-phap/van-tai-logistics'),
+            ),
+            array(
+                'title'       => 'Vật liệu Xây dựng',
+                'description' => 'Giải pháp marketing toàn diện cho ngành vật liệu xây dựng',
+                'icon'        => 'fas fa-hard-hat',
+                'image'       => 'https://images.pexels.com/photos/3253501/pexels-photo-3253501.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'color'       => 'yellow',
+                'link'        => home_url('/giai-phap/vat-lieu-xay-dung'),
+            ),
+        );
+    }
+}
+
+if ( ! function_exists( 'agency_get_solutions' ) ) {
+    /**
+     * Returns the list of solutions.
+     * Uses caching and returns default solutions.
+     *
+     * @return array
+     */
+    function agency_get_solutions(): array {
+        $cache_key = 'agency_solutions';
+        $solutions = wp_cache_get( $cache_key );
+
+        if ( false !== $solutions ) {
+            return $solutions;
+        }
+
+        $solutions = agency_get_default_solutions();
+
+        // Cache for one hour.
+        wp_cache_set( $cache_key, $solutions, '', HOUR_IN_SECONDS );
+
+        return $solutions;
+    }
+}
+
+if ( ! function_exists( 'agency_render_single_solution' ) ) {
+    /**
+     * Outputs a single solution card.
+     *
+     * @param array $solution Solution data (title, image, link).
+     */
+    function agency_render_single_solution( array $solution ): void {
+        $color = ! empty( $solution['color'] ) ? $solution['color'] : 'red';
+        $card_link = ! empty( $solution['link'] ) ? $solution['link'] : '#';
+        ?>
+        <div class="relative group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
+            <!-- Lớp phủ toàn bộ card để click -->
+            <?php if ( ! empty( $solution['link'] ) ) : ?>
+                <a href="<?php echo esc_url( $solution['link'] ); ?>" class="absolute inset-0 z-10 pointer-events-auto" aria-label="Xem chi tiết giải pháp"></a>
+            <?php endif; ?>
+
+            <!-- Background hiệu ứng -->
+            <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+            <!-- Nội dung chính -->
+            <div class="relative z-20 p-8 flex flex-col flex-1 pointer-events-none">
+                <div class="mb-6 overflow-hidden rounded-xl">
+                    <?php if ( ! empty( $solution['image'] ) ) : ?>
+                        <img src="<?php echo esc_url( $solution['image'] ); ?>" alt="<?php echo esc_attr( $solution['title'] ); ?>" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <?php endif; ?>
+                </div>
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
+                        <i class="<?php echo esc_attr( $solution['icon'] ?? 'fas fa-cogs' ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                    <?php echo esc_html( $solution['title'] ); ?>
+                </h3>
+                <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                    <?php echo esc_html( $solution['description'] ?? 'Giải pháp marketing toàn diện cho ngành ' . strtolower( $solution['title'] ) ); ?>
+                </p>
+
+                <!-- Nút Zalo (cần pointer-events-auto để click được) -->
+                <div class="mt-auto pt-2 flex justify-center">
+                    <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap">
+                        <span class="hidden sm:inline">Liên hệ tư vấn</span>
+                        <span class="sm:hidden">Tư vấn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+}
+
+if ( ! function_exists( 'agency_render_solutions' ) ) {
+    /**
+     * Outputs the grid of solutions.
+     *
+     * @param array $solutions List of solutions.
+     */
+    function agency_render_solutions( array $solutions ): void {
+        foreach ( $solutions as $solution ) {
+            agency_render_single_solution( $solution );
+        }
+    }
+}
+
+// Flush the solutions cache whenever the Customizer is saved or theme mods are updated.
+function agency_flush_solutions_cache(): void {
+    wp_cache_delete( 'agency_solutions' );
+}
+add_action( 'customize_save_after', 'agency_flush_solutions_cache' );
+add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'agency_flush_solutions_cache' );
 
 // --------------------------------------------------------------------------------------------------
 // Agency Partners helpers
