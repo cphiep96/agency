@@ -68,12 +68,12 @@ function vv_agency_create_pages() {
             'page_template' => 'page-lien-he.php'
         ),
         array(
-            'post_title'   => 'Quảng Cáo Google',
-            'post_name'    => 'quang-cao-google',
-            'post_content' => '<p>Giải pháp quảng cáo Google Ads tối ưu, tiếp cận khách hàng đúng lúc, đúng nơi với VV Agency.</p>',
+            'post_title'   => 'Quảng Cáo Google Maps',
+            'post_name'    => 'quang-cao-google-maps',
+            'post_content' => '<p>Tối ưu Google Maps và quảng cáo địa phương để tăng khả năng hiển thị và thu hút khách hàng trong khu vực với VV Agency.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
-            'page_template' => 'services/page-quang-cao-google.php'
+            'page_template' => 'services/page-quang-cao-google-maps.php'
         ),
         array(
             'post_title'   => 'Quảng Cáo Facebook',
@@ -116,12 +116,12 @@ function vv_agency_create_pages() {
             'page_template' => 'services/page-cham-soc-website.php'
         ),
         array(
-            'post_title'   => 'Chăm Sóc Fanpage',
-            'post_name'    => 'cham-soc-fanpage',
-            'post_content' => '<p>Tối ưu hóa fanpage, tăng tương tác và xây dựng cộng đồng trung thành cho thương hiệu.</p>',
+            'post_title'   => 'Viết Bài SEO',
+            'post_name'    => 'viet-bai-seo',
+            'post_content' => '<p>Nội dung chất lượng cao, tối ưu SEO giúp website của bạn lên top Google và thu hút khách hàng tiềm năng.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
-            'page_template' => 'services/page-cham-soc-fanpage.php'
+            'page_template' => 'services/page-viet-bai-seo.php'
         ),
         array(
             'post_title'   => 'Giải Pháp',

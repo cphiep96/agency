@@ -465,7 +465,8 @@ function agency_customizer_scripts() {
             'QUẢNG CÁO YOUTUBE',
             'QUẢNG CÁO INSTAGRAM',
             'CHĂM SÓC WEBSITE',
-            'CHĂM SÓC FANPAGE'
+            'CHĂM SÓC FANPAGE',
+            'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ'
         ];
         
         var defaultDescriptions = [
@@ -476,7 +477,8 @@ function agency_customizer_scripts() {
             'Khai thác sức mạnh Youtube để tiếp cận thế hệ khách hàng trẻ',
             'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'Chăm sóc website để tăng tỷ lệ chuyển đổi',
-            'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi'
+            'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi',
+            'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing'
         ];
         
         var defaultIcons = [
@@ -487,7 +489,8 @@ function agency_customizer_scripts() {
             'fab fa-youtube',
             'fab fa-instagram',
             'fas fa-globe',
-            'fab fa-linkedin'
+            'fab fa-linkedin',
+            'fas fa-chart-line'
         ];
         
         var defaultImages = [
@@ -498,7 +501,8 @@ function agency_customizer_scripts() {
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             'https://images.pexels.com/photos/167703/pexels-photo-167703.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
             'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            'https://images.pexels.com/photos/7587444/pexels-photo-7587444.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            'https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         ];
 
         var defaultColors = [
@@ -508,7 +512,8 @@ function agency_customizer_scripts() {
             'pink',
             'red',
             'blue',
-            'pink'
+            'pink',
+            'purple'
         ];
 
         var defaultLinks = [
@@ -519,7 +524,8 @@ function agency_customizer_scripts() {
             '/quang-cao-youtube',
             '/quang-cao-instagram',
             '/cham-soc-website',
-            '/cham-soc-fanpage'
+            '/cham-soc-fanpage',
+            '/giai-phap-digital-marketing'
         ];
         
         // Update section title and description
@@ -527,8 +533,8 @@ function agency_customizer_scripts() {
         wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
         
         
-        // Reset first 4 services to defaults
-        for (var i = 0; i < 4; i++) {
+        // Reset first 5 services to defaults
+        for (var i = 0; i < 5; i++) {
             wp.customize('agency_service_' + i + '_active').set(true);
             wp.customize('agency_service_' + i + '_title').set(defaultTitles[i]);
             wp.customize('agency_service_' + i + '_description').set(defaultDescriptions[i]);
@@ -536,9 +542,9 @@ function agency_customizer_scripts() {
             wp.customize('agency_service_' + i + '_image').set(defaultImages[i]);
             wp.customize('agency_service_' + i + '_color').set(defaultColors[i]);
         }
-        
+
         // Disable remaining services
-        for (var i = 4; i < 8; i++) {
+        for (var i = 5; i < 8; i++) {
             wp.customize('agency_service_' + i + '_active').set(false);
             wp.customize('agency_service_' + i + '_title').set('');
             wp.customize('agency_service_' + i + '_description').set('');
@@ -1102,12 +1108,12 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'link'        => home_url('/thiet-ke-website'),
             ),
             array(
-                'title'       => 'QUẢNG CÁO GOOGLE',
-                'description' => 'Chạy quảng cáo Google Ads hiệu quả, tăng lượng truy cập và chuyển đổi',
-                'icon'        => 'fab fa-google',
+                'title'       => 'QUẢNG CÁO GOOGLE MAPS',
+                'description' => 'Tối ưu Google Maps và quảng cáo địa phương để tăng khả năng hiển thị và thu hút khách hàng',
+                'icon'        => 'fas fa-map-marked-alt',
                 'image'       => $base_url . 'google.png',
                 'color'       => 'red',
-                'link'        => home_url('/quang-cao-google'),
+                'link'        => home_url('/quang-cao-google-maps'),
             ),
             array(
                 'title'       => 'QUẢNG CÁO FACEBOOK',
@@ -1150,12 +1156,20 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
                 'link'        => home_url('/cham-soc-website'),
             ),
             array(
-                'title'       => 'CHĂM SÓC FANPAGE',
-                'description' => 'Chăm sóc fanpage để tăng tỷ lệ chuyển đổi	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;',
-                'icon'        => 'fab fa-facebook-f',
-                'image'       => $base_url . 'cham-soc-fanpage.jpg',
-                'color'       => 'teal',
-                'link'        => home_url('/cham-soc-fanpage'),
+                'title'       => 'VIẾT BÀI SEO',
+                'description' => 'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
+                'icon'        => 'fas fa-pen-nib',
+                'image'       => $base_url . 'action/Dich-Vu-SEO.jpeg',
+                'color'       => 'blue',
+                'link'        => home_url('/viet-bai-seo'),
+            ),
+            array(
+                'title'       => 'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ',
+                'description' => 'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
+                'icon'        => 'fas fa-chart-line',
+                'image'       => $base_url . 'action/Dich-Vu-SEO.jpeg',
+                'color'       => 'purple',
+                'link'        => home_url('/giai-phap-digital-marketing'),
             ),
         );
     }
