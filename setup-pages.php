@@ -124,6 +124,14 @@ function vv_agency_create_pages() {
             'page_template' => 'services/page-viet-bai-seo.php'
         ),
         array(
+            'post_title'   => 'Giải Pháp Digital Marketing Tổng Thể',
+            'post_name'    => 'giai-phap-digital-marketing',
+            'post_content' => '<p>Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing giúp doanh nghiệp phát triển mạnh mẽ trong kỷ nguyên số.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-giai-phap-digital-marketing.php'
+        ),
+        array(
             'post_title'   => 'Giải Pháp',
             'post_name'    => 'giai-phap',
             'post_content' => '<p>Giải pháp marketing toàn diện cho các ngành khác nhau, tăng doanh số và tăng lợi nhuận cho doanh nghiệp.</p>',

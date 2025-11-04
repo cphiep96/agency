@@ -293,9 +293,9 @@ function agency_customizer_services($wp_customize) {
     ));
     
 
-    // Add individual services (up to 8 services)
+    // Add individual services (up to 9 services)
     $colors = array('blue', 'red', 'green', 'yellow', 'purple', 'pink', 'teal');
-    $max_services = 8;
+    $max_services = 9;
 
     for ($i = 0; $i < $max_services; $i++) {
         $default = isset($default_services[$i]) ? $default_services[$i] : array(
@@ -1191,7 +1191,7 @@ if ( ! function_exists( 'agency_get_services' ) ) {
         }
 
         $default_services = agency_get_default_services();
-        $max_services     = 8;
+        $max_services     = 9;
         $services         = array();
 
         for ( $i = 0; $i < $max_services; $i++ ) {
