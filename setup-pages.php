@@ -44,12 +44,12 @@ function vv_agency_create_pages() {
             'page_template' => 'page-giai-phap.php'
         ),
         array(
-            'post_title'   => 'Đánh Giá',
-            'post_name'    => 'danh-gia',
-            'post_content' => '<p>Xem các đánh giá và phản hồi từ khách hàng về dịch vụ của VV Agency.</p>',
+            'post_title'   => 'Dự Án',
+            'post_name'    => 'du-an',
+            'post_content' => '<p>Khám phá các dự án tiêu biểu đã được VV Agency thực hiện thành công cho khách hàng.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
-            'page_template' => 'page-danh-gia.php'
+            'page_template' => 'page-du-an.php'
         ),
         array(
             'post_title'   => 'Bản Tin',
@@ -309,7 +309,7 @@ function vv_agency_setup_theme_pages() {
         echo "<li><a href='" . home_url('/dich-vu') . "'>Dịch Vụ</a></li>";
         echo "<li><a href='" . home_url('/giai-phap') . "'>Giải Pháp</a></li>";
         echo "<li><a href='" . home_url('/thiet-ke-website') . "'>Website</a></li>";
-        echo "<li><a href='" . home_url('/danh-gia') . "'>Đánh Giá</a></li>";
+        echo "<li><a href='" . home_url('/du-an') . "'>Dự Án</a></li>";
         // echo "<li><a href='" . home_url('/ban-tin') . "'>Bản Tin</a></li>";
         echo "<li><a href='" . home_url('/lien-he') . "'>Liên Hệ</a></li>";
         echo "</ul>";

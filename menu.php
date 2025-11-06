@@ -23,8 +23,8 @@ function agency_main_menu($is_mobile = false) {
         <a href="<?php echo esc_url( home_url( '/thiet-ke-website' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-globe mr-2"></i>WEBSITE
         </a>
-        <a href="<?php echo esc_url( home_url( '/danh-gia' ) ); ?>" class="<?php echo $link_class; ?>">
-            <i class="fas fa-star mr-2"></i>ĐÁNH GIÁ
+        <a href="<?php echo esc_url( home_url( '/du-an' ) ); ?>" class="<?php echo $link_class; ?>">
+            <i class="fas fa-project-diagram mr-2"></i>DỰ ÁN
         </a>
         <!-- <a href="<?php echo esc_url( home_url( '/ban-tin' ) ); ?>" class="<?php echo $link_class; ?>">
             <i class="fas fa-newspaper mr-2"></i>BẢN TIN

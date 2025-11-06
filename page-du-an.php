@@ -1,51 +1,51 @@
 <?php
-/* Template Name: Đánh Giá */
+/* Template Name: Dự Án */
 get_header(); ?>
 
-<!-- Nội dung trang Đánh Giá bắt đầu -->
+<!-- Nội dung trang Dự Án bắt đầu -->
 <section class="py-16 text-white" style="background: linear-gradient(135deg, #ff3205 0%, #e02a00 100%);">
     <div class="container mx-auto px-4">
         <div class="text-center">
-            <h1 class="text-4xl font-bold mb-4">Đánh Giá Từ Khách Hàng</h1>
-            <p class="text-xl mb-8">Khách hàng nói gì về VV Agency?</p>
+            <h1 class="text-4xl font-bold mb-4">Dự Án Tiêu Biểu</h1>
+            <p class="text-xl mb-8">Các dự án đã được VV Agency thực hiện thành công</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                   <!-- Đánh giá giả lập 1 -->
+                   <!-- Dự án giả lập 1 -->
                    <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 <div class="flex items-center mb-4">
                     <!-- <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-blue-500">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer Image" class="w-full h-full object-cover">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Project Image" class="w-full h-full object-cover">
                     </div> -->
                     <div class="ml-4">
-                        <h3 class="text-xl font-bold text-gray-900">Nguyễn Văn Khánh</h3>
-                        <p class="text-sm text-gray-600 mt-1">"VV Agency đã giúp tôi xây dựng chiến lược marketing online hiệu quả, giúp doanh thu tăng trưởng rõ rệt trong thời gian ngắn. Dịch vụ rất chuyên nghiệp và nhanh chóng."</p>
+                        <h3 class="text-xl font-bold text-gray-900">Website Bán Hàng Online</h3>
+                        <p class="text-sm text-gray-600 mt-1">"VV Agency đã thiết kế và phát triển website thương mại điện tử hoàn chỉnh cho công ty, giúp tăng doanh thu online lên 150% trong 6 tháng đầu tiên."</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Đánh giá giả lập 2 -->
+            <!-- Dự án giả lập 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 <div class="flex items-center mb-4">
                     <!-- <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-blue-500">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer Image" class="w-full h-full object-cover">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Project Image" class="w-full h-full object-cover">
                     </div> -->
                     <div class="ml-4">
-                        <h3 class="text-xl font-bold text-gray-900">Trần Thị Hồng</h3>
-                        <p class="text-sm text-gray-600 mt-1">"Cảm ơn VV Agency đã giúp tôi hoàn thiện website của công ty. Giao diện đẹp, dễ sử dụng và tối ưu cho SEO. Chắc chắn sẽ tiếp tục hợp tác trong tương lai."</p>
+                        <h3 class="text-xl font-bold text-gray-900">Chiến Lược Marketing Online</h3>
+                        <p class="text-sm text-gray-600 mt-1">"Chiến dịch quảng cáo đa kênh đã giúp khách hàng tăng 300% tương tác trên mạng xã hội và đạt được 500+ leads chất lượng trong 3 tháng."</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Đánh giá giả lập 3 -->
+            <!-- Dự án giả lập 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                 <div class="flex items-center mb-4">
                     <!-- <div class="w-16 h-16 rounded-full overflow-hidden border-4 border-blue-500">
-                        <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Customer Image" class="w-full h-full object-cover">
+                        <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Project Image" class="w-full h-full object-cover">
                     </div> -->
                     <div class="ml-4">
-                        <h3 class="text-xl font-bold text-gray-900">Lê Minh Châu</h3>
-                        <p class="text-sm text-gray-600 mt-1">"VV Agency là một trong những đối tác đáng tin cậy của chúng tôi. Họ luôn đưa ra những giải pháp marketing sáng tạo và hiệu quả. Chắc chắn sẽ tiếp tục làm việc với họ."</p>
+                        <h3 class="text-xl font-bold text-gray-900">SEO & Content Marketing</h3>
+                        <p class="text-sm text-gray-600 mt-1">"Dịch vụ tối ưu hóa công cụ tìm kiếm đã giúp website khách hàng đạt top 10 từ khóa chính trong ngành, tăng lưu lượng truy cập tự nhiên 400%."</p>
                     </div>
                 </div>
             </div>
@@ -53,13 +53,13 @@ get_header(); ?>
 
             <?php
             $args = array(
-                'post_type' => 'danh_gia',
+                'post_type' => 'du_an',
                 'posts_per_page' => -1,
             );
-            $danh_gia = new WP_Query($args);
+            $du_an = new WP_Query($args);
             ?>
-            <?php if ($danh_gia->have_posts()) : ?>
-                <?php while ($danh_gia->have_posts()) : $danh_gia->the_post(); ?>
+            <?php if ($du_an->have_posts()) : ?>
+                <?php while ($du_an->have_posts()) : $du_an->the_post(); ?>
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-bold mr-4">
@@ -77,6 +77,7 @@ get_header(); ?>
         <?php wp_reset_postdata(); ?>
     </div>
 </section>
-<!-- Nội dung trang Đánh Giá kết thúc -->
+<!-- Nội dung trang Dự Án kết thúc -->
 
-<?php get_footer(); ?> 
+<?php get_footer(); ?>
+
