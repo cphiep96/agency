@@ -35,7 +35,7 @@
 						[ 'feature' => 'Chăm sóc Google Maps', 'basic' => true, 'professional' => true, 'premium' => true ],
 						[ 'feature' => 'Quản trị Fanpage', 'basic' => true, 'professional' => true, 'premium' => true ],
 						[ 'feature' => 'Quảng cáo Google Ads', 'basic' => true, 'professional' => true, 'premium' => true ],
-						[ 'feature' => 'Quảng cáo Facebook Ads', 'basic' => true, 'professional' => true, 'premium' => false ],
+						[ 'feature' => 'Quảng cáo Facebook Ads', 'basic' => true, 'professional' => true, 'premium' => true ],
 					];
 
 					foreach ( $pricing_data as $row ) :
@@ -57,9 +57,9 @@
 					<?php endforeach; ?>
                     <tr class="bg-gray-50">
                         <td class="border p-4 font-semibold"></td>
-                        <td class="border p-4 text-center"><a href="#" class="text-red-600 hover:underline font-semibold">Liên hệ tư vấn</a></td>
-                        <td class="border p-4 text-center"><a href="#" class="text-red-600 hover:underline font-semibold">Liên hệ tư vấn</a></td>
-                        <td class="border p-4 text-center"><a href="#" class="text-red-600 hover:underline font-semibold">Liên hệ tư vấn</a></td>
+                        <td class="border p-4 text-center"><a href="#" class="text-[#ff3205] hover:text-[#e02a00] hover:underline font-semibold">Liên hệ tư vấn</a></td>
+                        <td class="border p-4 text-center"><a href="#" class="text-[#ff3205] hover:text-[#e02a00] hover:underline font-semibold">Liên hệ tư vấn</a></td>
+                        <td class="border p-4 text-center"><a href="#" class="text-[#ff3205] hover:text-[#e02a00] hover:underline font-semibold">Liên hệ tư vấn</a></td>
                     </tr>
                     </tbody>
                 </table>

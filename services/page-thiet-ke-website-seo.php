@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient {
-    background: linear-gradient(135deg, #ff3205 , #e02a00, #ff3205 , #ff3205 );
+    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }

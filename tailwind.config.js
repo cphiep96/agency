@@ -20,6 +20,8 @@ module.exports = {
         brand: {
           DEFAULT: '#ff3205',
           dark: '#e02a00',
+          white: '#FFFFFF',
+          black: '#000000',
         },
       },
       fontFamily: {

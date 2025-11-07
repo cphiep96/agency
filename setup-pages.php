@@ -267,7 +267,15 @@ function vv_agency_create_pages() {
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'giai-phap/vat-lieu-xay-dung.php'
-        )
+        ),
+        array(
+            'post_title'   => 'Dịch Vụ SEO',
+            'post_name'    => 'dich-vu-seo',
+            'post_content' => '<p>Dịch vụ SEO toàn diện, tăng thứ hạng trên Google và thu hút khách hàng tiềm năng.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-dich-vu-seo.php'
+        ),
         // them cac page trong folder giai-phap vao mang $pages
     );
 

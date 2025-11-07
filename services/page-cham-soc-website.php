@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-website {
-    background: linear-gradient(135deg, #2b5876, #4e4376, #2b5876, #4e4376);
+    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
     background-size: 400% 400%;
     animation: gradientWebsite 16s ease infinite;
 }
@@ -37,7 +37,7 @@ get_header(); ?>
                         <li><i class="fas fa-tachometer-alt text-teal-500 mr-2"></i>Tối ưu tốc độ tải trang, trải nghiệm người dùng</li>
                         <li><i class="fas fa-headset text-purple-500 mr-2"></i>Hỗ trợ kỹ thuật, xử lý sự cố nhanh chóng</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#38b2ac] hover:bg-[#4299e1] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>

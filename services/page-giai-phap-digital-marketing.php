@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-digital {
-    background: linear-gradient(135deg, #8b5cf6, #a855f7, #8b5cf6, #a855f7);
+    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
     background-size: 400% 400%;
     animation: gradientDigital 15s ease infinite;
 }
@@ -48,7 +48,7 @@ section.is-visible {
                         <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i><span>Mở rộng độ nhận diện thương hiệu trên đa nền tảng.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i><span>Gia tăng tỷ lệ khách hàng tiềm năng và chuyển đổi đơn hàng.</span></li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>

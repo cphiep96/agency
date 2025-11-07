@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-facebook {
-    background: linear-gradient(135deg, #8e44ad, #3498db, #8e44ad, #3498db);
+    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
     background-size: 400% 400%;
     animation: gradientFacebook 18s ease infinite;
 }
@@ -37,7 +37,7 @@ get_header(); ?>
                         <li><i class="fas fa-bolt text-yellow-400 mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
                         <li><i class="fas fa-headset text-green-500 mr-2"></i>Hỗ trợ 24/7 bởi chuyên gia Facebook</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#1877f3] hover:bg-[#0052cc] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>

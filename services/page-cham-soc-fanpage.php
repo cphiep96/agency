@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-fanpage {
-    background: linear-gradient(135deg, #ff7c7c, #ffb6b6, #ff7c7c, #ffb6b6);
+    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
     background-size: 400% 400%;
     animation: gradientFanpage 12s ease infinite;
 }
@@ -37,7 +37,7 @@ get_header(); ?>
                         <li><i class="fas fa-bolt text-yellow-400 mr-2"></i>Chạy quảng cáo, tăng lượt tiếp cận tự nhiên</li>
                         <li><i class="fas fa-headset text-purple-500 mr-2"></i>Hỗ trợ quản trị, xử lý khủng hoảng truyền thông</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#319795] hover:bg-[#3182ce] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>

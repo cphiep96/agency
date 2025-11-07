@@ -468,7 +468,8 @@ function agency_customizer_scripts() {
             'QUẢNG CÁO INSTAGRAM',
             'CHĂM SÓC WEBSITE',
             'VIẾT BÀI SEO',
-            'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ'
+            'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ',
+            'DỊCH VỤ SEO'
         ];
         
         var defaultDescriptions = [
@@ -482,7 +483,8 @@ function agency_customizer_scripts() {
             'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'Chăm sóc website để tăng tỷ lệ chuyển đổi',
             'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
-            'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing'
+            'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
+            'Tối ưu hóa công cụ tìm kiếm toàn diện để tăng thứ hạng và lưu lượng truy cập tự nhiên'
         ];
         
         var defaultIcons = [
@@ -495,7 +497,8 @@ function agency_customizer_scripts() {
             'fab fa-instagram',
             'fas fa-globe',
             'fab fa-facebook-f',
-            'fas fa-chart-line'
+            'fas fa-chart-line',
+            'fas fa-search'
         ];
         
         var defaultImages = [
@@ -509,7 +512,8 @@ function agency_customizer_scripts() {
             '<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-INSTAGRAM.jpg',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/cham-soc-website.jpg',
             '<?php echo get_template_directory_uri(); ?>/src/img/service/seo.png',
-            '<?php echo get_template_directory_uri(); ?>/src/img/service/marketing.png'
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/marketing.png',
+            '<?php echo get_template_directory_uri(); ?>/src/img/service/seo.png'
         ];
 
         var defaultColors = [
@@ -523,7 +527,8 @@ function agency_customizer_scripts() {
             'purple',
             'green',
             'blue',
-            'purple'
+            'purple',
+            'green'
         ];
 
         var defaultLinks = [
@@ -537,7 +542,8 @@ function agency_customizer_scripts() {
             '/quang-cao-instagram',
             '/cham-soc-website',
             '/viet-bai-seo',
-            '/giai-phap-digital-marketing'
+            '/giai-phap-digital-marketing',
+            '/dich-vu-seo'
         ];
         
         // Update section title and description
@@ -545,8 +551,8 @@ function agency_customizer_scripts() {
         wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
         
         
-        // Reset first 11 services to defaults
-        for (var i = 0; i < 11; i++) {
+        // Reset first 12 services to defaults
+        for (var i = 0; i < 12; i++) {
             wp.customize('agency_service_' + i + '_active').set(true);
             wp.customize('agency_service_' + i + '_title').set(defaultTitles[i]);
             wp.customize('agency_service_' + i + '_description').set(defaultDescriptions[i]);
@@ -1249,7 +1255,6 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
      * @param array $service Service data (title, description, icon, image, color).
      */
     function agency_render_single_service( array $service ): void {
-        $color = ! empty( $service['color'] ) ? $service['color'] : 'blue';
         $card_link = ! empty( $service['link'] ) ? $service['link'] : '#';
         ?>
  <div class="relative group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
@@ -1259,7 +1264,7 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
     <?php endif; ?>
 
     <!-- Background hiệu ứng -->
-    <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: linear-gradient(135deg, #ff3205 0%, #ff3205 100%);"></div>
 
     <!-- Nội dung chính -->
     <div class="relative z-20 p-8 flex flex-col flex-1 pointer-events-none">
@@ -1269,20 +1274,20 @@ if ( ! function_exists( 'agency_render_single_service' ) ) {
             <?php endif; ?>
         </div>
         <div class="flex items-center justify-center mb-6">
-            <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                <i class="<?php echo esc_attr( $service['icon'] ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
+            <div class="w-16 h-16 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500" style="background-color: rgba(255, 50, 5, 0.1);">
+                <i class="<?php echo esc_attr( $service['icon'] ); ?> text-2xl" style="color: #ff3205;"></i>
             </div>
         </div>
-        <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+        <h3 class="text-xl font-bold text-center mb-3 group-hover:text-white transition-colors duration-500" style="color: #000000;">
             <?php echo esc_html( $service['title'] ); ?>
         </h3>
-        <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+        <p class="text-center text-sm group-hover:text-white/90 transition-colors duration-500" style="color: #000000;">
             <?php echo esc_html( $service['description'] ); ?>
         </p>
 
         <!-- Nút Zalo (cần pointer-events-auto để click được) -->
         <div class="mt-auto pt-2 flex justify-center">
-            <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap">
+            <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap transition-colors" style="background-color: #ff3205;" onmouseover="this.style.backgroundColor='#cc2904'" onmouseout="this.style.backgroundColor='#ff3205'">
                 <span class="hidden sm:inline">Liên hệ tư vấn</span>
                 <span class="sm:hidden">Tư vấn</span>
             </a>
@@ -1337,7 +1342,7 @@ if ( ! function_exists( 'agency_get_default_solutions' ) ) {
                 'title'       => 'Bán lẻ',
                 'description' => 'Giải pháp marketing toàn diện cho ngành bán lẻ',
                 'icon'        => 'fas fa-store',
-                'image'       => 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'blue',
                 'link'        => home_url('/giai-phap/ban-le'),
             ),
@@ -1361,7 +1366,7 @@ if ( ! function_exists( 'agency_get_default_solutions' ) ) {
                 'title'       => 'Công nghệ',
                 'description' => 'Giải pháp marketing toàn diện cho ngành công nghệ',
                 'icon'        => 'fas fa-microchip',
-                'image'       => 'https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'purple',
                 'link'        => home_url('/giai-phap/cong-nghe'),
             ),
@@ -1385,7 +1390,7 @@ if ( ! function_exists( 'agency_get_default_solutions' ) ) {
                 'title'       => 'Dược',
                 'description' => 'Giải pháp marketing toàn diện cho ngành dược',
                 'icon'        => 'fas fa-pills',
-                'image'       => 'https://images.pexels.com/photos/5938144/pexels-photo-5938144.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/7579832/pexels-photo-7579832.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'indigo',
                 'link'        => home_url('/giai-phap/duoc'),
             ),
@@ -1441,7 +1446,7 @@ if ( ! function_exists( 'agency_get_default_solutions' ) ) {
                 'title'       => 'Thép',
                 'description' => 'Giải pháp marketing toàn diện cho ngành thép',
                 'icon'        => 'fas fa-tools',
-                'image'       => 'https://images.pexels.com/photos/2882234/pexels-photo-2882234.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/5938144/pexels-photo-5938144.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'lime',
                 'link'        => home_url('/giai-phap/thep'),
             ),
@@ -1496,7 +1501,6 @@ if ( ! function_exists( 'agency_render_single_solution' ) ) {
      * @param array $solution Solution data (title, image, link).
      */
     function agency_render_single_solution( array $solution ): void {
-        $color = ! empty( $solution['color'] ) ? $solution['color'] : 'red';
         $card_link = ! empty( $solution['link'] ) ? $solution['link'] : '#';
         ?>
         <div class="relative group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col">
@@ -1506,7 +1510,7 @@ if ( ! function_exists( 'agency_render_single_solution' ) ) {
             <?php endif; ?>
 
             <!-- Background hiệu ứng -->
-            <div class="absolute inset-0 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-400 to-<?php echo esc_attr( $color ); ?>-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style="background: linear-gradient(135deg, #ff3205 0%, #ff3205 100%);"></div>
 
             <!-- Nội dung chính -->
             <div class="relative z-20 p-8 flex flex-col flex-1 pointer-events-none">
@@ -1516,20 +1520,20 @@ if ( ! function_exists( 'agency_render_single_solution' ) ) {
                     <?php endif; ?>
                 </div>
                 <div class="flex items-center justify-center mb-6">
-                    <div class="w-16 h-16 bg-<?php echo esc_attr( $color ); ?>-100 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500">
-                        <i class="<?php echo esc_attr( $solution['icon'] ?? 'fas fa-cogs' ); ?> text-2xl text-<?php echo esc_attr( $color ); ?>-600"></i>
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center group-hover:bg-white transition-colors duration-500" style="background-color: rgba(255, 50, 5, 0.1);">
+                        <i class="<?php echo esc_attr( $solution['icon'] ?? 'fas fa-cogs' ); ?> text-2xl" style="color: #ff3205;"></i>
                     </div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800 text-center mb-3 group-hover:text-white transition-colors duration-500">
+                <h3 class="text-xl font-bold text-center mb-3 group-hover:text-white transition-colors duration-500" style="color: #000000;">
                     <?php echo esc_html( $solution['title'] ); ?>
                 </h3>
-                <p class="text-gray-600 text-center text-sm group-hover:text-white/90 transition-colors duration-500">
+                <p class="text-center text-sm group-hover:text-white/90 transition-colors duration-500" style="color: #000000;">
                     <?php echo esc_html( $solution['description'] ?? 'Giải pháp marketing toàn diện cho ngành ' . strtolower( $solution['title'] ) ); ?>
                 </p>
 
                 <!-- Nút Zalo (cần pointer-events-auto để click được) -->
                 <div class="mt-auto pt-2 flex justify-center">
-                    <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white bg-<?php echo esc_attr( $color ); ?>-600 hover:bg-<?php echo esc_attr( $color ); ?>-700 transition-colors shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap">
+                    <a href="https://zalo.me/0396693505" target="_blank" class="zalo-button inline-block px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 rounded-lg font-semibold text-white shadow-md z-30 relative pointer-events-auto text-sm sm:text-base md:text-lg whitespace-nowrap transition-colors" style="background-color: #ff3205;" onmouseover="this.style.backgroundColor='#cc2904'" onmouseout="this.style.backgroundColor='#ff3205'">
                         <span class="hidden sm:inline">Liên hệ tư vấn</span>
                         <span class="sm:hidden">Tư vấn</span>
                     </a>

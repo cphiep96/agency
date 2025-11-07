@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Giải Pháp Toàn Diện</h1>
             <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
+                Chúng tôi cung cấp các giải pháp digital branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
             </p>
         </div>
     </div>
@@ -23,7 +23,7 @@ get_header(); ?>
                 Giải Pháp Toàn Diện
             </h2>
             <p class="text-gray-600 max-w-2xl mx-auto">
-                Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
+                Chúng tôi cung cấp các giải pháp digital branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
             </p>
         </div>
 

@@ -12,7 +12,7 @@
     ?>
 
     <!-- Services Section -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="services">
+    <section class="py-20 bg-white" id="services">
         <div class="container mx-auto px-4">
             <?php
             // Check if homepage-services sidebar has widgets
@@ -26,10 +26,10 @@
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <h2 class="text-4xl font-bold text-black mb-4">
                         <?php echo esc_html($services_title); ?>
                     </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
+                    <p class="text-black max-w-2xl mx-auto">
                         <?php echo esc_html($services_description); ?>
                     </p>
                 </div>
@@ -51,8 +51,19 @@
         </div>
     </section>
 
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Giải Pháp Toàn Diện
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+            Chúng tôi cung cấp các giải pháp digital branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
+        </p>
+    </div>
+    <!-- Solutions Section -->
+    <?php echo do_shortcode('[block id="footer-vvagency-solutions"]'); ?>
+
     <!-- Features Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <?php
             // Check if homepage-features sidebar has widgets
@@ -66,10 +77,10 @@
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    <h2 class="text-4xl font-bold text-black mb-4">
                         <?php echo esc_html($features_title); ?>
                     </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
+                    <p class="text-black max-w-2xl mx-auto">
                         <?php echo esc_html($features_description); ?>
                     </p>
                 </div>
@@ -78,7 +89,7 @@
                     <!-- Left Content - Image with overlay -->
                     <div class="relative group">
                         <div
-                            class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                            class="absolute inset-0 bg-gradient-to-r from-[#ff3205] to-[#ff3205] rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                         </div>
                         <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                             alt="Digital Marketing Strategy"
@@ -87,24 +98,24 @@
                         <!-- Floating Stats -->
                         <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg z-20">
                             <div class="flex items-center space-x-3">
-                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                                <div class="w-12 h-12 bg-[#ff3205] bg-opacity-10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-[#ff3205] text-xl"></i>
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-bold text-gray-800">85%</div>
-                                    <div class="text-xs text-gray-600">Tăng trưởng</div>
+                                    <div class="text-2xl font-bold text-black">85%</div>
+                                    <div class="text-xs text-black">Tăng trưởng</div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg z-20">
                             <div class="flex items-center space-x-3">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-users text-blue-600 text-xl"></i>
+                                <div class="w-12 h-12 bg-[#ff3205] bg-opacity-10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-users text-[#ff3205] text-xl"></i>
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-bold text-gray-800">1000+</div>
-                                    <div class="text-xs text-gray-600">Khách hàng</div>
+                                    <div class="text-2xl font-bold text-black">1000+</div>
+                                    <div class="text-xs text-black">Khách hàng</div>
                                 </div>
                             </div>
                         </div>
@@ -123,22 +134,22 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-share-alt text-white text-xl"></i>
                                     </div>
                                 </div>
                                 <div class="flex-1">
-                                    <h4 class="text-xl font-bold text-gray-800 mb-3">Phủ sóng đa nền tảng MXH</h4>
-                                    <p class="text-gray-600 leading-relaxed">Với sự phát triển của các nền tảng MXH, chúng tôi
+                                    <h4 class="text-xl font-bold text-black mb-3">Phủ sóng đa nền tảng MXH</h4>
+                                    <p class="text-black leading-relaxed">Với sự phát triển của các nền tảng MXH, chúng tôi
                                         giúp thương hiệu của bạn hiện diện mạnh mẽ trên Facebook, Instagram, TikTok, LinkedIn và
                                         nhiều kênh khác.</p>
                                     <div class="mt-3 flex flex-wrap gap-2">
                                         <span
-                                            class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Facebook</span>
+                                            class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">Facebook</span>
                                         <span
-                                            class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-medium">Instagram</span>
+                                            class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">Instagram</span>
                                         <span
-                                            class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">TikTok</span>
+                                            class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">TikTok</span>
                                     </div>
                                 </div>
                             </div>
@@ -148,24 +159,24 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-dollar-sign text-white text-xl"></i>
                                     </div>
                                 </div>
                                 <div class="flex-1">
-                                    <h4 class="text-xl font-bold text-gray-800 mb-3">Tối ưu chi phí & thời gian</h4>
-                                    <p class="text-gray-600 leading-relaxed">VV Agency giúp doanh nghiệp vừa và nhỏ tiết kiệm
+                                    <h4 class="text-xl font-bold text-black mb-3">Tối ưu chi phí & thời gian</h4>
+                                    <p class="text-black leading-relaxed">VV Agency giúp doanh nghiệp vừa và nhỏ tiết kiệm
                                         đến
                                         60% chi phí marketing so với việc tự vận hành, đồng thời rút ngắn thời gian triển khai
                                         chiến dịch.</p>
                                     <div class="mt-4 grid grid-cols-2 gap-4">
-                                        <div class="text-center p-3 bg-green-50 rounded-lg">
-                                            <div class="text-2xl font-bold text-green-600">60%</div>
-                                            <div class="text-xs text-gray-600">Tiết kiệm chi phí</div>
+                                        <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
+                                            <div class="text-2xl font-bold text-[#ff3205]">60%</div>
+                                            <div class="text-xs text-black">Tiết kiệm chi phí</div>
                                         </div>
-                                        <div class="text-center p-3 bg-blue-50 rounded-lg">
-                                            <div class="text-2xl font-bold text-blue-600">2x</div>
-                                            <div class="text-xs text-gray-600">Tốc độ triển khai</div>
+                                        <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
+                                            <div class="text-2xl font-bold text-[#ff3205]">2x</div>
+                                            <div class="text-xs text-black">Tốc độ triển khai</div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,16 +187,16 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-rocket text-white text-xl"></i>
                                     </div>
                                 </div>
                                 <div class="flex-1">
-                                    <h4 class="text-xl font-bold text-gray-800 mb-3">Công nghệ AI tiên tiến</h4>
-                                    <p class="text-gray-600 leading-relaxed">Ứng dụng AI và Big Data để phân tích hành vi khách
+                                    <h4 class="text-xl font-bold text-black mb-3">Công nghệ AI tiên tiến</h4>
+                                    <p class="text-black leading-relaxed">Ứng dụng AI và Big Data để phân tích hành vi khách
                                         hàng, tối ưu hóa chiến dịch real-time và dự đoán xu hướng thị trường.</p>
                                     <div class="mt-3">
-                                        <div class="flex items-center space-x-2 text-sm text-purple-600">
+                                        <div class="flex items-center space-x-2 text-sm text-[#ff3205]">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Phân tích dữ liệu tự động</span>
                                         </div>
