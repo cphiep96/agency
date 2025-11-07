@@ -221,7 +221,7 @@ class VV_Agency_Services_Widget extends WP_Widget {
      */
     public function form($instance) {
         $title = !empty($instance['title']) ? $instance['title'] : 'DỊCH VỤ CỦA VV AGENCY';
-        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số';
+        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số';
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'agency'); ?></label>
@@ -281,7 +281,7 @@ function agency_customizer_services($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_services_description', array(
-        'default' => 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số',
+        'default' => 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport' => 'refresh',
     ));
@@ -483,7 +483,7 @@ function agency_customizer_scripts() {
             'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'Chăm sóc website để tăng tỷ lệ chuyển đổi',
             'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
-            'Bộ giải pháp Digital Branding toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
+            'Bộ giải pháp Marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
             'Tối ưu hóa công cụ tìm kiếm toàn diện để tăng thứ hạng và lưu lượng truy cập tự nhiên'
         ];
         
@@ -549,7 +549,7 @@ function agency_customizer_scripts() {
         
         // Update section title and description
         wp.customize('agency_services_title').set('DỊCH VỤ CỦA VV AGENCY');
-        wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+        wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
         
         
         // Reset first 12 services to defaults
@@ -2087,7 +2087,7 @@ if ( ! function_exists( 'agency_get_default_hero_data' ) ) {
         return array(
             'title'         => 'VV AGENCY',
             'subtitle'      => 'ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ',
-            'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp Digital Branding toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
+            'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp Marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
             'button1_text'  => 'Liên hệ ngay',
             'button1_link'  => 'https://zalo.me/0396693505',
             'button2_text'  => 'Xem dịch vụ',
@@ -2260,11 +2260,19 @@ if ( ! function_exists( 'agency_render_single_feature' ) ) {
      * @param array $feature Feature data (title, description, icon, color).
      */
     function agency_render_single_feature( array $feature ): void {
-        $color = ! empty( $feature['color'] ) ? $feature['color'] : 'blue';
+        $color = ! empty( $feature['color'] ) ? $feature['color'] : 'brand';
+
+        // Map color names to actual color values
+        $color_map = array(
+            'brand' => array('from' => '#ff3205', 'to' => '#e02a00'),
+            'brand-dark' => array('from' => '#e02a00', 'to' => '#ff3205'),
+        );
+
+        $selected_color = isset($color_map[$color]) ? $color_map[$color] : $color_map['brand'];
         ?>
         <div class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
             <div class="flex-shrink-0">
-                <div class="w-14 h-14 bg-gradient-to-br from-<?php echo esc_attr( $color ); ?>-500 to-<?php echo esc_attr( $color ); ?>-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                <div class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300" style="background: linear-gradient(135deg, <?php echo esc_attr($selected_color['from']); ?>, <?php echo esc_attr($selected_color['to']); ?>);">
                     <i class="<?php echo esc_attr( $feature['icon'] ); ?> text-white text-xl"></i>
                 </div>
             </div>
@@ -2273,24 +2281,24 @@ if ( ! function_exists( 'agency_render_single_feature' ) ) {
                 <p class="text-gray-600 leading-relaxed"><?php echo esc_html( $feature['description'] ); ?></p>
                 <?php if ( $feature['title'] === 'Tối ưu chi phí & thời gian' ) : ?>
                     <div class="mt-4 grid grid-cols-2 gap-4">
-                        <div class="text-center p-3 bg-green-50 rounded-lg">
-                            <div class="text-2xl font-bold text-green-600">60%</div>
+                        <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
+                            <div class="text-2xl font-bold text-[#ff3205]">60%</div>
                             <div class="text-xs text-gray-600">Tiết kiệm chi phí</div>
                         </div>
-                        <div class="text-center p-3 bg-blue-50 rounded-lg">
-                            <div class="text-2xl font-bold text-blue-600">2x</div>
+                        <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
+                            <div class="text-2xl font-bold text-[#e02a00]">2x</div>
                             <div class="text-xs text-gray-600">Tốc độ triển khai</div>
                         </div>
                     </div>
                 <?php elseif ( $feature['title'] === 'Phủ sóng đa nền tảng MXH' ) : ?>
                     <div class="mt-3 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium">Facebook</span>
-                        <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-medium">Instagram</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium">TikTok</span>
+                        <span class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">Facebook</span>
+                        <span class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#e02a00] rounded-full text-xs font-medium">Instagram</span>
+                        <span class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">TikTok</span>
                     </div>
                 <?php elseif ( $feature['title'] === 'Công nghệ AI tiên tiến' ) : ?>
                     <div class="mt-3">
-                        <div class="flex items-center space-x-2 text-sm text-purple-600">
+                        <div class="flex items-center space-x-2 text-sm text-[#ff3205]">
                             <i class="fas fa-check-circle"></i>
                             <span>Phân tích dữ liệu tự động</span>
                         </div>
@@ -2361,7 +2369,7 @@ function agency_customizer_features($wp_customize) {
             'title' => '',
             'description' => '',
             'icon' => 'fas fa-star',
-            'color' => 'blue',
+            'color' => 'brand',
         );
 
         // Feature Active
@@ -2429,13 +2437,8 @@ function agency_customizer_features($wp_customize) {
             'section' => 'agency_features_section',
             'type' => 'select',
             'choices' => array(
-                'blue' => __('Blue', 'agency'),
-                'red' => __('Red', 'agency'),
-                'green' => __('Green', 'agency'),
-                'yellow' => __('Yellow', 'agency'),
-                'purple' => __('Purple', 'agency'),
-                'pink' => __('Pink', 'agency'),
-                'teal' => __('Teal', 'agency'),
+                'brand' => __('Brand Red', 'agency'),
+                'brand-dark' => __('Brand Dark Red', 'agency'),
             ),
         ));
     }
@@ -2781,7 +2784,7 @@ function agency_block_shortcode($atts) {
             } else {
                 // Get services section title and description from customizer
                 $services_title = get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
-                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-12 md:mb-16">

@@ -126,7 +126,8 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        style="background-color: #ff3205;"
+                                        class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-share-alt text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -137,10 +138,13 @@
                                         nhiều kênh khác.</p>
                                     <div class="mt-3 flex flex-wrap gap-2">
                                         <span
+                                            style="background-color: #ff3205;"
                                             class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">Facebook</span>
                                         <span
+                                            style="background-color: #ff3205;"
                                             class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">Instagram</span>
                                         <span
+                                            style="background-color: #ff3205;"
                                             class="px-3 py-1 bg-[#ff3205] bg-opacity-10 text-[#ff3205] rounded-full text-xs font-medium">TikTok</span>
                                     </div>
                                 </div>
@@ -151,7 +155,8 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        style="background-color: #ff3205;"
+                                        class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-dollar-sign text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -179,7 +184,8 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        style="background-color: #ff3205;"
+                                        class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-rocket text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -188,7 +194,7 @@
                                     <p class="text-black leading-relaxed">Ứng dụng AI và Big Data để phân tích hành vi khách
                                         hàng, tối ưu hóa chiến dịch real-time và dự đoán xu hướng thị trường.</p>
                                     <div class="mt-3">
-                                        <div class="flex items-center space-x-2 text-sm text-black">
+                                        <div style="background-color: #ff3205; color: #fff;" class="flex items-center space-x-2 text-sm text-black">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Phân tích dữ liệu tự động</span>
                                         </div>
