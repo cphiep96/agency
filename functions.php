@@ -198,7 +198,7 @@ class VV_Agency_Services_Widget extends WP_Widget {
         echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
 
         // Section description
-        $description = ! empty( $instance['description'] ) ? $instance['description'] : get_theme_mod( 'agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số' );
+        $description = ! empty( $instance['description'] ) ? $instance['description'] : get_theme_mod( 'agency_services_description', 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số' );
         echo '<p class="text-gray-600 max-w-2xl mx-auto text-center mb-16">' . esc_html( $description ) . '</p>';
 
         // Fetch and render services
@@ -2771,7 +2771,7 @@ function agency_block_shortcode($atts) {
             ?>
                 <!-- Custom footer content here -->
                 <!-- sửa là các services giống trang chủ -->
-                <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="services">
+                <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50" id="services">
         <div class="container mx-auto px-4">
             <?php
             // Check if homepage-services sidebar has widgets
@@ -2784,16 +2784,16 @@ function agency_block_shortcode($atts) {
                 $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                 ?>
                 <!-- Section Title -->
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                         <?php echo esc_html($services_title); ?>
                     </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
+                    <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-4">
                         <?php echo esc_html($services_description); ?>
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                     <?php
                     // Get services via helper and render
                     $services = agency_get_services();
@@ -2815,7 +2815,7 @@ function agency_block_shortcode($atts) {
             
         case 'footer-vvagency-solutions':
             ?>
-            <section class="py-20 bg-gradient-to-b from-white to-gray-50" id="giai-phap">
+            <section class="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50" id="giai-phap">
                 <div class="container mx-auto px-4">
                     <?php
                     if (is_active_sidebar('homepage-solutions')) {
@@ -2824,16 +2824,15 @@ function agency_block_shortcode($atts) {
                         $solutions_title = get_theme_mod('agency_solutions_title', 'GIẢI PHÁP CỦA VV AGENCY');
                         $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                         ?>
-                        <div class="text-center mb-16">
-                            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                        <div class="text-center mb-12 md:mb-16">
+                            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
                                 <?php echo esc_html($solutions_title); ?>
                             </h2>
-                            <p class="text-gray-600 max-w-2xl mx-auto">
+                            <p class="text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-4">
                                 <?php echo esc_html($solutions_description); ?>
                             </p>
                         </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                             <?php
                             $solutions = agency_get_solutions();
                             if ( empty( $solutions ) ) {

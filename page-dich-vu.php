@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="text-center text-white">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Dịch Vụ Của Chúng Tôi</h1>
             <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                giải pháp Digital Branding toàn diện cho doanh nghiệp của bạn
+                giải pháp Marketing toàn diện cho doanh nghiệp của bạn
             </p>
         </div>
     </div>
@@ -24,7 +24,7 @@ get_header(); ?>
             } else {
                 // Get services section title and description from customizer
                 $services_title = get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
-                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">

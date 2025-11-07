@@ -46,23 +46,23 @@ get_header(); ?>
   <div class="container mx-auto px-4">
     <h2 class="text-2xl font-bold text-center text-black mb-8">Các loại bài viết SEO chuyên nghiệp tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-blog text-3xl text-[#1e40af] mb-4"></i>
+      <div class="bg-red-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
+        <i class="fas fa-blog text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Blog</h3>
         <p class="text-gray-600">Nội dung blog chất lượng, chia sẻ giá trị và tối ưu SEO.</p>
       </div>
-      <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-newspaper text-3xl text-[#3b82f6] mb-4"></i>
+      <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
+        <i class="fas fa-newspaper text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Tin tức</h3>
         <p class="text-gray-600">Cập nhật tin tức ngành, xây dựng uy tín thương hiệu.</p>
       </div>
-      <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-lightbulb text-3xl text-[#60a5fa] mb-4"></i>
+      <div class="bg-red-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
+        <i class="fas fa-lightbulb text-3xl text-[#e02a00] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Tư vấn</h3>
         <p class="text-gray-600">Hướng dẫn chuyên sâu, giải đáp thắc mắc khách hàng.</p>
       </div>
-      <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-star text-3xl text-[#93c5fd] mb-4"></i>
+      <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
+        <i class="fas fa-star text-3xl text-[#e02a00] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Review</h3>
         <p class="text-gray-600">Đánh giá sản phẩm/dịch vụ trung thực, xây dựng niềm tin.</p>
       </div>
@@ -74,19 +74,19 @@ get_header(); ?>
             <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình tiếp nhận dự án tại VV Agency</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-comments text-3xl text-[#1e40af] mb-3"></i>
+                    <i class="fas fa-comments text-3xl text-[#ff3205] mb-3"></i>
                     <span class="font-semibold text-lg">Tư vấn</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-file-invoice-dollar text-3xl text-[#1e40af] mb-3"></i>
+                    <i class="fas fa-file-invoice-dollar text-3xl text-[#e02a00] mb-3"></i>
                     <span class="font-semibold text-lg">Báo giá</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-pen-alt text-3xl text-[#1e40af] mb-3"></i>
+                    <i class="fas fa-pen-alt text-3xl text-[#ff3205] mb-3"></i>
                     <span class="font-semibold text-lg">Tiến hành viết bài</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-sync-alt text-3xl text-[#1e40af] mb-3"></i>
+                    <i class="fas fa-sync-alt text-3xl text-[#e02a00] mb-3"></i>
                     <span class="font-semibold text-lg">Bàn giao, chỉnh sửa</span>
                 </div>
             </div>
@@ -163,13 +163,13 @@ get_header(); ?>
           <tr class="bg-gray-50">
             <td class="py-3 px-3 text-left font-semibold"></td>
             <td class="py-3 px-3 text-center">
-                <a href="https://zalo.me/0396693505" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
+                <a href="https://zalo.me/0396693505" class="inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
             </td>
             <td class="py-3 px-3 text-center">
-                <a href="https://zalo.me/0396693505" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
+                <a href="https://zalo.me/0396693505" class="inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
             </td>
             <td class="py-3 px-3 text-center">
-                <a href="https://zalo.me/0396693505" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
+                <a href="https://zalo.me/0396693505" class="inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white py-2 px-4 rounded-lg shadow transition-colors text-xs font-bold">Liên hệ tư vấn</a>
             </td>
           </tr>
         </tbody>
@@ -212,7 +212,7 @@ get_header(); ?>
 
       <!-- Dots Indicator -->
       <div class="flex justify-center mt-8 space-x-2">
-        <button onclick="goToPartnerSlide(0)" class="w-3 h-3 rounded-full bg-purple-500 transition-all duration-300" id="partnerDot0"></button>
+        <button onclick="goToPartnerSlide(0)" class="w-3 h-3 rounded-full bg-[#ff3205] transition-all duration-300" id="partnerDot0"></button>
         <button onclick="goToPartnerSlide(1)" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" id="partnerDot1"></button>
       </div>
     </div>
@@ -243,8 +243,9 @@ get_header(); ?>
         partnerDots.forEach((dot, index) => {
           if (index === currentPartnerSlide) {
             dot.classList.remove('bg-gray-300', 'hover:bg-gray-400');
-            dot.classList.add('bg-purple-500');
+            dot.style.backgroundColor = '#ff3205';
           } else {
+            dot.style.backgroundColor = '';
             dot.classList.remove('bg-purple-500');
             dot.classList.add('bg-gray-300', 'hover:bg-gray-400');
           }

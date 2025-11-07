@@ -15,6 +15,7 @@ get_header(); ?>
 }
 </style>
 <main>
+    <!-- Nội dung trang Chăm Sóc Fanpage bắt đầu -->
     <section class="py-20 animated-gradient-fanpage">
         <div class="container mx-auto px-4">
             <div class="text-center text-black">

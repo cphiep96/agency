@@ -110,6 +110,7 @@ get_header(); ?>
         <div class="overflow-x-auto">
       <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
       <tr class="bg-[#ff3205] text-white">
+              <thead class="bg-[#ff3205] text-white">
               <tr>
                 <th class="py-2 px-2 border-b text-left">Gói dịch vụ</th>
                 <th class="py-2 px-2 border-b text-center">Cơ bản</th>
