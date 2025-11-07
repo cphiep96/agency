@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-google {
-    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa, #ffffff, #f8f9fa);
     background-size: 400% 400%;
     animation: gradientGoogle 12s ease infinite;
 }
@@ -17,7 +17,7 @@ get_header(); ?>
 <main>
     <section class="py-20 animated-gradient-google">
         <div class="container mx-auto px-4">
-            <div class="text-center text-white">
+            <div class="text-center text-black">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6"><i class="fab fa-google mr-2"></i>Quảng Cáo Google</h1>
                 <p class="text-xl opacity-90 max-w-3xl mx-auto">Tăng trưởng doanh số với Google Ads – tiếp cận khách hàng tiềm năng đúng lúc, đúng nơi.</p>
             </div>
@@ -30,8 +30,8 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/src/img/service/google.png" alt="Google Ads" class="rounded-2xl shadow-xl w-full h-72 object-contain bg-white">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Lợi ích khi chạy Google Ads cùng VV Agency</h2>
-                    <ul class="space-y-4 text-lg text-gray-700">
+                    <h2 class="text-3xl font-bold text-black mb-6">Lợi ích khi chạy Google Ads cùng VV Agency</h2>
+                    <ul class="space-y-4 text-lg text-black">
                         <li><i class="fas fa-bullseye text-red-500 mr-2"></i>Tiếp cận khách hàng đúng nhu cầu, đúng thời điểm</li>
                         <li><i class="fas fa-chart-line text-yellow-500 mr-2"></i>Tối ưu chi phí, tăng tỷ lệ chuyển đổi</li>
                         <li><i class="fas fa-rocket text-green-500 mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
@@ -45,13 +45,13 @@ get_header(); ?>
     <!-- Section: Giải pháp toàn diện giúp bạn vươn tới khách hàng -->
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Giải pháp toàn diện giúp bạn vươn tới khách hàng – chỉ có tại <span class="text-[#ea4335]">VV Agency</span></h2>
+        <h2 class="text-2xl font-bold text-center text-black mb-10">Giải pháp toàn diện giúp bạn vươn tới khách hàng – chỉ có tại <span class="text-[#ea4335]">VV Agency</span></h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#ea4335] flex items-center justify-center mr-4">
-                <i class="fas fa-search text-white text-xl"></i>
+              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
+                <i class="fas fa-search text-black text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Tìm kiếm</h3>
             </div>
@@ -60,8 +60,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#fbbc05] flex items-center justify-center mr-4">
-                <i class="fas fa-image text-white text-xl"></i>
+              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
+                <i class="fas fa-image text-black text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Hiển thị</h3>
             </div>
@@ -70,8 +70,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#34a853] flex items-center justify-center mr-4">
-                <i class="fas fa-shopping-cart text-white text-xl"></i>
+              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
+                <i class="fas fa-shopping-cart text-black text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Mua sắm</h3>
             </div>
@@ -80,8 +80,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#4285f4] flex items-center justify-center mr-4">
-                <i class="fas fa-play-circle text-white text-xl"></i>
+              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
+                <i class="fas fa-play-circle text-black text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Video</h3>
             </div>
@@ -90,34 +90,34 @@ get_header(); ?>
         </div>
         
         <div class="mt-8 text-center">
-          <a href="https://zalo.me/0396693505" class="inline-block bg-[#ea4335] hover:bg-[#fbbc05] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+          <a href="https://zalo.me/0396693505" class="inline-block bg-[#ea4335] hover:bg-[#ff3205] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
         </div>
       </div>
     </section>
     <!-- Section: Quy trình xử lý công việc tại VV Agency -->
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Quy trình xử lý công việc tại VV Agency</h2>
+        <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình xử lý công việc tại VV Agency</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-search text-3xl text-[#ea4335] mb-3"></i>
             <span class="font-semibold mb-1">Bước 1</span>
-            <span class="text-gray-700">Nghiên cứu</span>
+            <span class="text-black">Nghiên cứu</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-lightbulb text-3xl text-[#fbbc05] mb-3"></i>
+            <i class="fas fa-lightbulb text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 2</span>
-            <span class="text-gray-700">Tư vấn chiến lược</span>
+            <span class="text-black">Tư vấn chiến lược</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-ad text-3xl text-[#34a853] mb-3"></i>
             <span class="font-semibold mb-1">Bước 3</span>
-            <span class="text-gray-700">Thiết lập chiến dịch quảng cáo</span>
+            <span class="text-black">Thiết lập chiến dịch quảng cáo</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-chart-line text-3xl text-[#4285f4] mb-3"></i>
             <span class="font-semibold mb-1">Bước 4</span>
-            <span class="text-gray-700">Tối ưu chuyển đổi</span>
+            <span class="text-black">Tối ưu chuyển đổi</span>
           </div>
         </div>
       </div>
@@ -125,18 +125,18 @@ get_header(); ?>
     <!-- Section: Bảng giá chạy quảng cáo Google tại VV Agency -->
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4 max-w-6xl">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Bảng giá chạy quảng cáo Google tại VV Agency</h2>
+        <h2 class="text-2xl font-bold text-center text-black mb-8">Bảng giá chạy quảng cáo Google tại VV Agency</h2>
         <div class="overflow-x-auto">
           <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
             <thead>
-              <tr class="bg-[#319795] text-white">
+            <tr class="bg-[#ff3205] text-white">
                 <th class="py-2 px-2 font-semibold">Gói dịch vụ</th>
                 <th class="py-2 px-2 font-semibold">Cơ bản<br><span class="text-xs">(5-100 triệu)</span></th>
                 <th class="py-2 px-2 font-semibold">Chuyên nghiệp<br><span class="text-xs">(101-200 triệu)</span></th>
                 <th class="py-2 px-2 font-semibold">Cao cấp<br><span class="text-xs">(201 triệu+)</span></th>
               </tr>
             </thead>
-            <tbody class="text-gray-800">
+            <tbody class="text-black">
               <tr class="border-b">
                 <td class="py-2 px-2 font-semibold">Phí dịch vụ (%)</td>
                 <td class="py-2 px-2 text-center">20%</td>
@@ -218,7 +218,7 @@ get_header(); ?>
   
     <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
+    <h2 class="text-2xl font-bold text-center text-black mb-8">Khách hàng – Đối tác</h2>
     <div class="relative overflow-hidden">
       <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
         <div class="w-full flex-shrink-0 px-4">

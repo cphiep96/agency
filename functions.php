@@ -198,7 +198,7 @@ class VV_Agency_Services_Widget extends WP_Widget {
         echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
 
         // Section description
-        $description = ! empty( $instance['description'] ) ? $instance['description'] : get_theme_mod( 'agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số' );
+        $description = ! empty( $instance['description'] ) ? $instance['description'] : get_theme_mod( 'agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số' );
         echo '<p class="text-gray-600 max-w-2xl mx-auto text-center mb-16">' . esc_html( $description ) . '</p>';
 
         // Fetch and render services
@@ -221,7 +221,7 @@ class VV_Agency_Services_Widget extends WP_Widget {
      */
     public function form($instance) {
         $title = !empty($instance['title']) ? $instance['title'] : 'DỊCH VỤ CỦA VV AGENCY';
-        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số';
+        $description = !empty($instance['description']) ? $instance['description'] : 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số';
         ?>
         <p>
             <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'agency'); ?></label>
@@ -281,7 +281,7 @@ function agency_customizer_services($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_services_description', array(
-        'default' => 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số',
+        'default' => 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport' => 'refresh',
     ));
@@ -483,7 +483,7 @@ function agency_customizer_scripts() {
             'Khai thác sức mạnh Instagram để tiếp cận thế hệ khách hàng trẻ',
             'Chăm sóc website để tăng tỷ lệ chuyển đổi',
             'Nội dung chất lượng cao, tối ưu SEO giúp website lên top Google',
-            'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
+            'Bộ giải pháp Digital Branding toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
             'Tối ưu hóa công cụ tìm kiếm toàn diện để tăng thứ hạng và lưu lượng truy cập tự nhiên'
         ];
         
@@ -498,7 +498,8 @@ function agency_customizer_scripts() {
             'fas fa-globe',
             'fab fa-facebook-f',
             'fas fa-chart-line',
-            'fas fa-search'
+            'fas fa-search',
+            'fas fa-search',
         ];
         
         var defaultImages = [
@@ -548,11 +549,11 @@ function agency_customizer_scripts() {
         
         // Update section title and description
         wp.customize('agency_services_title').set('DỊCH VỤ CỦA VV AGENCY');
-        wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+        wp.customize('agency_services_description').set('Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
         
         
         // Reset first 12 services to defaults
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i <= 12; i++) {
             wp.customize('agency_service_' + i + '_active').set(true);
             wp.customize('agency_service_' + i + '_title').set(defaultTitles[i]);
             wp.customize('agency_service_' + i + '_description').set(defaultDescriptions[i]);
@@ -1190,11 +1191,19 @@ if ( ! function_exists( 'agency_get_default_services' ) ) {
             ),
             array(
                 'title'       => 'GIẢI PHÁP DIGITAL MARKETING TỔNG THỂ',
-                'description' => 'Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
+                'description' => 'Bộ giải pháp Digital Branding toàn diện bao gồm SEO, quảng cáo, content và social media marketing',
                 'icon'        => 'fas fa-chart-line',
                 'image'       => $base_url . 'marketing.png',
                 'color'       => 'purple',
                 'link'        => home_url('/giai-phap-digital-marketing'),
+            ),
+            array(
+                'title'       => 'DỊCH VỤ SEO',
+                'description' => 'Dịch vụ SEO toàn diện, tăng thứ hạng trên Google và thu hút khách hàng tiềm năng.',
+                'icon'        => 'fas fa-search',
+                'image'       => $base_url . 'seo.png',
+                'color'       => 'blue',
+                'link'        => home_url('/dich-vu-seo'),
             ),
         );
     }
@@ -1216,7 +1225,7 @@ if ( ! function_exists( 'agency_get_services' ) ) {
         }
 
         $default_services = agency_get_default_services();
-        $max_services     = 11;
+        $max_services     = 12;
         $services         = array();
 
         for ( $i = 0; $i < $max_services; $i++ ) {
@@ -1340,131 +1349,131 @@ if ( ! function_exists( 'agency_get_default_solutions' ) ) {
         return array(
             array(
                 'title'       => 'Bán lẻ',
-                'description' => 'Giải pháp marketing toàn diện cho ngành bán lẻ',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành bán lẻ',
                 'icon'        => 'fas fa-store',
                 'image'       => 'https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'blue',
-                'link'        => home_url('/giai-phap/ban-le'),
+                'link'        => home_url('/ban-le'),
             ),
             array(
                 'title'       => 'Chế biến thực phẩm',
-                'description' => 'Giải pháp marketing toàn diện cho ngành chế biến thực phẩm',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành chế biến thực phẩm',
                 'icon'        => 'fas fa-utensils',
                 'image'       => 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'red',
-                'link'        => home_url('/giai-phap/che-bien-thuc-pham'),
+                'link'        => home_url('/che-bien-thuc-pham'),
             ),
             array(
                 'title'       => 'Cơ khí',
-                'description' => 'Giải pháp marketing toàn diện cho ngành cơ khí',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành cơ khí',
                 'icon'        => 'fas fa-cogs',
                 'image'       => 'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'green',
-                'link'        => home_url('/giai-phap/co-khi'),
+                'link'        => home_url('/co-khi'),
             ),
             array(
                 'title'       => 'Công nghệ',
-                'description' => 'Giải pháp marketing toàn diện cho ngành công nghệ',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành công nghệ',
                 'icon'        => 'fas fa-microchip',
                 'image'       => 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'purple',
-                'link'        => home_url('/giai-phap/cong-nghe'),
+                'link'        => home_url('/cong-nghe'),
             ),
             array(
                 'title'       => 'Dệt May',
-                'description' => 'Giải pháp marketing toàn diện cho ngành dệt may',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành dệt may',
                 'icon'        => 'fas fa-tshirt',
                 'image'       => 'https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'pink',
-                'link'        => home_url('/giai-phap/det-may'),
+                'link'        => home_url('/det-may'),
             ),
             array(
                 'title'       => 'Du lịch',
-                'description' => 'Giải pháp marketing toàn diện cho ngành du lịch',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành du lịch',
                 'icon'        => 'fas fa-plane',
                 'image'       => 'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'teal',
-                'link'        => home_url('/giai-phap/du-lich'),
+                'link'        => home_url('/du-lich'),
             ),
             array(
                 'title'       => 'Dược',
-                'description' => 'Giải pháp marketing toàn diện cho ngành dược',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành dược',
                 'icon'        => 'fas fa-pills',
-                'image'       => 'https://images.pexels.com/photos/7579832/pexels-photo-7579832.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/159211/headache-pain-pills-medication-159211.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'indigo',
-                'link'        => home_url('/giai-phap/duoc'),
+                'link'        => home_url('/duoc'),
             ),
             array(
                 'title'       => 'F&B',
-                'description' => 'Giải pháp marketing toàn diện cho ngành F&B',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành F&B',
                 'icon'        => 'fas fa-utensils',
                 'image'       => 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'orange',
-                'link'        => home_url('/giai-phap/fnb'),
+                'link'        => home_url('/fnb'),
             ),
             array(
                 'title'       => 'Giáo dục',
-                'description' => 'Giải pháp marketing toàn diện cho ngành giáo dục',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành giáo dục',
                 'icon'        => 'fas fa-graduation-cap',
                 'image'       => 'https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'cyan',
-                'link'        => home_url('/giai-phap/giao-duc'),
+                'link'        => home_url('/giao-duc'),
             ),
             array(
                 'title'       => 'Hóa chất',
-                'description' => 'Giải pháp marketing toàn diện cho ngành hóa chất',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành hóa chất',
                 'icon'        => 'fas fa-flask',
                 'image'       => 'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'emerald',
-                'link'        => home_url('/giai-phap/hoa-chat'),
+                'link'        => home_url('/hoa-chat'),
             ),
             array(
                 'title'       => 'Ngành xây dựng',
-                'description' => 'Giải pháp marketing toàn diện cho ngành xây dựng',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành xây dựng',
                 'icon'        => 'fas fa-building',
                 'image'       => 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'violet',
-                'link'        => home_url('/giai-phap/nganh-xay-dung'),
+                'link'        => home_url('/nganh-xay-dung'),
             ),
             array(
                 'title'       => 'Nông nghiệp',
-                'description' => 'Giải pháp marketing toàn diện cho ngành nông nghiệp',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành nông nghiệp',
                 'icon'        => 'fas fa-tractor',
-                'image'       => 'https://images.pexels.com/photos/226587/pexels-photo-226587.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
+                'image'       => 'https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'rose',
-                'link'        => home_url('/giai-phap/nong-nghiep'),
+                'link'        => home_url('/nong-nghiep'),
             ),
             array(
                 'title'       => 'Tài chính',
-                'description' => 'Giải pháp marketing toàn diện cho ngành tài chính',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành tài chính',
                 'icon'        => 'fas fa-money-bill-wave',
                 'image'       => 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'sky',
-                'link'        => home_url('/giai-phap/tai-chinh'),
+                'link'        => home_url('/tai-chinh'),
             ),
             array(
                 'title'       => 'Thép',
-                'description' => 'Giải pháp marketing toàn diện cho ngành thép',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành thép',
                 'icon'        => 'fas fa-tools',
                 'image'       => 'https://images.pexels.com/photos/5938144/pexels-photo-5938144.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'lime',
-                'link'        => home_url('/giai-phap/thep'),
+                'link'        => home_url('/thep'),
             ),
             array(
                 'title'       => 'Vận tải, Logistics',
-                'description' => 'Giải pháp marketing toàn diện cho ngành vận tải, logistics',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành vận tải, logistics',
                 'icon'        => 'fas fa-truck',
                 'image'       => 'https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'amber',
-                'link'        => home_url('/giai-phap/van-tai-logistics'),
+                'link'        => home_url('/van-tai-logistics'),
             ),
             array(
                 'title'       => 'Vật liệu Xây dựng',
-                'description' => 'Giải pháp marketing toàn diện cho ngành vật liệu xây dựng',
+                'description' => 'giải pháp Digital Branding toàn diện cho ngành vật liệu xây dựng',
                 'icon'        => 'fas fa-hard-hat',
                 'image'       => 'https://images.pexels.com/photos/159358/construction-site-build-construction-work-159358.jpeg?auto=compress&cs=tinysrgb&w=600&h=400',
                 'color'       => 'yellow',
-                'link'        => home_url('/giai-phap/vat-lieu-xay-dung'),
+                'link'        => home_url('/vat-lieu-xay-dung'),
             ),
         );
     }
@@ -1528,7 +1537,7 @@ if ( ! function_exists( 'agency_render_single_solution' ) ) {
                     <?php echo esc_html( $solution['title'] ); ?>
                 </h3>
                 <p class="text-center text-sm group-hover:text-white/90 transition-colors duration-500" style="color: #000000;">
-                    <?php echo esc_html( $solution['description'] ?? 'Giải pháp marketing toàn diện cho ngành ' . strtolower( $solution['title'] ) ); ?>
+                    <?php echo esc_html( $solution['description'] ?? 'giải pháp Digital Branding toàn diện cho ngành ' . strtolower( $solution['title'] ) ); ?>
                 </p>
 
                 <!-- Nút Zalo (cần pointer-events-auto để click được) -->
@@ -2078,7 +2087,7 @@ if ( ! function_exists( 'agency_get_default_hero_data' ) ) {
         return array(
             'title'         => 'VV AGENCY',
             'subtitle'      => 'ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ',
-            'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp marketing toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
+            'description'   => 'Chúng tôi là đối tác chiến lược của doanh nghiệp trong hành trình chuyển đổi số, mang đến giải pháp Digital Branding toàn diện – từ thiết kế website chuyên nghiệp đến các chiến dịch quảng cáo trực tuyến hiệu quả.',
             'button1_text'  => 'Liên hệ ngay',
             'button1_link'  => 'https://zalo.me/0396693505',
             'button2_text'  => 'Xem dịch vụ',
@@ -2333,7 +2342,7 @@ function agency_customizer_features($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_features_description', array(
-        'default' => 'Chúng tôi mang đến giải pháp marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn',
+        'default' => 'Chúng tôi mang đến giải pháp Digital Branding toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport' => 'refresh',
     ));
@@ -2772,7 +2781,7 @@ function agency_block_shortcode($atts) {
             } else {
                 // Get services section title and description from customizer
                 $services_title = get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
-                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">
@@ -2813,7 +2822,7 @@ function agency_block_shortcode($atts) {
                         dynamic_sidebar('homepage-solutions');
                     } else {
                         $solutions_title = get_theme_mod('agency_solutions_title', 'GIẢI PHÁP CỦA VV AGENCY');
-                        $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                        $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                         ?>
                         <div class="text-center mb-16">
                             <h2 class="text-4xl font-bold text-gray-800 mb-4">

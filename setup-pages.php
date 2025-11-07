@@ -38,7 +38,7 @@ function vv_agency_create_pages() {
         array(
             'post_title'   => 'Giải Pháp',
             'post_name'    => 'giai-phap',
-            'post_content' => '<p>Khám phá các giải pháp marketing toàn diện của VV Agency. Chúng tôi cung cấp giải pháp từ chiến lược marketing số đến thương mại điện tử.</p>',
+            'post_content' => '<p>Khám phá các giải pháp Digital Branding toàn diện của VV Agency. Chúng tôi cung cấp giải pháp từ chiến lược marketing số đến thương mại điện tử.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'page-giai-phap.php'
@@ -49,16 +49,17 @@ function vv_agency_create_pages() {
             'post_content' => '<p>Khám phá các dự án tiêu biểu đã được VV Agency thực hiện thành công cho khách hàng.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
-            'page_template' => 'page-du-an.php'
-        ),
-        array(
-            'post_title'   => 'Bản Tin',
-            'post_name'    => 'ban-tin',
-            'post_content' => '<p>Cập nhật tin tức mới nhất về digital marketing và các xu hướng công nghệ từ VV Agency.</p>',
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
+            // 'page_template' => 'page-du-an.php'
             'page_template' => 'page-ban-tin.php'
         ),
+        // array(
+        //     'post_title'   => 'Bản Tin',
+        //     'post_name'    => 'ban-tin',
+        //     'post_content' => '<p>Cập nhật tin tức mới nhất về digital marketing và các xu hướng công nghệ từ VV Agency.</p>',
+        //     'post_status'  => 'publish',
+        //     'post_type'    => 'page',
+        //     'page_template' => 'page-ban-tin.php'
+        // ),
         array(
             'post_title'   => 'Liên Hệ',
             'post_name'    => 'lien-he',
@@ -126,15 +127,23 @@ function vv_agency_create_pages() {
         array(
             'post_title'   => 'Giải Pháp Digital Marketing Tổng Thể',
             'post_name'    => 'giai-phap-digital-marketing',
-            'post_content' => '<p>Bộ giải pháp marketing toàn diện bao gồm SEO, quảng cáo, content và social media marketing giúp doanh nghiệp phát triển mạnh mẽ trong kỷ nguyên số.</p>',
+            'post_content' => '<p>Bộ giải pháp Digital Branding toàn diện bao gồm SEO, quảng cáo, content và social media marketing giúp doanh nghiệp phát triển mạnh mẽ trong kỷ nguyên số.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'services/page-giai-phap-digital-marketing.php'
         ),
         array(
+            'post_title'   => 'Dịch Vụ SEO',
+            'post_name'    => 'dich-vu-seo',
+            'post_content' => '<p>Dịch vụ SEO toàn diện, tăng thứ hạng trên Google và thu hút khách hàng tiềm năng.</p>',
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template' => 'services/page-dich-vu-seo.php'
+        ),
+        array(
             'post_title'   => 'Giải Pháp',
             'post_name'    => 'giai-phap',
-            'post_content' => '<p>Giải pháp marketing toàn diện cho các ngành khác nhau, tăng doanh số và tăng lợi nhuận cho doanh nghiệp.</p>',
+            'post_content' => '<p>giải pháp Digital Branding toàn diện cho các ngành khác nhau, tăng doanh số và tăng lợi nhuận cho doanh nghiệp.</p>',
             'post_status'  => 'publish',
             'post_type'    => 'page',
             'page_template' => 'page-giai-phap.php'
@@ -268,14 +277,6 @@ function vv_agency_create_pages() {
             'post_type'    => 'page',
             'page_template' => 'giai-phap/vat-lieu-xay-dung.php'
         ),
-        array(
-            'post_title'   => 'Dịch Vụ SEO',
-            'post_name'    => 'dich-vu-seo',
-            'post_content' => '<p>Dịch vụ SEO toàn diện, tăng thứ hạng trên Google và thu hút khách hàng tiềm năng.</p>',
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-            'page_template' => 'services/page-dich-vu-seo.php'
-        ),
         // them cac page trong folder giai-phap vao mang $pages
     );
 
@@ -317,8 +318,8 @@ function vv_agency_setup_theme_pages() {
         echo "<li><a href='" . home_url('/dich-vu') . "'>Dịch Vụ</a></li>";
         echo "<li><a href='" . home_url('/giai-phap') . "'>Giải Pháp</a></li>";
         echo "<li><a href='" . home_url('/thiet-ke-website') . "'>Website</a></li>";
+        // echo "<li><a href='" . home_url('/du-an') . "'>Dự Án</a></li>";
         echo "<li><a href='" . home_url('/du-an') . "'>Dự Án</a></li>";
-        // echo "<li><a href='" . home_url('/ban-tin') . "'>Bản Tin</a></li>";
         echo "<li><a href='" . home_url('/lien-he') . "'>Liên Hệ</a></li>";
         echo "</ul>";
     } else {

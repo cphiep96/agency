@@ -20,7 +20,7 @@ get_header(); ?>
                 <h2 class="text-3xl font-bold text-black mb-6">Câu Chuyện Của Chúng Tôi</h2>
                 <p class="text-gray-600 mb-4">
                     VV Agency được thành lập với sứ mệnh hỗ trợ các doanh nghiệp vừa và nhỏ phát triển trong thời đại số. 
-                    Chúng tôi cung cấp các giải pháp marketing toàn diện, từ thiết kế website đến quảng cáo trực tuyến.
+                    Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, từ thiết kế website đến quảng cáo trực tuyến.
                 </p>
                 <p class="text-gray-600 mb-6">
                     Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi cam kết mang đến những giải pháp marketing hiệu quả 

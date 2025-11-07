@@ -122,21 +122,21 @@ get_header();
                     <div class="sidebar lg:sticky lg:top-8">
                         <!-- Banner Image Full Height -->
                         <div class="relative bg-white rounded-xl shadow-lg overflow-hidden" style="height: 100vh; min-height: 600px;">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/img/banner/banner-right.jpg"
+                            <a href="<?php echo esc_url(home_url('/giai-phap/')); ?>" class="block w-full h-full">
+                                <img src="<?php echo get_template_directory_uri(); ?>/src/img/banner/banner-right.jpg"
                                  alt="Banner"
                                  class="w-full h-full object-cover absolute inset-0">
-
-                            <!-- Overlay Content -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-start justify-center">
-                                <div class="p-6 text-white max-w-sm w-full text-center">
-                                    <h3 class="text-xl font-bold mb-2"><?php _e('Liên hệ tư vấn', 'agency'); ?></h3>
-                                    <p class="text-sm mb-4 opacity-90"><?php _e('Chúng tôi sẵn sàng hỗ trợ bạn', 'agency'); ?></p>
-                                    <a href="<?php echo esc_url(home_url('/lien-he/')); ?>"
-                                       class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
-                                        <?php _e('Liên hệ ngay', 'agency'); ?>
-                                    </a>
+                                <!-- Overlay Content -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-start justify-center">
+                                    <div class="p-6 text-white max-w-sm w-full text-center">
+                                        <h3 class="text-xl font-bold mb-2"><?php _e('Liên hệ tư vấn', 'agency'); ?></h3>
+                                        <p class="text-sm mb-4 opacity-90"><?php _e('Chúng tôi sẵn sàng hỗ trợ bạn', 'agency'); ?></p>
+                                        <span class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                                            <?php _e('Liên hệ ngay', 'agency'); ?>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

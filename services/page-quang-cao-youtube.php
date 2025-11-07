@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-youtube {
-    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa, #ffffff, #f8f9fa);
     background-size: 400% 400%;
     animation: gradientYouTube 14s ease infinite;
 }
@@ -17,7 +17,7 @@ get_header(); ?>
 <main>
     <section class="py-20 animated-gradient-youtube">
         <div class="container mx-auto px-4">
-            <div class="text-center text-white">
+            <div class="text-center text-black">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6"><i class="fab fa-youtube mr-2"></i>Quảng Cáo YouTube</h1>
                 <p class="text-xl opacity-90 max-w-3xl mx-auto">Tận dụng sức mạnh video để truyền tải thông điệp thương hiệu trên YouTube.</p>
             </div>
@@ -30,8 +30,8 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/src/img/service/quang-cao-youtube.jpg" alt="YouTube Ads" class="rounded-2xl shadow-xl w-full h-72 object-contain bg-white">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Lý do nên chọn YouTube Ads?</h2>
-                    <ul class="space-y-4 text-lg text-gray-700">
+                    <h2 class="text-3xl font-bold text-black mb-6">Lý do nên chọn YouTube Ads?</h2>
+                    <ul class="space-y-4 text-lg text-black">
                         <li><i class="fas fa-play-circle text-red-500 mr-2"></i>Tiếp cận hàng triệu người dùng qua video</li>
                         <li><i class="fas fa-bullhorn text-yellow-500 mr-2"></i>Định dạng quảng cáo đa dạng, sáng tạo</li>
                         <li><i class="fas fa-chart-line text-green-500 mr-2"></i>Đo lường hiệu quả, tối ưu liên tục</li>
@@ -45,32 +45,32 @@ get_header(); ?>
     <!-- Section: Quy trình quảng cáo YouTube tại VV Agency -->
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Quy trình quảng cáo YouTube tại VV Agency</h2>
+        <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình quảng cáo YouTube tại VV Agency</h2>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-info-circle text-3xl text-[#ff0000] mb-3"></i>
             <span class="font-semibold mb-1">Bước 1</span>
-            <span class="text-gray-700">Tiếp nhận thông tin</span>
+            <span class="text-black">Tiếp nhận thông tin</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-tasks text-3xl text-[#222222] mb-3"></i>
             <span class="font-semibold mb-1">Bước 2</span>
-            <span class="text-gray-700">Lập kế hoạch triển khai</span>
+            <span class="text-black">Lập kế hoạch triển khai</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-file-signature text-3xl text-[#ff0000] mb-3"></i>
             <span class="font-semibold mb-1">Bước 3</span>
-            <span class="text-gray-700">Ký hợp đồng</span>
+            <span class="text-black">Ký hợp đồng</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-rocket text-3xl text-[#222222] mb-3"></i>
             <span class="font-semibold mb-1">Bước 4</span>
-            <span class="text-gray-700">Triển khai dự án</span>
+            <span class="text-black">Triển khai dự án</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
             <i class="fas fa-chart-line text-3xl text-[#ff0000] mb-3"></i>
             <span class="font-semibold mb-1">Bước 5</span>
-            <span class="text-gray-700">Đo lường và báo cáo</span>
+            <span class="text-black">Đo lường và báo cáo</span>
           </div>
         </div>
       </div>
@@ -78,18 +78,18 @@ get_header(); ?>
     <!-- Section: Bảng báo giá dịch vụ quảng cáo YouTube tại VV Agency -->
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4 max-w-6xl">
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Bảng báo giá dịch vụ quảng cáo YouTube tại VV Agency</h2>
+        <h2 class="text-2xl font-bold text-center text-black mb-8">Bảng báo giá dịch vụ quảng cáo YouTube tại VV Agency</h2>
         <div class="overflow-x-auto">
       <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
             <thead>
-              <tr class="bg-[#319795] text-white">
+            <tr class="bg-[#ff3205] text-white">
                 <th class="py-2 px-2 font-semibold">Gói dịch vụ</th>
                 <th class="py-2 px-2 font-semibold">Cơ bản<br><span class="text-xs">(5-100 triệu)</span></th>
                 <th class="py-2 px-2 font-semibold">Chuyên nghiệp<br><span class="text-xs">(101-200 triệu)</span></th>
                 <th class="py-2 px-2 font-semibold">Cao cấp<br><span class="text-xs">(201 triệu+)</span></th>
               </tr>
             </thead>
-            <tbody class="text-gray-800">
+            <tbody class="text-black">
               <tr class="border-b">
                 <td class="py-2 px-2 font-semibold">Phí dịch vụ (%)</td>
                 <td class="py-2 px-2">20%</td>
@@ -147,7 +147,7 @@ get_header(); ?>
 
     <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
+    <h2 class="text-2xl font-bold text-center text-black mb-8">Khách hàng – Đối tác</h2>
     <div class="relative overflow-hidden">
       <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
         <div class="w-full flex-shrink-0 px-4">

@@ -22,7 +22,7 @@
             } else {
                 // Get services section title and description from customizer
                 $services_title = get_theme_mod('agency_services_title', 'DỊCH VỤ CỦA VV AGENCY');
-                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                $services_description = get_theme_mod('agency_services_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">
@@ -51,14 +51,6 @@
         </div>
     </section>
 
-    <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">
-            Giải Pháp Toàn Diện
-        </h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-            Chúng tôi cung cấp các giải pháp digital branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số
-        </p>
-    </div>
     <!-- Solutions Section -->
     <?php echo do_shortcode('[block id="footer-vvagency-solutions"]'); ?>
 
@@ -73,7 +65,7 @@
             } else {
                 // Get features section title and description from customizer
                 $features_title = get_theme_mod('agency_features_title', 'TẠI SAO CHỌN VV AGENCY?');
-                $features_description = get_theme_mod('agency_features_description', 'Chúng tôi mang đến giải pháp marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn');
+                $features_description = get_theme_mod('agency_features_description', 'Chúng tôi mang đến giải pháp Digital Branding toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">
@@ -134,7 +126,7 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-share-alt text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -159,7 +151,7 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-dollar-sign text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -171,11 +163,11 @@
                                         chiến dịch.</p>
                                     <div class="mt-4 grid grid-cols-2 gap-4">
                                         <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
-                                            <div class="text-2xl font-bold text-[#ff3205]">60%</div>
+                                            <div class="text-2xl font-bold text-black">60%</div>
                                             <div class="text-xs text-black">Tiết kiệm chi phí</div>
                                         </div>
                                         <div class="text-center p-3 bg-[#ff3205] bg-opacity-5 rounded-lg">
-                                            <div class="text-2xl font-bold text-[#ff3205]">2x</div>
+                                            <div class="text-2xl font-bold text-black">2x</div>
                                             <div class="text-xs text-black">Tốc độ triển khai</div>
                                         </div>
                                     </div>
@@ -187,7 +179,7 @@
                                 class="group flex items-start space-x-4 p-6 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
                                 <div class="flex-shrink-0">
                                     <div
-                                        class="w-14 h-14 bg-gradient-to-br from-[#ff3205] to-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                                        class="w-14 h-14 bg-[#ff3205] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                                         <i class="fas fa-rocket text-white text-xl"></i>
                                     </div>
                                 </div>
@@ -196,7 +188,7 @@
                                     <p class="text-black leading-relaxed">Ứng dụng AI và Big Data để phân tích hành vi khách
                                         hàng, tối ưu hóa chiến dịch real-time và dự đoán xu hướng thị trường.</p>
                                     <div class="mt-3">
-                                        <div class="flex items-center space-x-2 text-sm text-[#ff3205]">
+                                        <div class="flex items-center space-x-2 text-sm text-black">
                                             <i class="fas fa-check-circle"></i>
                                             <span>Phân tích dữ liệu tự động</span>
                                         </div>

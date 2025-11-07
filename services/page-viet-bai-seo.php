@@ -4,7 +4,7 @@ get_header(); ?>
 
 <style>
 .animated-gradient-seo {
-    background: linear-gradient(135deg, #ff3205, #e02a00, #ff3205, #e02a00);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa, #ffffff, #f8f9fa);
     background-size: 400% 400%;
     animation: gradientSEO 18s ease infinite;
 }
@@ -17,7 +17,7 @@ get_header(); ?>
 <main>
     <section class="py-20 animated-gradient-seo">
         <div class="container mx-auto px-4">
-            <div class="text-center text-white">
+            <div class="text-center text-black">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6"><i class="fas fa-pen-nib mr-2"></i>Viết Bài SEO</h1>
                 <p class="text-xl opacity-90 max-w-3xl mx-auto">Nội dung chất lượng cao, tối ưu SEO giúp website của bạn lên top Google và thu hút khách hàng tiềm năng.</p>
             </div>
@@ -30,8 +30,8 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/src/img/action/Dich-Vu-SEO.jpeg" alt="Viết Bài SEO" class="rounded-2xl shadow-xl w-full h-72 object-cover">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Tại sao chọn dịch vụ viết bài SEO của VV Agency?</h2>
-                    <ul class="space-y-4 text-lg text-gray-700">
+                    <h2 class="text-3xl font-bold text-black mb-6">Tại sao chọn dịch vụ viết bài SEO của VV Agency?</h2>
+                    <ul class="space-y-4 text-lg text-black">
                         <li><i class="fas fa-search text-blue-500 mr-2"></i>Nội dung được tối ưu hóa cho công cụ tìm kiếm</li>
                         <li><i class="fas fa-users text-green-500 mr-2"></i>Thu hút và chuyển đổi khách hàng tiềm năng</li>
                         <li><i class="fas fa-chart-line text-purple-500 mr-2"></i>Tăng thứ hạng từ khóa và lưu lượng truy cập</li>
@@ -44,7 +44,7 @@ get_header(); ?>
     </section>
     <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Các loại bài viết SEO chuyên nghiệp tại VV Agency</h2>
+    <h2 class="text-2xl font-bold text-center text-black mb-8">Các loại bài viết SEO chuyên nghiệp tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
         <i class="fas fa-blog text-3xl text-[#1e40af] mb-4"></i>
@@ -71,7 +71,7 @@ get_header(); ?>
 </section>
     <section class="py-12">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Quy trình tiếp nhận dự án tại VV Agency</h2>
+            <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình tiếp nhận dự án tại VV Agency</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
                     <i class="fas fa-comments text-3xl text-[#1e40af] mb-3"></i>
@@ -94,18 +94,18 @@ get_header(); ?>
     </section>
 <section class="py-12 bg-white">
   <div class="container mx-auto px-4 max-w-6xl">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Bảng giá dịch vụ viết bài SEO tại VV Agency</h2>
+    <h2 class="text-2xl font-bold text-center text-black mb-8">Bảng giá dịch vụ viết bài SEO tại VV Agency</h2>
     <div class="overflow-x-auto">
       <table class="min-w-full bg-white rounded-xl shadow-lg text-sm">
         <thead>
-          <tr class="bg-[#1e40af] text-white">
+        <tr class="bg-[#ff3205] text-white">
             <th class="py-3 px-3 font-semibold text-left">Gói dịch vụ</th>
             <th class="py-3 px-3 font-semibold text-center">Cơ bản</th>
             <th class="py-3 px-3 font-semibold text-center">Chuyên nghiệp</th>
             <th class="py-3 px-3 font-semibold text-center">Cao cấp</th>
           </tr>
         </thead>
-        <tbody class="text-gray-800">
+        <tbody class="text-black">
           <tr class="border-b">
             <td class="py-2 px-3 font-semibold">Giá</td>
             <td class="py-2 px-3 text-center">Liên hệ</td>
@@ -181,7 +181,7 @@ get_header(); ?>
 
 <section class="py-12 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Khách hàng – Đối tác</h2>
+    <h2 class="text-2xl font-bold text-center text-black mb-8">Khách hàng – Đối tác</h2>
     <div class="relative overflow-hidden">
       <div class="flex transition-transform duration-500 ease-in-out" id="partnersCarousel">
         <div class="w-full flex-shrink-0 px-4">
