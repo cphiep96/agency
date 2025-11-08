@@ -2350,7 +2350,7 @@ function agency_customizer_features($wp_customize) {
     ));
 
     $wp_customize->add_setting('agency_features_description', array(
-        'default' => 'Chúng tôi mang đến giải pháp Digital Branding toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn',
+        'default' => 'Chúng tôi mang đến giải pháp Marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn',
         'sanitize_callback' => 'sanitize_textarea_field',
         'transport' => 'refresh',
     ));
@@ -2825,7 +2825,7 @@ function agency_block_shortcode($atts) {
                         dynamic_sidebar('homepage-solutions');
                     } else {
                         $solutions_title = get_theme_mod('agency_solutions_title', 'GIẢI PHÁP CỦA VV AGENCY');
-                        $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp Digital Branding toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
+                        $solutions_description = get_theme_mod('agency_solutions_description', 'Chúng tôi cung cấp các giải pháp Marketing toàn diện, giúp doanh nghiệp của bạn phát triển mạnh mẽ trong kỷ nguyên số');
                         ?>
                         <div class="text-center mb-12 md:mb-16">
                             <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">

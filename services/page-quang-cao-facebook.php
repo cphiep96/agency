@@ -32,10 +32,10 @@ get_header(); ?>
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Tại sao chọn Facebook Ads của VV Agency?</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li><i class="fas fa-users text-blue-500 mr-2"></i>Tiếp cận chính xác đối tượng mục tiêu</li>
-                        <li><i class="fas fa-thumbs-up text-blue-400 mr-2"></i>Tăng tương tác, tăng nhận diện thương hiệu</li>
-                        <li><i class="fas fa-bolt text-yellow-400 mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
-                        <li><i class="fas fa-headset text-green-500 mr-2"></i>Hỗ trợ 24/7 bởi chuyên gia Facebook</li>
+                        <li><i class="fas fa-users text-[#ff3205] mr-2"></i>Tiếp cận chính xác đối tượng mục tiêu</li>
+                        <li><i class="fas fa-thumbs-up text-[#ff3205] mr-2"></i>Tăng tương tác, tăng nhận diện thương hiệu</li>
+                        <li><i class="fas fa-bolt text-[#ff3205] mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
+                        <li><i class="fas fa-headset text-[#ff3205] mr-2"></i>Hỗ trợ 24/7 bởi chuyên gia Facebook</li>
                     </ul>
                     <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
@@ -47,22 +47,22 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-8">Giải pháp quảng cáo Facebook – Chìa khóa tiếp cận đúng khách hàng, đúng thời điểm</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-broadcast-tower text-3xl text-[#1877f3] mb-4"></i>
+        <i class="fas fa-broadcast-tower text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Phủ sóng đa nền tảng</h3>
         <p class="text-gray-600">Tăng cường độ nhận diện thương hiệu trên nhiều kênh.</p>
       </div>
       <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-user-plus text-3xl text-[#42b72a] mb-4"></i>
+        <i class="fas fa-user-plus text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Tiếp cận khách hàng tiềm năng</h3>
         <p class="text-gray-600">Nhắm đúng đối tượng, tăng tỷ lệ chuyển đổi.</p>
       </div>
       <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-chart-line text-3xl text-[#fbbc05] mb-4"></i>
+        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Thúc đẩy doanh số tại điểm bán</h3>
         <p class="text-gray-600">Tăng trưởng doanh số trực tiếp, hiệu quả rõ rệt.</p>
       </div>
       <div class="bg-blue-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-globe text-3xl text-[#0052cc] mb-4"></i>
+        <i class="fas fa-globe text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Tăng trưởng online</h3>
         <p class="text-gray-600">Phát triển doanh thu trên nền tảng trực tuyến.</p>
       </div>
@@ -74,27 +74,27 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình triển khai dự án tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-info-circle text-3xl text-[#1877f3] mb-3"></i>
+        <i class="fas fa-info-circle text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 1</span>
         <span class="text-black">Tiếp nhận thông tin</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-tasks text-3xl text-[#1877f3] mb-3"></i>
+        <i class="fas fa-tasks text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 2</span>
         <span class="text-black">Lập kế hoạch triển khai</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-file-signature text-3xl text-[#1877f3] mb-3"></i>
+        <i class="fas fa-file-signature text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 3</span>
         <span class="text-black">Ký hợp đồng</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-rocket text-3xl text-[#1877f3] mb-3"></i>
+        <i class="fas fa-rocket text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 4</span>
         <span class="text-black">Triển khai dự án</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-chart-line text-3xl text-[#1877f3] mb-3"></i>
+        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 5</span>
         <span class="text-black">Đo lường và báo cáo</span>
       </div>

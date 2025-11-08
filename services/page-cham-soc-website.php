@@ -47,17 +47,17 @@ get_header(); ?>
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Lợi ích khi chăm sóc website chuyên nghiệp</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-rocket text-3xl text-[#38b2ac] mb-4"></i>
+                    <i class="fas fa-rocket text-3xl text-[#ff3205] mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Tăng trưởng bền vững</h3>
                     <p class="text-gray-600">Website luôn hoạt động ổn định, hỗ trợ phát triển kinh doanh lâu dài.</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-lock text-3xl text-[#4299e1] mb-4"></i>
+                    <i class="fas fa-lock text-3xl text-[#ff3205] mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Bảo mật tối đa</h3>
                     <p class="text-gray-600">Ngăn chặn tấn công, bảo vệ dữ liệu và thông tin khách hàng.</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-thumbs-up text-3xl text-[#38b2ac] mb-4"></i>
+                    <i class="fas fa-thumbs-up text-3xl text-[#ff3205] mb-4"></i>
                     <h3 class="font-bold text-lg mb-2">Hỗ trợ tận tâm</h3>
                     <p class="text-gray-600">Đội ngũ kỹ thuật luôn sẵn sàng hỗ trợ, xử lý mọi vấn đề phát sinh.</p>
                 </div>
@@ -75,27 +75,27 @@ get_header(); ?>
             <span class="text-gray-700">Nghiên cứu sản phẩm/dịch vụ</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-users text-3xl text-[#4299e1] mb-3"></i>
+            <i class="fas fa-users text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 2</span>
             <span class="text-gray-700">Nghiên cứu khách hàng</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-key text-3xl text-[#38b2ac] mb-3"></i>
+            <i class="fas fa-key text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 3</span>
             <span class="text-gray-700">Nghiên cứu từ khóa</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-layer-group text-3xl text-[#4299e1] mb-3"></i>
+            <i class="fas fa-layer-group text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 4</span>
             <span class="text-gray-700">Gom nhóm từ khóa</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-file-alt text-3xl text-[#38b2ac] mb-3"></i>
+            <i class="fas fa-file-alt text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 5</span>
             <span class="text-gray-700">Xây dựng nội dung (content)</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-link text-3xl text-[#4299e1] mb-3"></i>
+            <i class="fas fa-link text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 6</span>
             <span class="text-gray-700">Xây dựng hệ thống liên kết (backlink)</span>
           </div>

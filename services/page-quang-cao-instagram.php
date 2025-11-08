@@ -32,12 +32,12 @@ get_header(); ?>
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Instagram Ads nổi bật điều gì?</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li><i class="fas fa-image text-pink-500 mr-2"></i>Hình ảnh, video sáng tạo, bắt mắt</li>
-                        <li><i class="fas fa-users text-purple-500 mr-2"></i>Tiếp cận giới trẻ, khách hàng năng động</li>
-                        <li><i class="fas fa-bolt text-yellow-400 mr-2"></i>Định dạng quảng cáo đa dạng: story, feed, reels</li>
-                        <li><i class="fas fa-chart-line text-orange-500 mr-2"></i>Đo lường hiệu quả, tối ưu liên tục</li>
+                        <li><i class="fas fa-image text-[#fd3104] mr-2"></i>Hình ảnh, video sáng tạo, bắt mắt</li>
+                        <li><i class="fas fa-users text-[#ff3205] mr-2"></i>Tiếp cận giới trẻ, khách hàng năng động</li>
+                        <li><i class="fas fa-bolt text-[#ff3205] mr-2"></i>Định dạng quảng cáo đa dạng: story, feed, reels</li>
+                        <li><i class="fas fa-chart-line text-[#ff3205] mr-2"></i>Đo lường hiệu quả, tối ưu liên tục</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
+                    <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#fd3104] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>
@@ -47,27 +47,27 @@ get_header(); ?>
         <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình triển khai dự án Instagram tại VV Agency</h2>
         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-info-circle text-3xl text-[#833ab4] mb-3"></i>
+            <i class="fas fa-info-circle text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 1</span>
             <span class="text-black">Tiếp nhận thông tin</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-tasks text-3xl text-[#fd1d1d] mb-3"></i>
+            <i class="fas fa-tasks text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 2</span>
             <span class="text-black">Lập kế hoạch triển khai</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-file-signature text-3xl text-[#fcb045] mb-3"></i>
+            <i class="fas fa-file-signature text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 3</span>
             <span class="text-black">Ký hợp đồng</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-rocket text-3xl text-[#fd1d1d] mb-3"></i>
+            <i class="fas fa-rocket text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 4</span>
             <span class="text-black">Triển khai dự án</span>
           </div>
           <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-chart-line text-3xl text-[#833ab4] mb-3"></i>
+            <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 5</span>
             <span class="text-black">Đo lường và báo cáo</span>
           </div>

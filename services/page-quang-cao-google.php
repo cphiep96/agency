@@ -32,10 +32,10 @@ get_header(); ?>
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Lợi ích khi chạy Google Ads cùng VV Agency</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li><i class="fas fa-bullseye text-red-500 mr-2"></i>Tiếp cận khách hàng đúng nhu cầu, đúng thời điểm</li>
-                        <li><i class="fas fa-chart-line text-yellow-500 mr-2"></i>Tối ưu chi phí, tăng tỷ lệ chuyển đổi</li>
-                        <li><i class="fas fa-rocket text-green-500 mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
-                        <li><i class="fas fa-user-shield text-blue-500 mr-2"></i>Đội ngũ chuyên gia Google Ads hỗ trợ tận tâm</li>
+                        <li><i class="fas fa-bullseye text-[#ff3205] mr-2"></i>Tiếp cận khách hàng đúng nhu cầu, đúng thời điểm</li>
+                        <li><i class="fas fa-chart-line text-[#ff3205] mr-2"></i>Tối ưu chi phí, tăng tỷ lệ chuyển đổi</li>
+                        <li><i class="fas fa-rocket text-[#ff3205] mr-2"></i>Triển khai nhanh, đo lường hiệu quả rõ ràng</li>
+                        <li><i class="fas fa-user-shield text-[#ff3205] mr-2"></i>Đội ngũ chuyên gia Google Ads hỗ trợ tận tâm</li>
                     </ul>
                     <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
@@ -50,8 +50,8 @@ get_header(); ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
-                <i class="fas fa-search text-black text-xl"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-search text-[#ff3205] text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Tìm kiếm</h3>
             </div>
@@ -60,8 +60,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
-                <i class="fas fa-image text-black text-xl"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-image text-[#ff3205] text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Hiển thị</h3>
             </div>
@@ -70,8 +70,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
-                <i class="fas fa-shopping-cart text-black text-xl"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-shopping-cart text-[#ff3205] text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Mua sắm</h3>
             </div>
@@ -80,8 +80,8 @@ get_header(); ?>
           
           <div class="bg-white border border-gray-100 rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-full bg-[#ff3205] flex items-center justify-center mr-4">
-                <i class="fas fa-play-circle text-black text-xl"></i>
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-play-circle text-[#ff3205] text-xl"></i>
               </div>
               <h3 class="font-bold text-lg">Video</h3>
             </div>
@@ -110,12 +110,12 @@ get_header(); ?>
             <span class="text-black">Tư vấn chiến lược</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-ad text-3xl text-[#34a853] mb-3"></i>
+            <i class="fas fa-ad text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 3</span>
             <span class="text-black">Thiết lập chiến dịch quảng cáo</span>
           </div>
           <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-            <i class="fas fa-chart-line text-3xl text-[#4285f4] mb-3"></i>
+            <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-3"></i>
             <span class="font-semibold mb-1">Bước 4</span>
             <span class="text-black">Tối ưu chuyển đổi</span>
           </div>

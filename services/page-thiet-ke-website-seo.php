@@ -59,15 +59,15 @@ get_header(); ?>
                     <div class="p-6">
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Thiết kế theo thương hiệu</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tối ưu hóa SEO</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tương thích mọi thiết bị</span>
                             </li>
                         </ul>
@@ -92,15 +92,15 @@ get_header(); ?>
                     <div class="p-6">
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Giỏ hàng & thanh toán</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Quản lý đơn hàng</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tích hợp vận chuyển</span>
                             </li>
                         </ul>
@@ -125,15 +125,15 @@ get_header(); ?>
                     <div class="p-6">
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Thiết kế thu hút</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tối ưu tỷ lệ chuyển đổi</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tích hợp form liên hệ</span>
                             </li>
                         </ul>
@@ -158,15 +158,15 @@ get_header(); ?>
                     <div class="p-6">
                         <ul class="space-y-3 text-gray-600">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Nghiên cứu từ khóa</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Tối ưu On-page & Off-page</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <i class="fas fa-check-circle text-[#ff3205] mr-2"></i>
                                 <span>Báo cáo hiệu suất</span>
                             </li>
                         </ul>

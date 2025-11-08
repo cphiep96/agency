@@ -65,7 +65,7 @@
             } else {
                 // Get features section title and description from customizer
                 $features_title = get_theme_mod('agency_features_title', 'TẠI SAO CHỌN VV AGENCY?');
-                $features_description = get_theme_mod('agency_features_description', 'Chúng tôi mang đến giải pháp Digital Branding toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn');
+                $features_description = get_theme_mod('agency_features_description', 'Chúng tôi mang đến giải pháp Marketing toàn diện với chi phí tối ưu nhất cho doanh nghiệp của bạn');
                 ?>
                 <!-- Section Title -->
                 <div class="text-center mb-16">

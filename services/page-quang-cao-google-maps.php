@@ -52,22 +52,22 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-8">Giải pháp quảng cáo Google Maps – Nâng tầm doanh nghiệp địa phương</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-store text-3xl text-[#ff3205] mb-4"></i>
+        <i class="fas fa-map-marked-alt text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Google My Business</h3>
         <p class="text-black">Thiết lập và tối ưu hồ sơ doanh nghiệp trên Google Maps.</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-search-location text-3xl text-[#ff3205] mb-4"></i>
+        <i class="fas fa-map-marker-alt text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">SEO Địa phương</h3>
         <p class="text-black">Tối ưu để xuất hiện trong kết quả tìm kiếm địa phương.</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-ad text-3xl text-[#ff3205] mb-4"></i>
+        <i class="fas fa-map-marker-alt text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Quảng cáo địa phương</h3>
         <p class="text-black">Chạy quảng cáo Google Ads cho khu vực địa phương.</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-4"></i>
+        <i class="fas fa-map-marker-alt text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Phân tích và báo cáo</h3>
         <p class="text-black">Theo dõi hiệu quả và điều chỉnh chiến lược kịp thời.</p>
       </div>
@@ -79,27 +79,27 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình triển khai dịch vụ Google Maps tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-user-plus text-3xl text-[#ff3205] mb-3"></i>
+        <i class="fas fa-info-circle text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 1</span>
         <span class="text-black">Thiết lập tài khoản</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-map-marked-alt text-3xl text-[#ff3205] mb-3"></i>
+        <i class="fas fa-tasks text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 2</span>
         <span class="text-black">Tạo hồ sơ doanh nghiệp</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-search text-3xl text-[#ff3205] mb-3"></i>
+        <i class="fas fa-file-signature text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 3</span>
         <span class="text-black">Tối ưu SEO địa phương</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-bullhorn text-3xl text-[#ff3205] mb-3"></i>
+        <i class="fas fa-rocket text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 4</span>
         <span class="text-black">Triển khai quảng cáo</span>
       </div>
       <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-chart-bar text-3xl text-[#ff3205] mb-3"></i>
+        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 5</span>
         <span class="text-black">Báo cáo và tối ưu</span>
       </div>

@@ -32,10 +32,10 @@ get_header(); ?>
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Tại sao chọn dịch vụ viết bài SEO của VV Agency?</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li><i class="fas fa-search text-blue-500 mr-2"></i>Nội dung được tối ưu hóa cho công cụ tìm kiếm</li>
-                        <li><i class="fas fa-users text-green-500 mr-2"></i>Thu hút và chuyển đổi khách hàng tiềm năng</li>
-                        <li><i class="fas fa-chart-line text-purple-500 mr-2"></i>Tăng thứ hạng từ khóa và lưu lượng truy cập</li>
-                        <li><i class="fas fa-clock text-orange-500 mr-2"></i>Đăng bài đều đặn, đúng lịch trình</li>
+                        <li><i class="fas fa-search text-[#ff3205] mr-2"></i>Nội dung được tối ưu hóa cho công cụ tìm kiếm</li>
+                        <li><i class="fas fa-users text-[#ff3205] mr-2"></i>Thu hút và chuyển đổi khách hàng tiềm năng</li>
+                        <li><i class="fas fa-chart-line text-[#ff3205] mr-2"></i>Tăng thứ hạng từ khóa và lưu lượng truy cập</li>
+                        <li><i class="fas fa-clock text-[#ff3205] mr-2"></i>Đăng bài đều đặn, đúng lịch trình</li>
                     </ul>
                     <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
@@ -57,12 +57,12 @@ get_header(); ?>
         <p class="text-gray-600">Cập nhật tin tức ngành, xây dựng uy tín thương hiệu.</p>
       </div>
       <div class="bg-red-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-lightbulb text-3xl text-[#e02a00] mb-4"></i>
+        <i class="fas fa-lightbulb text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Tư vấn</h3>
         <p class="text-gray-600">Hướng dẫn chuyên sâu, giải đáp thắc mắc khách hàng.</p>
       </div>
       <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-star text-3xl text-[#e02a00] mb-4"></i>
+        <i class="fas fa-star text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Bài viết Review</h3>
         <p class="text-gray-600">Đánh giá sản phẩm/dịch vụ trung thực, xây dựng niềm tin.</p>
       </div>
@@ -78,7 +78,7 @@ get_header(); ?>
                     <span class="font-semibold text-lg">Tư vấn</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-file-invoice-dollar text-3xl text-[#e02a00] mb-3"></i>
+                    <i class="fas fa-file-invoice-dollar text-3xl text-[#ff3205] mb-3"></i>
                     <span class="font-semibold text-lg">Báo giá</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
@@ -86,7 +86,7 @@ get_header(); ?>
                     <span class="font-semibold text-lg">Tiến hành viết bài</span>
                 </div>
                 <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-                    <i class="fas fa-sync-alt text-3xl text-[#e02a00] mb-3"></i>
+                    <i class="fas fa-sync-alt text-3xl text-[#ff3205] mb-3"></i>
                     <span class="font-semibold text-lg">Bàn giao, chỉnh sửa</span>
                 </div>
             </div>

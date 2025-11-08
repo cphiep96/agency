@@ -43,10 +43,10 @@ section.is-visible {
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Tại sao Digital Marketing là chìa khóa thành công?</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[#ff3205] mr-3 mt-1"></i><span>Phân tích và đón đầu thị trường, tạo lợi thế cạnh tranh.</span></li>
+                        <li class="flex items-start"><i class="fas fa-chart-line text-[#ff3205] mr-3 mt-1"></i><span>Phân tích và đón đầu thị trường, tạo lợi thế cạnh tranh.</span></li>
                         <li class="flex items-start"><i class="fas fa-check-circle text-[#ff3205] mr-3 mt-1"></i><span>Tiếp cận đúng đối tượng mục tiêu, tối ưu hóa chi phí và hiệu quả.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[#ff3205] mr-3 mt-1"></i><span>Mở rộng độ nhận diện thương hiệu trên đa nền tảng.</span></li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[#ff3205] mr-3 mt-1"></i><span>Gia tăng tỷ lệ khách hàng tiềm năng và chuyển đổi đơn hàng.</span></li>
+                        <li class="flex items-start"><i class="fas fa-users text-[#ff3205] mr-3 mt-1"></i><span>Mở rộng độ nhận diện thương hiệu trên đa nền tảng.</span></li>
+                        <li class="flex items-start"><i class="fas fa-chart-pie text-[#ff3205] mr-3 mt-1"></i><span>Gia tăng tỷ lệ khách hàng tiềm năng và chuyển đổi đơn hàng.</span></li>
                     </ul>
                     <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>

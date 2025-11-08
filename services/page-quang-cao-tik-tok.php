@@ -32,10 +32,10 @@ get_header(); ?>
                 <div>
                     <h2 class="text-3xl font-bold text-black mb-6">Tại sao nên chọn TikTok Ads?</h2>
                     <ul class="space-y-4 text-lg text-black">
-                        <li><i class="fas fa-fire text-pink-500 mr-2"></i>Lan tỏa thương hiệu nhanh chóng, viral mạnh mẽ</li>
-                        <li><i class="fas fa-users text-cyan-400 mr-2"></i>Tiếp cận hàng triệu người dùng trẻ</li>
-                        <li><i class="fas fa-magic text-pink-400 mr-2"></i>Định dạng quảng cáo sáng tạo, đa dạng</li>
-                        <li><i class="fas fa-chart-bar text-blue-500 mr-2"></i>Đo lường hiệu quả, tối ưu liên tục</li>
+                        <li><i class="fas fa-fire text-[#ff3205] mr-2"></i>Lan tỏa thương hiệu nhanh chóng, viral mạnh mẽ</li>
+                        <li><i class="fas fa-users text-[#ff3205] mr-2"></i>Tiếp cận hàng triệu người dùng trẻ</li>
+                        <li><i class="fas fa-magic text-[#ff3205] mr-2"></i>Định dạng quảng cáo sáng tạo, đa dạng</li>
+                        <li><i class="fas fa-chart-bar text-[#ff3205] mr-2"></i>Đo lường hiệu quả, tối ưu liên tục</li>
                     </ul>
                     <a href="https://zalo.me/0396693505" class="mt-8 inline-block bg-[#ff3205] hover:bg-[#e02a00] text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-colors">Liên hệ tư vấn</a>
                 </div>
@@ -47,27 +47,27 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-10">Quy trình triển khai dự án TikTok tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
       <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-info-circle text-3xl text-[#25F4EE] mb-3"></i>
+        <i class="fas fa-info-circle text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 1</span>
         <span class="text-black">Tiếp nhận thông tin</span>
       </div>
       <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-tasks text-3xl text-[#FE2C55] mb-3"></i>
+        <i class="fas fa-tasks text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 2</span>
         <span class="text-black">Lập kế hoạch triển khai</span>
       </div>
       <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-file-signature text-3xl text-[#F6C944] mb-3"></i>
+        <i class="fas fa-file-signature text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 3</span>
         <span class="text-black">Ký hợp đồng</span>
       </div>
       <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-rocket text-3xl text-[#333333] mb-3"></i>
+        <i class="fas fa-rocket text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 4</span>
         <span class="text-black">Triển khai dự án</span>
       </div>
       <div class="bg-gray-50 rounded-xl shadow p-6 flex flex-col items-center text-center hover:shadow-lg transition">
-        <i class="fas fa-chart-line text-3xl text-[#25F4EE] mb-3"></i>
+        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-3"></i>
         <span class="font-semibold mb-1">Bước 5</span>
         <span class="text-black">Đo lường và báo cáo</span>
       </div>
@@ -79,22 +79,22 @@ get_header(); ?>
     <h2 class="text-2xl font-bold text-center text-black mb-8">Lợi ích khi quảng cáo TikTok tại VV Agency</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-bolt text-3xl text-[#25F4EE] mb-4"></i>
+        <i class="fas fa-bolt text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Nhanh - Gọn - Hiệu quả</h3>
         <p class="text-gray-600">Bạn không cần chờ đợi lâu!</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-clock text-3xl text-[#FE2C55] mb-4"></i>
+        <i class="fas fa-clock text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Tối ưu thời gian</h3>
         <p class="text-gray-600">Đơn giản quy trình - Bứt phá hiệu quả</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-coins text-3xl text-[#F6C944] mb-4"></i>
+        <i class="fas fa-coins text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Tài chính rõ ràng</h3>
         <p class="text-gray-600">Hành động công khai, minh bạch</p>
       </div>
       <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition-all duration-300">
-        <i class="fas fa-chart-line text-3xl text-[#333333] mb-4"></i>
+        <i class="fas fa-chart-line text-3xl text-[#ff3205] mb-4"></i>
         <h3 class="font-bold text-lg mb-2">Báo cáo hàng tuần</h3>
         <p class="text-gray-600">Theo dõi hiệu quả liên tục</p>
       </div>
