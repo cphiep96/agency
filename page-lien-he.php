@@ -19,9 +19,9 @@ get_header(); ?>
                 <h2 class="text-2xl font-semibold mb-4">Thông Tin Liên Hệ</h2>
                 <p class="mb-4"><strong>Địa chỉ:</strong> 489 Đ. Nguyễn Văn Công, Phường Hạnh Thông, Hồ Chí Minh 100000</p>
                 <p class="mb-4"><strong>Địa chỉ:</strong> Tổ 1, khu vực 1, phường Quy Nhơn Nam, tỉnh Gia Lai</p>
-                <p class="mb-4"><strong>Hotline:</strong> <a href="tel:+8439669350489" class="text-orange-300">0396693505</a></p>
-                <p class="mb-4"><strong>Zalo:</strong> <a href="https://zalo.me/0396693505" class="text-orange-300">0396693505</a></p>
-                <p class="mb-4"><strong>Messenger:</strong> <a href="https://m.me/vvagencymarketing" class="text-orange-300">vvagencymarketing</a></p>
+                <p class="mb-4"><strong>Hotline:</strong> <a href="tel:+8439669350489" class="text-[#ff3205]">0396693505</a></p>
+                <p class="mb-4"><strong>Zalo:</strong> <a href="https://zalo.me/0396693505" class="text-[#ff3205]">0396693505</a></p>
+                <p class="mb-4"><strong>Messenger:</strong> <a href="https://m.me/vvagencymarketing" class="text-[#ff3205]">vvagencymarketing</a></p>
                 <p class="mb-4"><strong>Email:</strong> doquocvietts@gmail.com</p>
                 <p class="mb-4"><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7, 8:00 AM - 5:00 PM</p>
             </div>

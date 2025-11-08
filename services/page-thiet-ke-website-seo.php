@@ -72,7 +72,7 @@ get_header(); ?>
                             </li>
                         </ul>
                         <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-black py-3 rounded-lg font-semibold transition-colors">
-                            Liên hệ
+                        <span class="text-white">Liên hệ</span>
                         </a>
                     </div>
                 </div>
@@ -104,8 +104,8 @@ get_header(); ?>
                                 <span>Tích hợp vận chuyển</span>
                             </li>
                         </ul>
-                        <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-black py-3 rounded-lg font-semibold transition-colors">
-                            Liên hệ
+                        <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-white py-3 rounded-lg font-semibold transition-colors">
+                            <span class="text-white">Liên hệ</span>
                         </a>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ get_header(); ?>
                             </li>
                         </ul>
                         <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-black py-3 rounded-lg font-semibold transition-colors">
-                            Liên hệ
+                            <span class="text-white">Liên hệ</span>
                         </a>
                     </div>
                 </div>
@@ -170,8 +170,8 @@ get_header(); ?>
                                 <span>Báo cáo hiệu suất</span>
                             </li>
                         </ul>
-                        <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-black py-3 rounded-lg font-semibold transition-colors">
-                            Liên hệ
+                        <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center mt-6 w-full text-white py-3 rounded-lg font-semibold transition-colors">
+                        <span class="text-white">Liên hệ</span>
                         </a>
                     </div>
                 </div>
@@ -236,7 +236,7 @@ get_header(); ?>
                     <div class="md:pr-8 flex-1">
                         <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#ff3205]">
                             <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-[#ff3205] text-black rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
+                                <div class="w-10 h-10 bg-[#ff3205] text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
                                 <h3 class="text-xl font-bold text-black">Tư Vấn & Lấy Yêu Cầu</h3>
                             </div>
                             <p class="text-gray-600">Chúng tôi sẽ trao đổi để hiểu rõ mục tiêu, đối tượng khách hàng và các yêu cầu cụ thể của bạn cho website.</p>
@@ -249,7 +249,7 @@ get_header(); ?>
                     <div class="md:pl-8 flex-1">
                         <div class="bg-white p-6 rounded-xl shadow-lg border-r-4 border-[#ff3205]">
                             <div class="flex items-center mb-3 md:flex-row-reverse">
-                                <div class="w-10 h-10 bg-[#ff3205] text-black rounded-full flex items-center justify-center font-bold text-lg md:ml-4 mr-4 md:mr-0">2</div>
+                                <div class="w-10 h-10 bg-[#ff3205] text-white rounded-full flex items-center justify-center font-bold text-lg md:ml-4 mr-4 md:mr-0">2</div>
                                 <h3 class="text-xl font-bold text-black">Thiết Kế Giao Diện</h3>
                             </div>
                             <p class="text-gray-600 md:text-right">Dựa trên yêu cầu, chúng tôi sẽ thiết kế giao diện (UI/UX) độc đáo, hiện đại và phù hợp với thương hiệu của bạn.</p>
@@ -262,7 +262,7 @@ get_header(); ?>
                     <div class="md:pr-8 flex-1">
                         <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#ff3205]">
                             <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-[#ff3205] text-black rounded-full flex items-center justify-center font-bold text-lg mr-4">3</div>
+                                <div class="w-10 h-10 bg-[#ff3205] text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">3</div>
                                 <h3 class="text-xl font-bold text-black">Lập Trình & Phát Triển</h3>
                             </div>
                             <p class="text-gray-600">Đội ngũ lập trình viên sẽ chuyển đổi thiết kế thành một website hoàn chỉnh, chuẩn SEO và tương thích mọi thiết bị.</p>
@@ -275,7 +275,7 @@ get_header(); ?>
                     <div class="md:pl-8 flex-1">
                          <div class="bg-white p-6 rounded-xl shadow-lg border-r-4 border-[#ff3205]">
                             <div class="flex items-center mb-3 md:flex-row-reverse">
-                                <div class="w-10 h-10 bg-[#ff3205] text-black rounded-full flex items-center justify-center font-bold text-lg md:ml-4 mr-4 md:mr-0">4</div>
+                                <div class="w-10 h-10 bg-[#ff3205] text-white rounded-full flex items-center justify-center font-bold text-lg md:ml-4 mr-4 md:mr-0">4</div>
                                 <h3 class="text-xl font-bold text-black">Kiểm Tra & Bàn Giao</h3>
                             </div>
                             <p class="text-gray-600 md:text-right">Chúng tôi sẽ kiểm tra kỹ lưỡng mọi tính năng trước khi bàn giao website và hướng dẫn bạn quản trị nội dung.</p>
@@ -288,7 +288,7 @@ get_header(); ?>
                     <div class="md:pr-8 flex-1">
                         <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#ff3205]">
                             <div class="flex items-center mb-3">
-                                <div class="w-10 h-10 bg-[#ff3205] text-black rounded-full flex items-center justify-center font-bold text-lg mr-4">5</div>
+                                <div class="w-10 h-10 bg-[#ff3205] text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">5</div>
                                 <h3 class="text-xl font-bold text-black">Bảo Trì & Hỗ Trợ</h3>
                             </div>
                             <p class="text-gray-600">VV Agency cam kết đồng hành, hỗ trợ kỹ thuật và bảo trì website để đảm bảo hoạt động ổn định.</p>
@@ -311,31 +311,31 @@ get_header(); ?>
                     <p class="text-center text-gray-500 mb-6">Dành cho cá nhân, startup</p>
                     <p class="text-4xl font-bold text-center mb-6">8.000.000<span class="text-lg font-normal">đ</span></p>
                     <ul class="space-y-4 text-gray-600 mb-8 flex-grow">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Giao diện theo mẫu</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tối đa 5 trang con</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tương thích di động</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tối ưu chuẩn SEO</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Bảo hành vĩnh viễn</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Hỗ trợ cơ bản</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Giao diện theo mẫu</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tối đa 5 trang con</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tương thích di động</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tối ưu chuẩn SEO</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Bảo hành vĩnh viễn</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Hỗ trợ cơ bản</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-black py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
+                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-white py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
                 </div>
                 <!-- Pricing Card 2 (Recommended) -->
-                <div class="bg-[#ff3205] text-black rounded-xl shadow-2xl p-8 flex flex-col relative transform md:scale-105 transition-transform transition-shadow duration-300 hover:shadow-[#ff3205]/50 hover:scale-110">
+                <div class="bg-[#ff3205] text-white rounded-xl shadow-2xl p-8 flex flex-col relative transform md:scale-105 transition-transform transition-shadow duration-300 hover:shadow-[#ff3205]/50 hover:scale-110">
                     <span class="absolute top-0 left-1/2 -translate-x-1/2 -mt-3 bg-white text-[#ff3205] text-sm font-bold px-3 py-1 rounded-full shadow-md">Phổ Biến Nhất</span>
                     <h3 class="text-2xl font-bold text-center mb-4">Chuyên Nghiệp</h3>
-                    <p class="text-center text-black/80 mb-6">Dành cho doanh nghiệp vừa và nhỏ</p>
+                    <p class="text-center text-white mb-6">Dành cho doanh nghiệp vừa và nhỏ</p>
                     <p class="text-4xl font-bold text-center mb-6">15.000.000<span class="text-lg font-normal">đ</span></p>
                     <ul class="space-y-4 mb-8 flex-grow">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Thiết kế giao diện riêng</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Tối đa 10 trang con</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Tối ưu SEO On-page</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Tối ưu chuẩn SEO</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Bảo hành vĩnh viễn</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Tích hợp Mạng xã hội</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-black mr-2"></i>Hỗ trợ ưu tiên</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Thiết kế giao diện riêng</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Tối đa 10 trang con</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Tối ưu SEO On-page</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Tối ưu chuẩn SEO</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Bảo hành vĩnh viễn</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Tích hợp Mạng xã hội</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-white mr-2"></i>Hỗ trợ ưu tiên</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-black py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
+                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-white py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
                 </div>
                 <!-- Pricing Card 3 -->
                 <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col transition-transform transition-shadow duration-300 hover:shadow-2xl hover:-translate-y-2">
@@ -343,14 +343,14 @@ get_header(); ?>
                     <p class="text-center text-gray-500 mb-6">Dành cho doanh nghiệp lớn, TMĐT</p>
                     <p class="text-4xl font-bold text-center mb-6">Liên hệ</p>
                     <ul class="space-y-4 text-gray-600 mb-8 flex-grow">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Mọi tính năng gói Chuyên Nghiệp</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tính năng TMĐT nâng cao</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tối ưu tốc độ chuyên sâu</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Tối ưu chuẩn SEO</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Bảo hành vĩnh viễn</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Hỗ trợ 24/7</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Mọi tính năng gói Chuyên Nghiệp</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tính năng TMĐT nâng cao</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tối ưu tốc độ chuyên sâu</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Tối ưu chuẩn SEO</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Bảo hành vĩnh viễn</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-[#ff3205] mr-2"></i>Hỗ trợ 24/7</li>
                     </ul>
-                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-black py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
+                    <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-white py-3 rounded-lg font-semibold transition-colors">Liên Hệ Tư Vấn</a>
                 </div>
             </div>
         </div>
@@ -477,10 +477,10 @@ get_header(); ?>
 
     <!-- Final CTA Section -->
     <section class="py-20" style="background-color: #ff3205;">
-        <div class="container mx-auto px-4 text-center text-black">
+        <div class="container mx-auto px-4 text-center text-white">
             <h2 class="text-4xl font-bold mb-4">Sẵn Sàng Để Có Một Website Đột Phá?</h2>
             <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">Hãy để VV Agency giúp bạn xây dựng một website không chỉ đẹp mà còn mang lại hiệu quả kinh doanh vượt trội.</p>
-            <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-black py-3 rounded-lg font-semibold transition-colors">
+            <a href="https://zalo.me/0396693505" style="background-color: #ff3205;" target="_blank" rel="noopener noreferrer" class="block text-center w-full text-white py-3 rounded-lg font-semibold transition-colors">
                 Yêu Cầu Tư Vấn Miễn Phí
             </a>
         </div>

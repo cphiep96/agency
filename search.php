@@ -93,7 +93,7 @@ $search_query = get_search_query();
                             </a>
                         <?php else: ?>
                             <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
-                                <div class="text-5xl text-orange-300">
+                                <div class="text-5xl text-[#ff3205]">
                                     <?php if ($post_type === 'post'): ?>
                                         <i class="far fa-newspaper"></i>
                                     <?php elseif ($post_type === 'page'): ?>
@@ -106,7 +106,7 @@ $search_query = get_search_query();
                         <?php endif; ?>
                         
                         <div class="p-6">
-                            <span class="inline-block bg-orange-100 text-orange-800 text-xs font-semibold tracking-wide uppercase mb-3 py-1 px-2 rounded">
+                            <span class="inline-block bg-[#ff3205] text-white text-xs font-semibold tracking-wide uppercase mb-3 py-1 px-2 rounded">
                                 <?php echo esc_html($post_type_name); ?>
                                 
                                 <?php if ($category): ?>

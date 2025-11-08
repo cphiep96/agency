@@ -16,7 +16,7 @@
                                     class="h-12 w-auto">
                             <?php endif; ?>
                             <div>
-                                <p class="text-xs text-gray-400">ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ</p>
+                                <p class="text-xs text-white">ĐỒNG HÀNH – BỨT PHÁ – HIỆU QUẢ</p>
                             </div>
                         </a>
                     </div>
@@ -33,7 +33,7 @@
                         <a href="tel:<?php echo esc_attr(get_theme_mod('agency_footer_hotline', '0396693505')); ?>" class="px-4 py-2 rounded text-sm" style="background-color: #ff3205; display: inline-flex; align-items: center;">
                             <i class="fas fa-phone mr-2"></i>GỌI ĐIỆN
                         </a>
-                        <a href="mailto:<?php echo esc_attr(get_theme_mod('agency_footer_email', 'doquocvietts@gmail.com')); ?>" class="bg-gray-600 px-4 py-2 rounded text-sm" style="display: inline-flex; align-items: center;">
+                        <a href="mailto:<?php echo esc_attr(get_theme_mod('agency_footer_email', 'doquocvietts@gmail.com')); ?>" class="px-4 py-2 rounded text-sm" style="display: inline-flex; align-items: center;">
                             <i class="fas fa-envelope mr-2"></i>EMAIL
                         </a>
                     </div>

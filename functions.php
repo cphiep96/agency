@@ -632,7 +632,7 @@ class VV_Agency_Partners_Widget extends WP_Widget {
         echo '<div class="text-center mb-12">';
         echo '<h2 class="text-3xl font-bold text-gray-800 mb-4">';
         if ($show_icon) {
-            echo '<i class="fas fa-star text-purple-500 mr-2"></i>';
+            echo '<i class="fas fa-star text-[#ff3205] mr-2"></i>';
         }
         echo apply_filters('widget_title', $title) . '</h2>';
         
@@ -690,7 +690,7 @@ class VV_Agency_Partners_Widget extends WP_Widget {
             
             // Dots indicator
             echo '<div class="flex justify-center mt-8 space-x-2">';
-                echo '<button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-purple-500 transition-all duration-300" id="dot0"></button>';
+                echo '<button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-[#ff3205] transition-all duration-300" id="dot0"></button>';
                 echo '<button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" id="dot1"></button>';
             echo '</div>';
         echo '</div>';
@@ -1669,7 +1669,7 @@ if ( ! function_exists( 'agency_render_partners_section' ) ) {
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">
                 <?php if ( $show_icon ) : ?>
-                    <i class="fas fa-star text-purple-500 mr-2"></i>
+                    <i class="fas fa-star text-[#ff3205] mr-2"></i>
                 <?php endif; ?>
                 <?php echo esc_html( $title ); ?>
             </h2>
@@ -1710,7 +1710,7 @@ if ( ! function_exists( 'agency_render_partners_section' ) ) {
             <?php if ( count( $chunks ) > 1 ) : ?>
                 <div class="flex justify-center mt-8 space-x-2">
                     <?php foreach ( range( 0, count( $chunks ) - 1 ) as $index ) : ?>
-                        <button onclick="goToSlide(<?php echo esc_attr( $index ); ?>)" class="w-3 h-3 rounded-full <?php echo 0 === $index ? 'bg-purple-500' : 'bg-gray-300 hover:bg-gray-400'; ?> transition-all duration-300" id="dot<?php echo esc_attr( $index ); ?>"></button>
+                        <button onclick="goToSlide(<?php echo esc_attr( $index ); ?>)" class="w-3 h-3 rounded-full <?php echo 0 === $index ? 'bg-[#ff3205]' : 'bg-gray-300 hover:bg-gray-400'; ?> transition-all duration-300" id="dot<?php echo esc_attr( $index ); ?>"></button>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
